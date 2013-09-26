@@ -6,9 +6,8 @@ import java.util.List;
 public class Board {
 	List<Mark> marks;
 	List<Connection> connections;
-	
+
 	public Board() {
 		this.marks = new ArrayList<Mark>();
 	}
-	
 }

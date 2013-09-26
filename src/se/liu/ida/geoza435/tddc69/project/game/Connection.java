@@ -3,13 +3,13 @@ package se.liu.ida.geoza435.tddc69.project.game;
 public class Connection {
 	Mark a, b;
 	ConnectionType type;
-	
+
 	public Connection(Mark a, Mark b, ConnectionType type) {
 		this.a = a;
 		this.b = b;
 		this.type = type;
 	}
-	
+
 	public Connection(Mark a, Mark b) {
 		this(a, b, ConnectionType.normal);
 	}
