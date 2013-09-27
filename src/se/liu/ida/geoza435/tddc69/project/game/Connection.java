@@ -37,4 +37,10 @@ public class Connection {
 	public void setType(ConnectionType type) {
 		this.type = type;
 	}
+
+	@Override
+	public String toString() {
+		return "[c:#" + a.hashCode() + "<->#" + b.hashCode() + ", t=" + type
+				+ "]";
+	}
 }
