@@ -3,10 +3,14 @@ package se.liu.ida.geoza435.tddc69.project.game;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mark {
+import se.liu.ida.geoza435.tddc69.project.Observable;
+import se.liu.ida.geoza435.tddc69.project.Observer;
+
+public class Mark extends Observable {
 	MarkType type;
 	Position position;
 	List<Connection> connections;
+	List<Observer> observers;
 
 	public Mark(MarkType type, Position position) {
 		this.type = type;
@@ -20,6 +24,7 @@ public class Mark {
 
 	public void setPosition(Position position) {
 		this.position = position;
+		changed();
 	}
 
 	public List<Connection> getConnections() {
@@ -38,4 +43,5 @@ public class Mark {
 	public String toString() {
 		return "[m:" + type.toString() + "@" + position.toString() + "]";
 	}
+
 }

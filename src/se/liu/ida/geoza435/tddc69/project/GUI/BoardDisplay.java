@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 
 @SuppressWarnings("serial")
-public class BoardDisplay extends JPanel  {
+public class BoardDisplay extends JPanel {
 	Board board;
 
 	public BoardDisplay(Board board) {

@@ -8,17 +8,21 @@ import java.awt.Rectangle;
 
 import javax.swing.JLabel;
 
+import se.liu.ida.geoza435.tddc69.project.Observable;
+import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 @SuppressWarnings("serial")
-public class ConnectionDisplay extends JLabel {
+public class ConnectionDisplay extends JLabel implements Observer {
 	Connection connection;
 
 	public ConnectionDisplay(Connection c) {
 		this.connection = c;
 		this.setBounds(boundsSet(new Rectangle()));
 		this.setSize(sizeSet());
+		this.connection.getA().observe(this);
+		this.connection.getB().observe(this);
 	}
 
 	public Rectangle boundsSet(Rectangle rv) {
@@ -60,7 +64,7 @@ public class ConnectionDisplay extends JLabel {
 		Position a = connection.getA().getPosition();
 		Position b = connection.getB().getPosition();
 
-		System.out.println(sizeSet());
+		// System.out.println(sizeSet());
 
 		BasicStroke bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
 				BasicStroke.JOIN_BEVEL);
@@ -82,6 +86,13 @@ public class ConnectionDisplay extends JLabel {
 					this.sizeSet().width - offset,
 					this.sizeSet().height - offset);
 		}
+	}
+
+	@Override
+	public void notifyChange(Observable observable) {
+		this.setBounds(this.boundsSet(new Rectangle()));
+		this.setSize(this.sizeSet());
+		this.repaint();
 	}
 
 }
