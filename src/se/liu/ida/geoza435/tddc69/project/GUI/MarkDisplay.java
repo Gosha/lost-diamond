@@ -13,6 +13,8 @@ public class MarkDisplay extends JLabel {
 	Mark mark;
 	Rectangle bounds;
 
+	public final static int SIZE = 40;
+
 	public MarkDisplay(Mark mark) {
 		this.mark = mark;
 		this.bounds = new Rectangle(
@@ -27,8 +29,8 @@ public class MarkDisplay extends JLabel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
-		//TODO Constants?
-		g2d.setColor(new Color(200, 0, 0));
-		g2d.fillOval(0, 0, 40, 40);
+		// TODO Color constants, ugh
+		g2d.setColor(new Color(200, 0, 0, 200));
+		g2d.fillOval(0, 0, SIZE, SIZE);
 	}
 }

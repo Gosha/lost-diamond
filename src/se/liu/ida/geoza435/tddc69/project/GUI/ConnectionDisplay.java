@@ -43,8 +43,9 @@ public class ConnectionDisplay extends JLabel {
 		 */
 		Position a = connection.getA().getPosition();
 		Position b = connection.getB().getPosition();
-		Dimension d = new Dimension(Math.abs(a.getX() - b.getX() + 20),
-				Math.abs(a.getY() - b.getY()) + 20);
+		Dimension d = new Dimension(Math.abs(a.getX() - b.getX())
+				+ MarkDisplay.SIZE,
+				Math.abs(a.getY() - b.getY()) + MarkDisplay.SIZE);
 		return d;
 	}
 
@@ -64,9 +65,11 @@ public class ConnectionDisplay extends JLabel {
 		BasicStroke bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
 				BasicStroke.JOIN_BEVEL);
 		g2d.setStroke(bs1);
-
-		g2d.drawLine(0, 0, this.sizeSet().width,
-				this.sizeSet().height);
+		int offset = MarkDisplay.SIZE / 2;
+		g2d.drawLine(offset,
+				offset,
+				this.sizeSet().width - offset,
+				this.sizeSet().height - offset);
 	}
 
 }
