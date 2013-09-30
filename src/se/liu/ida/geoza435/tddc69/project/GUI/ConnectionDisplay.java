@@ -54,21 +54,12 @@ public class ConnectionDisplay extends JLabel {
 		 * TODO: Clean up
 		 */
 		super.paintComponent(g);
-		Graphics2D g2d = (Graphics2D) g;
+		Graphics2D g2d = DrawingTools.setupGraphics(g);
 
 		// Position a = connection.getA().getPosition();
 		// Position b = connection.getB().getPosition();
 
 		System.out.println(sizeSet());
-
-		RenderingHints rh = new RenderingHints(
-				RenderingHints.KEY_ANTIALIASING,
-				RenderingHints.VALUE_ANTIALIAS_ON);
-
-		rh.put(RenderingHints.KEY_RENDERING,
-				RenderingHints.VALUE_RENDER_QUALITY);
-
-		g2d.setRenderingHints(rh);
 
 		BasicStroke bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
 				BasicStroke.JOIN_BEVEL);
