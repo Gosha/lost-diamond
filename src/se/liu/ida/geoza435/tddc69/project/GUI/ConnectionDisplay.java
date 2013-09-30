@@ -1,57 +1,81 @@
 package se.liu.ida.geoza435.tddc69.project.GUI;
 
+import java.awt.BasicStroke;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.RenderingHints;
 
-import javax.swing.JComponent;
+import javax.swing.JLabel;
+
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
-public class ConnectionDisplay extends JComponent {
+public class ConnectionDisplay extends JLabel {
+	private static final long serialVersionUID = 1L;
 	Connection connection;
 
 	public ConnectionDisplay(Connection c) {
 		this.connection = c;
+		this.setBounds(boundsSet(new Rectangle()));
+		this.setSize(sizeSet());
 	}
 
-	@Override
-	public Rectangle getBounds(Rectangle rv) {
+	public Rectangle boundsSet(Rectangle rv) {
+		/*
+		 * TODO: Better name
+		 */
 		Position a = connection.getA().getPosition();
 		Position b = connection.getB().getPosition();
 
 		rv.setBounds(Math.min(a.getX(), b.getX()),
 				Math.min(a.getY(), b.getY()),
-				Math.abs(a.getX() - b.getX()),
-				Math.abs(a.getY() - b.getY()));
+				Math.abs(a.getX() - b.getX() + 10),
+				Math.abs(a.getY() - b.getY()) + 10);
 		System.out.println(rv);
 		return rv;
 	}
 
-	@Override
-	public Dimension getPreferredSize() {
+	public Dimension sizeSet() {
+		/*
+		 * TODO: Better name
+		 */
 		Position a = connection.getA().getPosition();
 		Position b = connection.getB().getPosition();
-		Dimension d = new Dimension(Math.abs(a.getX() - b.getX()),
-				Math.abs(a.getY() - b.getY()));
+		Dimension d = new Dimension(Math.abs(a.getX() - b.getX() + 20),
+				Math.abs(a.getY() - b.getY()) + 20);
 		return d;
 	}
 
 	@Override
 	public void paintComponent(Graphics g) {
+		/*
+		 * TODO: Clean up
+		 */
 		super.paintComponent(g);
-		Position a = connection.getA().getPosition();
-		Position b = connection.getB().getPosition();
+		Graphics2D g2d = (Graphics2D) g;
 
-		System.out.println(getPreferredSize());
+		// Position a = connection.getA().getPosition();
+		// Position b = connection.getB().getPosition();
 
-		g.drawLine(0, 0, this.getPreferredSize().width,
-				this.getPreferredSize().height);
+		System.out.println(sizeSet());
+
+		RenderingHints rh = new RenderingHints(
+				RenderingHints.KEY_ANTIALIASING,
+				RenderingHints.VALUE_ANTIALIAS_ON);
+
+		rh.put(RenderingHints.KEY_RENDERING,
+				RenderingHints.VALUE_RENDER_QUALITY);
+
+		g2d.setRenderingHints(rh);
+
+		BasicStroke bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
+				BasicStroke.JOIN_BEVEL);
+		g2d.setStroke(bs1);
+
+		g2d.drawLine(0, 0, this.sizeSet().width,
+				this.sizeSet().height);
 	}
 
-	@Override
-	public void paint(Graphics g) {
-		System.out.println("paint");
-		this.paintComponent(g);
-	}
 }
