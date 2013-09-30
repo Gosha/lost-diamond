@@ -57,8 +57,9 @@ public class ConnectionDisplay extends JLabel {
 		super.paintComponent(g);
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
 
-		// Position a = connection.getA().getPosition();
-		// Position b = connection.getB().getPosition();
+		// TODO: Better names
+		Position a = connection.getA().getPosition();
+		Position b = connection.getB().getPosition();
 
 		System.out.println(sizeSet());
 
@@ -66,10 +67,22 @@ public class ConnectionDisplay extends JLabel {
 				BasicStroke.JOIN_BEVEL);
 		g2d.setStroke(bs1);
 		int offset = MarkDisplay.SIZE / 2;
-		g2d.drawLine(offset,
-				offset,
-				this.sizeSet().width - offset,
-				this.sizeSet().height - offset);
+
+		if (a.getX() > b.getX() && a.getY() < b.getY()
+				|| a.getX() < b.getX() && a.getY() > b.getY()) {
+			// Connection: /
+			g2d.drawLine(
+					offset,
+					this.sizeSet().height - offset,
+					this.sizeSet().width - offset,
+					offset);
+		} else {
+			// Connection: \
+			g2d.drawLine(
+					offset, offset,
+					this.sizeSet().width - offset,
+					this.sizeSet().height - offset);
+		}
 	}
 
 }

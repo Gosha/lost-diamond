@@ -23,14 +23,18 @@ public class MarkDisplay extends JLabel {
 				150, 40);
 		this.setText(mark.toString());
 		this.setBounds(bounds);
+		this.setForeground(Color.BLUE);
 	}
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		super.paintComponent(g);
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
 		// TODO Color constants, ugh
 		g2d.setColor(new Color(200, 0, 0, 200));
 		g2d.fillOval(0, 0, SIZE, SIZE);
+
+		// Paint Label text / Other super stuff
+		super.paintComponent(g);
 	}
+
 }

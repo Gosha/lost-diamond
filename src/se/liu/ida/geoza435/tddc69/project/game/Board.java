@@ -21,9 +21,17 @@ public class Board {
 		Mark m2 = addMark(new Mark(MarkType.normal, new Position(150, 150)));
 		Mark m3 = addMark(new Mark(MarkType.normal, new Position(151, 250)));
 		Mark m4 = addMark(new Mark(MarkType.normal, new Position(200, 50)));
+		Mark m5 = addMark(new Mark(MarkType.normal, new Position(50, 170)));
+		Mark m6 = addMark(new Mark(MarkType.normal, new Position(50, 320)));
+		Mark m7 = addMark(new Mark(MarkType.normal, new Position(220, 320)));
+		Mark m8 = addMark(new Mark(MarkType.normal, new Position(260, 170)));
 		addConnection(new Connection(m1, m2));
 		addConnection(new Connection(m3, m2));
 		addConnection(new Connection(m2, m4));
+		addConnection(new Connection(m3, m5));
+		addConnection(new Connection(m3, m6));
+		addConnection(new Connection(m3, m7));
+		addConnection(new Connection(m3, m8));
 	}
 
 	public Mark addMark(Mark m) {
