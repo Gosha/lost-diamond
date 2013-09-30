@@ -31,8 +31,8 @@ public class ConnectionDisplay extends JLabel {
 
 		rv.setBounds(Math.min(a.getX(), b.getX()),
 				Math.min(a.getY(), b.getY()),
-				Math.abs(a.getX() - b.getX() + 10),
-				Math.abs(a.getY() - b.getY()) + 10);
+				Math.abs(a.getX() - b.getX()),
+				Math.abs(a.getY() - b.getY()));
 		System.out.println(rv);
 		return rv;
 	}
