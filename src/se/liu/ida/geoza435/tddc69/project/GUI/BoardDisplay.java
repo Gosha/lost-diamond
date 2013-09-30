@@ -1,13 +1,12 @@
 package se.liu.ida.geoza435.tddc69.project.GUI;
 
 import java.awt.Dimension;
-import java.awt.Rectangle;
 
-import javax.swing.Scrollable;
 import javax.swing.JPanel;
 
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 
+@SuppressWarnings("serial")
 public class BoardDisplay extends JPanel  {
 	Board board;
 

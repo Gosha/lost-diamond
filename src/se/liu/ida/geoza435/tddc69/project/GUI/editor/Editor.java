@@ -18,6 +18,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Board;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
+@SuppressWarnings("serial")
 public class Editor extends JFrame {
 
 	public Editor() {

@@ -5,15 +5,14 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.RenderingHints;
 
 import javax.swing.JLabel;
 
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
+@SuppressWarnings("serial")
 public class ConnectionDisplay extends JLabel {
-	private static final long serialVersionUID = 1L;
 	Connection connection;
 
 	public ConnectionDisplay(Connection c) {

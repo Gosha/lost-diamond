@@ -14,6 +14,7 @@ public class MarkDisplay extends JLabel {
 	Rectangle bounds;
 
 	public final static int SIZE = 40;
+@SuppressWarnings("serial")
 
 	public MarkDisplay(Mark mark) {
 		this.mark = mark;
