@@ -5,7 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SwingUtilities;
 
+import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
+import se.liu.ida.geoza435.tddc69.project.game.Connection;
+import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
 public class EditorController {
 
@@ -28,6 +31,14 @@ public class EditorController {
 								System.exit(0);
 							}
 						});
+
+				BoardDisplay boardDisplay = editorView.getBoardDisplay();
+				for (Mark m : editorView.getBoard().getMarks()) {
+					boardDisplay.addMarkDisplay(m);
+				}
+				for (Connection c : editorView.getBoard().getConnections()) {
+					boardDisplay.addConnectionDisplay(c);
+				}
 				editorView.setVisible(true);
 			}
 		});

@@ -10,11 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
-import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
-import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
-import se.liu.ida.geoza435.tddc69.project.game.Connection;
-import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
 @SuppressWarnings("serial")
 public class EditorView extends JFrame {
@@ -44,14 +40,6 @@ public class EditorView extends JFrame {
 		buttonPanel.add(quitButton);
 		buttonPanel.add(moveButton);
 		buttonPanel.add(addButton);
-
-		for (Mark m : board.getMarks()) {
-			boardDisplay.add(new MarkDisplay(m));
-		}
-
-		for (Connection c : board.getConnections()) {
-			boardDisplay.add(new ConnectionDisplay(c));
-		}
 
 		JScrollPane spane = new JScrollPane();
 
