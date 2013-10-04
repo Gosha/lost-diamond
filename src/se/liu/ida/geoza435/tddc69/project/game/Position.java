@@ -1,5 +1,8 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+/**
+ * Immutable position class.
+ */
 public class Position {
 	int x, y;
 
