@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
@@ -19,6 +21,7 @@ public class EditorController {
 
 		editorView = new EditorView(board);
 		board.createStubBoard();
+		final MouseListenerHandler mlf = new MouseListenerHandler();
 
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -34,7 +37,8 @@ public class EditorController {
 
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 				for (Mark m : editorView.getBoard().getMarks()) {
-					boardDisplay.addMarkDisplay(m);
+					final MarkDisplay md = boardDisplay.addMarkDisplay(m);
+					md.addMouseMotionListener(mlf.getMouseListenerInstance(md));
 				}
 				for (Connection c : editorView.getBoard().getConnections()) {
 					boardDisplay.addConnectionDisplay(c);

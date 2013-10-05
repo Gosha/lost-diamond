@@ -1,25 +1,21 @@
 package se.liu.ida.geoza435.tddc69.project.GUI;
 
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
-import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 @SuppressWarnings("serial")
 public class MarkDisplay extends JLabel {
-	Mark mark;
+	public Mark mark;
 	Rectangle bounds;
-	protected Point anchorPoint;
-	protected boolean overbearing;
+	public Point anchorPoint;
+	public boolean overbearing;
 
 	public final static int SIZE = 40;
 
@@ -54,35 +50,5 @@ public class MarkDisplay extends JLabel {
 		 * This handle is a reference to THIS because in next Mouse Adapter
 		 * "this" is not allowed
 		 */
-		final MarkDisplay handle = this;
-		addMouseMotionListener(new MouseAdapter() {
-
-			@Override
-			public void mouseMoved(MouseEvent e) {
-				anchorPoint = e.getPoint();
-				setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			}
-
-			@Override
-			public void mouseDragged(MouseEvent e) {
-				int anchorX = anchorPoint.x;
-				int anchorY = anchorPoint.y;
-
-				Point parentOnScreen = getParent().getLocationOnScreen();
-				Point mouseOnScreen = e.getLocationOnScreen();
-				Point position = new Point(mouseOnScreen.x - parentOnScreen.x -
-						anchorX, mouseOnScreen.y - parentOnScreen.y - anchorY);
-				setLocation(position);
-
-				handle.mark.setPosition(new Position(position.x, position.y));
-
-				// Change Z-Buffer if it is "overbearing"
-				if (overbearing) {
-					getParent().setComponentZOrder(handle, 0);
-					// repaint();
-				}
-				handle.getParent().getParent().repaint();
-			}
-		});
 	}
 }

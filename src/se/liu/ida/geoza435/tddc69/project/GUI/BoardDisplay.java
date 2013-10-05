@@ -1,6 +1,8 @@
 package se.liu.ida.geoza435.tddc69.project.GUI;
 
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,20 +34,24 @@ public class BoardDisplay extends JPanel {
 			public void mouseClicked(MouseEvent arg0) {
 				// Gör saker!
 				JOptionPane.showMessageDialog(null, "Hej");
+				SharedMouseMotionDelegate
+						.setMouseMotionDelegate(new MouseOverDelegate());
 			}
 
 		});
 	}
 
-	public void addMarkDisplay(Mark m) {
+	public MarkDisplay addMarkDisplay(Mark m) {
 		MarkDisplay newMarkDisplay = new MarkDisplay(m);
 		this.md.add(newMarkDisplay);
 		this.add(newMarkDisplay);
+		return newMarkDisplay;
 	}
 
-	public void addConnectionDisplay(Connection c) {
+	public ConnectionDisplay addConnectionDisplay(Connection c) {
 		ConnectionDisplay newCD = new ConnectionDisplay(c);
 		this.cd.add(newCD);
 		this.add(newCD);
+		return newCD;
 	}
 }
