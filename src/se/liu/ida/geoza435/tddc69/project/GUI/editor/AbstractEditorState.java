@@ -3,7 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseHandlerState;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
-class AbstractEditorState implements MouseHandlerState {
+abstract class AbstractEditorState implements MouseHandlerState {
 
 	EditorView container;
 
