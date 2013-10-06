@@ -28,7 +28,6 @@ public class MarkDisplay extends JLabel {
 		this.setText(mark.toString());
 		this.setBounds(bounds);
 		this.setForeground(Color.BLUE);
-		this.addDragListeners();
 	}
 
 	@Override
@@ -42,13 +41,4 @@ public class MarkDisplay extends JLabel {
 		// super.paintComponent(g);
 	}
 
-	/**
-	 * Add Mouse Motion Listener with drag function
-	 */
-	private void addDragListeners() {
-		/**
-		 * This handle is a reference to THIS because in next Mouse Adapter
-		 * "this" is not allowed
-		 */
-	}
 }

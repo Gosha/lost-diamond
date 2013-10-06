@@ -12,8 +12,11 @@ public class MouseListenerHandler {
 	}
 
 	public void setState(MouseHandlerState state) {
+		if (this.state != null) {
+			this.state.leaveState(this);
+		}
 		this.state = state;
-		this.state.setupState(this);
+		this.state.enterState(this);
 	}
 
 	public BoardDisplay getBoardDisplay() {

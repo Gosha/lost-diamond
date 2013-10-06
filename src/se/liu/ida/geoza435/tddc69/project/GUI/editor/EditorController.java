@@ -7,7 +7,6 @@ import javax.swing.SwingUtilities;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
-import se.liu.ida.geoza435.tddc69.project.GUI.MoveState;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
@@ -36,6 +35,11 @@ public class EditorController {
 							}
 						});
 
+				editorView.getAddButton().addActionListener(
+						new AddButtonListener(mlh, editorView));
+				editorView.getMoveButton().addActionListener(
+						new MoveButtonListener(mlh, editorView));
+
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 
 				for (Mark m : editorView.getBoard().getMarks()) {
@@ -46,7 +50,7 @@ public class EditorController {
 					boardDisplay.addConnectionDisplay(c);
 				}
 
-				mlh.setState(new MoveState());
+				mlh.setState(new MoveState(editorView));
 
 				editorView.setVisible(true);
 			}

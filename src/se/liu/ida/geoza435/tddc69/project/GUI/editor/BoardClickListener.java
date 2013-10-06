@@ -1,4 +1,4 @@
-package se.liu.ida.geoza435.tddc69.project.GUI;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

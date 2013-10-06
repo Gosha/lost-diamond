@@ -1,10 +1,11 @@
-package se.liu.ida.geoza435.tddc69.project.GUI;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 public class DragMotionListener extends MouseAdapter {
