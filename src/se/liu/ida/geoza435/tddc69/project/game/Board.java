@@ -1,6 +1,7 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Board {
@@ -42,6 +43,25 @@ public class Board {
 	public Connection addConnection(Connection c) {
 		this.connections.add(c);
 		return c;
+	}
+
+	public void deleteMark(Mark m) {
+		marks.remove(m);
+		Iterator<Connection> iterator = m.getConnections().iterator();
+		while (iterator.hasNext()) {
+			Connection c = iterator.next();
+			if (c.getA() != m) {
+				c.getA().deleteConnection(c);
+			}
+			if (c.getB() != m) {
+				c.getB().deleteConnection(c);
+			}
+			deleteConnection(c);
+		}
+	}
+
+	public void deleteConnection(Connection c) {
+		connections.remove(c);
 	}
 
 	@Override

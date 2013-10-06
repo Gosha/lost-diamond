@@ -39,6 +39,8 @@ public class EditorController {
 						new AddButtonListener(mlh, editorView));
 				editorView.getMoveButton().addActionListener(
 						new MoveButtonListener(mlh, editorView));
+				editorView.getDeleteButton().addActionListener(
+						new DeleteButtonLister(mlh, editorView));
 
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 

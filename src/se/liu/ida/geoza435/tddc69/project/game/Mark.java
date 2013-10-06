@@ -41,6 +41,10 @@ public class Mark extends Observable {
 		return connections;
 	}
 
+	public void deleteConnection(Connection c) {
+		connections.remove(c);
+	}
+
 	public void addConnection(Connection c) {
 		connections.add(c);
 	}

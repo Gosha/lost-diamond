@@ -8,6 +8,8 @@ public class Connection {
 		this.a = a;
 		this.b = b;
 		this.type = type;
+		a.addConnection(this);
+		b.addConnection(this);
 	}
 
 	public Connection(Mark a, Mark b) {
