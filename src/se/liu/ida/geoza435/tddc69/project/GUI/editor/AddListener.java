@@ -12,11 +12,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
-public class BoardClickListener extends MouseAdapter {
+public class AddListener extends MouseAdapter {
 
 	BoardDisplay bd;
 
-	public BoardClickListener(BoardDisplay bd) {
+	public AddListener(BoardDisplay bd) {
 		this.bd = bd;
 	}
 

@@ -16,7 +16,7 @@ public class AddState extends AbstractEditorState {
 	public void enterState(MouseListenerHandler mlh) {
 
 		BoardDisplay bd = mlh.getBoardDisplay();
-		bd.addMouseListener(new BoardClickListener(bd));
+		bd.addMouseListener(new AddListener(bd));
 
 		container.getAddButton().setEnabled(false);
 
