@@ -35,12 +35,15 @@ public class EditorController {
 							}
 						});
 
-				editorView.getAddButton().addActionListener(
-						new AddButtonListener(mlh, editorView));
 				editorView.getMoveButton().addActionListener(
-						new MoveButtonListener(mlh, editorView));
+						new StateButtonListener(mlh, editorView,
+								new MoveState(editorView)));
+				editorView.getAddButton().addActionListener(
+						new StateButtonListener(mlh, editorView,
+								new AddState(editorView)));
 				editorView.getDeleteButton().addActionListener(
-						new DeleteButtonLister(mlh, editorView));
+						new StateButtonListener(mlh, editorView,
+								new DeleteState(editorView)));
 
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 

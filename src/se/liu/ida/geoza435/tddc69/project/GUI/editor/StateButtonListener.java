@@ -5,19 +5,23 @@ import java.awt.event.ActionListener;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
-public class AddButtonListener implements ActionListener {
+public class StateButtonListener implements ActionListener {
 
 	MouseListenerHandler mlh;
 	EditorView container;
+	AbstractEditorState state;
 
-	public AddButtonListener(MouseListenerHandler mlh, EditorView editorView) {
+	public StateButtonListener(MouseListenerHandler mlh,
+			EditorView editorView,
+			AbstractEditorState state) {
 		this.mlh = mlh;
 		this.container = editorView;
+		this.state = state;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		mlh.setState(new AddState(container));
+		mlh.setState(state);
 	}
 
 }
