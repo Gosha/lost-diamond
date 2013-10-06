@@ -12,10 +12,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
 @SuppressWarnings("serial")
 public class BoardDisplay extends JPanel {
-	Board board;
+	private Board board;
 	// TODO: Better names
 	List<MarkDisplay> md;
 	List<ConnectionDisplay> cd;
+	MarkDisplay selectedMark;
 
 	public BoardDisplay(Board board) {
 		this.md = new ArrayList<MarkDisplay>();
@@ -42,5 +43,22 @@ public class BoardDisplay extends JPanel {
 
 	public List<MarkDisplay> getMarkDisplays() {
 		return this.md;
+	}
+
+	public void selectNone() {
+		getBoard().selectNone();
+	}
+
+	public void selectOne(MarkDisplay md) {
+		selectedMark = md;
+		md.mark.setSelected(true);
+	}
+
+	public MarkDisplay getSelectedMark() {
+		return selectedMark;
+	}
+
+	public Board getBoard() {
+		return board;
 	}
 }

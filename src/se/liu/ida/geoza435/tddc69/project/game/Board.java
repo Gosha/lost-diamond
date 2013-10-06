@@ -52,4 +52,10 @@ public class Board {
 	public List<Mark> getMarks() {
 		return this.marks;
 	}
+
+	public void selectNone() {
+		for (Mark m : this.getMarks()) {
+			m.setSelected(false);
+		}
+	}
 }

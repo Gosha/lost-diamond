@@ -11,6 +11,7 @@ public class Mark extends Observable {
 	Position position;
 	List<Connection> connections;
 	List<Observer> observers;
+	boolean selected;
 
 	public Mark(MarkType type, Position position) {
 		this.type = type;
@@ -24,6 +25,15 @@ public class Mark extends Observable {
 
 	public void setPosition(Position position) {
 		this.position = position;
+		changed();
+	}
+
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean set) {
+		selected = set;
 		changed();
 	}
 
