@@ -29,8 +29,13 @@ public class AddState extends AbstractEditorState {
 	public void leaveState(MouseListenerHandler mouseListenerHandler) {
 		BoardDisplay bd = mouseListenerHandler.getBoardDisplay();
 		bd.selectNone();
-		for (MouseListener ma : bd.getMouseListeners()) {
-			bd.removeMouseListener(ma);
+		for (MouseListener ml : bd.getMouseListeners()) {
+			bd.removeMouseListener(ml);
+		}
+		for (MarkDisplay md : mouseListenerHandler.getMarkDisplays()) {
+			for (MouseListener ml : md.getMouseListeners()) {
+				md.removeMouseListener(ml);
+			}
 		}
 		container.getAddButton().setEnabled(true);
 	}
