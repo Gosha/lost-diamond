@@ -1,7 +1,6 @@
 package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -37,7 +36,6 @@ public class EditorView extends JFrame {
 	public void initUI() {
 		setLayout(new BorderLayout());
 		buttonPanel.setLayout(new GridLayout(0, 1));
-		buttonPanel.setPreferredSize(new Dimension(100, 100));
 
 		getContentPane().add(buttonPanel, BorderLayout.WEST);
 
