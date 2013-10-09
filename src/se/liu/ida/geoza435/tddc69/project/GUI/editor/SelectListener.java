@@ -10,16 +10,25 @@ public class SelectListener extends MouseAdapter {
 
 	protected MarkDisplay md;
 	protected BoardDisplay bd;
+	protected SelectCallback callback;
 
 	public SelectListener(MarkDisplay md, BoardDisplay bd) {
 		this.md = md;
 		this.bd = bd;
 	}
 
+	public SelectListener(MarkDisplay md, BoardDisplay bd,
+			SelectCallback callback) {
+		this(md, bd);
+		this.callback = callback;
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		bd.selectNone();
-		bd.selectOne(md);
+		if (callback == null || callback.run(this)) {
+			bd.selectNone();
+			bd.selectOne(md);
+		}
 	}
 
 }

@@ -44,6 +44,9 @@ public class EditorController {
 				editorView.getDeleteButton().addActionListener(
 						new StateButtonListener(mlh, editorView,
 								new DeleteState(editorView)));
+				editorView.getConnectButton().addActionListener(
+						new StateButtonListener(mlh, editorView,
+								new ConnectState(editorView)));
 
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 
@@ -52,7 +55,7 @@ public class EditorController {
 				}
 
 				for (Connection c : editorView.getBoard().getConnections()) {
-					boardDisplay.addConnectionDisplay(c);
+					boardDisplay.addConnection(c);
 				}
 
 				mlh.setState(new MoveState(editorView));

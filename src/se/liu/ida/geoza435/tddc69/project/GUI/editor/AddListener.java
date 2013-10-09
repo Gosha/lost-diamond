@@ -31,7 +31,7 @@ public class AddListener extends MouseAdapter {
 			Connection newConnection = new Connection(selectedMark.mark,
 					newmark);
 			MarkDisplay newmd = bd.addMarkDisplay(newmark);
-			bd.addConnectionDisplay(newConnection);
+			bd.addConnection(newConnection);
 			bd.selectNone();
 			bd.selectOne(newmd);
 			bd.repaint();

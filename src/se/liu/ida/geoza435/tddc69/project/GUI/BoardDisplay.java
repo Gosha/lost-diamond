@@ -35,11 +35,18 @@ public class BoardDisplay extends JPanel {
 		return newMarkDisplay;
 	}
 
-	public ConnectionDisplay addConnectionDisplay(Connection c) {
+	public ConnectionDisplay addConnection(Connection c) {
 		ConnectionDisplay newCD = new ConnectionDisplay(c);
 		this.cd.add(newCD);
 		this.add(newCD);
 		return newCD;
+	}
+
+	public void addNewConnectionDisplay(Connection c) {
+		ConnectionDisplay newCD = new ConnectionDisplay(c);
+		this.cd.add(newCD);
+		this.board.addConnection(c);
+		this.add(newCD);
 	}
 
 	public List<MarkDisplay> getMarkDisplays() {
@@ -64,6 +71,7 @@ public class BoardDisplay extends JPanel {
 	}
 
 	public void selectNone() {
+		selectedMark = null;
 		getBoard().selectNone();
 	}
 

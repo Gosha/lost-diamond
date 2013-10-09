@@ -19,6 +19,7 @@ public class EditorView extends JFrame {
 	JButton addButton = new JButton("Add");
 	JButton moveButton = new JButton("Move");
 	JButton deleteButton = new JButton("Delete");
+	JButton connectButton = new JButton("Connect");
 	JPanel buttonPanel = new JPanel();
 	BoardDisplay boardDisplay;
 
@@ -42,6 +43,7 @@ public class EditorView extends JFrame {
 		buttonPanel.add(moveButton);
 		buttonPanel.add(addButton);
 		buttonPanel.add(deleteButton);
+		buttonPanel.add(connectButton);
 
 		JScrollPane spane = new JScrollPane();
 
@@ -53,6 +55,10 @@ public class EditorView extends JFrame {
 		setLocationByPlatform(true);
 		setSize(600, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+	public JButton getConnectButton() {
+		return connectButton;
 	}
 
 	public JButton getQuitButton() {
