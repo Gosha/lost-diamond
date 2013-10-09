@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
+import se.liu.ida.geoza435.tddc69.project.game.ConnectionType;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 @SuppressWarnings("serial")
@@ -66,10 +67,11 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		Position b = connection.getB().getPosition();
 
 		// System.out.println(sizeSet());
-
-		BasicStroke bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
-				BasicStroke.JOIN_BEVEL);
-		g2d.setStroke(bs1);
+		if (connection.getType() != ConnectionType.normal) {
+			BasicStroke bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
+					BasicStroke.JOIN_BEVEL);
+			g2d.setStroke(bs1);
+		}
 		int offset = MarkDisplay.SIZE / 2;
 
 		if (DrawingTools.connectionFromBottom(a, b)) {
