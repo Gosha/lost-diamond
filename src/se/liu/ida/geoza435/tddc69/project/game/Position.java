@@ -1,9 +1,12 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+import java.io.Serializable;
+
 /**
  * Immutable position class.
  */
-public class Position {
+public class Position implements Serializable {
+	private static final long serialVersionUID = 1L;
 	int x, y;
 
 	public int getX() {

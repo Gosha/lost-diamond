@@ -1,12 +1,15 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Board {
-	List<Mark> marks;
-	List<Connection> connections;
+public class Board implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	ArrayList<Mark> marks;
+	ArrayList<Connection> connections;
 
 	public Board() {
 		this.marks = new ArrayList<Mark>();

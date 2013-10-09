@@ -1,16 +1,18 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.Observable;
 import se.liu.ida.geoza435.tddc69.project.Observer;
 
-public class Mark extends Observable {
+public class Mark extends Observable implements Serializable {
+	private static final long serialVersionUID = 1L;
 	MarkType type;
 	Position position;
-	List<Connection> connections;
-	List<Observer> observers;
+	ArrayList<Connection> connections;
+	ArrayList<Observer> observers;
 	boolean selected;
 
 	public Mark(MarkType type, Position position) {

@@ -1,6 +1,9 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
-public class Connection {
+import java.io.Serializable;
+
+public class Connection implements Serializable {
+	private static final long serialVersionUID = 1L;
 	Mark a, b;
 	ConnectionType type;
 
