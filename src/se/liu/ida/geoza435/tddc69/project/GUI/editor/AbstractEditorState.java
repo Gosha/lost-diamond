@@ -29,6 +29,10 @@ abstract class AbstractEditorState implements MouseHandlerState {
 	@Override
 	public void leaveState(MouseListenerHandler mlh) {
 		BoardDisplay bd = mlh.getBoardDisplay();
+
+		for (MouseListener ml : bd.getMouseListeners()) {
+			bd.removeMouseListener(ml);
+		}
 		for (MarkDisplay md : bd.getMarkDisplays()) {
 			md.setCursor(Cursor.getDefaultCursor());
 			for (MouseListener ma : md.getMouseListeners()) {

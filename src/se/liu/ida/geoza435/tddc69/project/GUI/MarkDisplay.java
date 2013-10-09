@@ -65,8 +65,6 @@ public class MarkDisplay extends JLabel implements Observer {
 			break;
 		}
 
-		System.out.println((SIZE / 2) - radius);
-
 		g2d.fillOval((SIZE / 2) - radius, (SIZE / 2) - radius,
 				2 * radius, 2 * radius);
 
