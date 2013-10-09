@@ -1,6 +1,7 @@
 package se.liu.ida.geoza435.tddc69.project.GUI;
 
 import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -12,7 +13,6 @@ import javax.swing.JLabel;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
-import se.liu.ida.geoza435.tddc69.project.game.ConnectionType;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 @SuppressWarnings("serial")
@@ -66,12 +66,28 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		Position a = connection.getA().getPosition();
 		Position b = connection.getB().getPosition();
 
-		// System.out.println(sizeSet());
-		if (connection.getType() != ConnectionType.normal) {
-			BasicStroke bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
+		BasicStroke bs1;
+		switch (connection.getType()) {
+		case normal:
+			bs1 = new BasicStroke(3, BasicStroke.CAP_BUTT,
 					BasicStroke.JOIN_BEVEL);
-			g2d.setStroke(bs1);
+			break;
+		case flight:
+			bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
+					BasicStroke.JOIN_BEVEL);
+			g2d.setColor(new Color(200, 20, 20));
+			break;
+		case boat:
+			bs1 = new BasicStroke(5, BasicStroke.CAP_BUTT,
+					BasicStroke.JOIN_BEVEL);
+			g2d.setColor(new Color(20, 20, 200));
+			break;
+		default:
+			bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
+					BasicStroke.JOIN_BEVEL);
 		}
+
+		g2d.setStroke(bs1);
 		int offset = MarkDisplay.SIZE / 2;
 
 		if (DrawingTools.connectionFromBottom(a, b)) {
@@ -119,6 +135,10 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		this.setBounds(this.boundsSet(new Rectangle()));
 		this.setSize(this.sizeSet());
 		this.repaint();
+	}
+
+	public Connection getConnection() {
+		return connection;
 	}
 
 }

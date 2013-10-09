@@ -55,6 +55,10 @@ public class Mark extends Observable implements Serializable {
 		return type;
 	}
 
+	public void setType(MarkType markType) {
+		this.type = markType;
+	}
+
 	@Override
 	public String toString() {
 		return "[m:" + type.toString() + "@" + position.toString() + "]";

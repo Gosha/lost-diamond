@@ -52,6 +52,10 @@ public class EditorController {
 				connectButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
 								new ConnectState(editorView, connectButton)));
+				JButton typeButton = editorView.getTypeButton();
+				typeButton.addActionListener(
+						new StateButtonListener(mlh, editorView,
+								new TypeState(editorView, typeButton)));
 
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 

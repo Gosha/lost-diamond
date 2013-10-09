@@ -87,4 +87,8 @@ public class BoardDisplay extends JPanel {
 	public Board getBoard() {
 		return board;
 	}
+
+	public List<ConnectionDisplay> getConnectionDisplays() {
+		return this.cd;
+	}
 }

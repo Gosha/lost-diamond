@@ -38,8 +38,37 @@ public class MarkDisplay extends JLabel implements Observer {
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
 		// TODO Color constants, ugh
 
-		g2d.setColor(new Color(200, 0, 0, 255));
-		g2d.fillOval(0, 0, SIZE, SIZE);
+		Integer radius = 20;
+		switch (mark.getType()) {
+		case normal:
+			radius = 15;
+			g2d.setColor(new Color(10, 10, 10, 255));
+			break;
+		case boat:
+			radius = 15;
+			g2d.setColor(new Color(20, 20, 200));
+			break;
+		case city:
+			radius = 20;
+			g2d.setColor(new Color(10, 10, 10));
+			g2d.fillOval((SIZE / 2) - radius, (SIZE / 2) - radius,
+					2 * radius, 2 * radius);
+			radius = 18;
+			g2d.setColor(new Color(200, 20, 20));
+			break;
+		case start:
+			radius = 20;
+			g2d.setColor(new Color(200, 200, 20));
+			break;
+		default:
+			g2d.setColor(new Color(0, 0, 0, 255));
+			break;
+		}
+
+		System.out.println((SIZE / 2) - radius);
+
+		g2d.fillOval((SIZE / 2) - radius, (SIZE / 2) - radius,
+				2 * radius, 2 * radius);
 
 		if (mark.isSelected()) {
 			g2d.setStroke(new BasicStroke(3));

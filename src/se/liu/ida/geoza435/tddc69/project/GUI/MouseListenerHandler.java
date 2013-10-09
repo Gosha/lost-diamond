@@ -26,4 +26,9 @@ public class MouseListenerHandler {
 	public List<MarkDisplay> getMarkDisplays() {
 		return bd.getMarkDisplays();
 	}
+
+	public List<ConnectionDisplay> getConnectionDisplays() {
+		return bd.getConnectionDisplays();
+	}
+
 }
