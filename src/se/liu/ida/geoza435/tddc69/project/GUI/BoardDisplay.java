@@ -68,6 +68,20 @@ public class BoardDisplay extends JPanel {
 		this.remove(md);
 	}
 
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+
+	public void loadBoard() {
+		for (Mark m : getBoard().getMarks()) {
+			addMarkDisplay(m);
+		}
+
+		for (Connection c : getBoard().getConnections()) {
+			addConnection(c);
+		}
+	}
+
 	public void selectNone() {
 		selectedMark = null;
 		getBoard().selectNone();
@@ -80,6 +94,12 @@ public class BoardDisplay extends JPanel {
 
 	public MarkDisplay getSelectedMark() {
 		return selectedMark;
+	}
+
+	public void clearBoard() {
+		this.cd.clear();
+		this.md.clear();
+		this.removeAll();
 	}
 
 	public Board getBoard() {

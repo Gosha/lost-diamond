@@ -31,4 +31,8 @@ public class MouseListenerHandler {
 		return bd.getConnectionDisplays();
 	}
 
+	public void reenterState() {
+		this.state.enterState(this);
+	}
+
 }

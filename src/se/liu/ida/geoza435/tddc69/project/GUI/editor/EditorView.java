@@ -16,6 +16,7 @@ public class EditorView extends JFrame {
 
 	JButton quitButton = new JButton("Quit");
 	JButton saveButton = new JButton("Save");
+	JButton loadButton = new JButton("Load");
 	JButton addButton = new JButton("Add");
 	JButton moveButton = new JButton("Move");
 	JButton deleteButton = new JButton("Delete");
@@ -24,13 +25,8 @@ public class EditorView extends JFrame {
 	JPanel buttonPanel = new JPanel();
 	BoardDisplay boardDisplay;
 
-	Board board;
-
 	public EditorView(Board board) {
-
-		this.board = board;
 		this.boardDisplay = new BoardDisplay(board);
-
 	}
 
 	public void initUI() {
@@ -41,6 +37,7 @@ public class EditorView extends JFrame {
 
 		buttonPanel.add(quitButton);
 		buttonPanel.add(saveButton);
+		buttonPanel.add(loadButton);
 		buttonPanel.add(moveButton);
 		buttonPanel.add(addButton);
 		buttonPanel.add(deleteButton);
@@ -71,6 +68,10 @@ public class EditorView extends JFrame {
 		return saveButton;
 	}
 
+	public JButton getLoadButton() {
+		return loadButton;
+	}
+
 	public JButton getAddButton() {
 		return addButton;
 	}
@@ -93,9 +94,5 @@ public class EditorView extends JFrame {
 
 	public BoardDisplay getBoardDisplay() {
 		return boardDisplay;
-	}
-
-	public Board getBoard() {
-		return board;
 	}
 }
