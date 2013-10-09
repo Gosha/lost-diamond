@@ -18,6 +18,7 @@ public class ConnectState extends AbstractEditorState {
 			md.addMouseListener(new SelectListener(md,
 					mouseListenerHandler.getBoardDisplay(),
 					new ConnectCallback()));
+			md.addMouseMotionListener(new MouseOverListener(md));
 		}
 	}
 }

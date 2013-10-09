@@ -20,6 +20,7 @@ public class AddState extends AbstractEditorState {
 
 		for (MarkDisplay md : mlh.getMarkDisplays()) {
 			md.addMouseListener(new SelectListener(md, bd));
+			md.addMouseMotionListener(new MouseOverListener(md));
 		}
 	}
 

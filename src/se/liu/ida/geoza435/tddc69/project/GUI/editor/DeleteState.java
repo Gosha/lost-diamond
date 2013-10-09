@@ -16,6 +16,7 @@ public class DeleteState extends AbstractEditorState {
 		super.enterState(mlh);
 		for (MarkDisplay md : mlh.getMarkDisplays()) {
 			md.addMouseListener(new DeleteListener(md, mlh.getBoardDisplay()));
+			md.addMouseMotionListener(new MouseOverListener(md));
 		}
 	}
 }
