@@ -43,10 +43,8 @@ public class BoardDisplay extends JPanel {
 	}
 
 	public void addNewConnectionDisplay(Connection c) {
-		ConnectionDisplay newCD = new ConnectionDisplay(c);
-		this.cd.add(newCD);
+		addConnection(c);
 		this.board.addConnection(c);
-		this.add(newCD);
 	}
 
 	public List<MarkDisplay> getMarkDisplays() {
