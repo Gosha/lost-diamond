@@ -57,6 +57,9 @@ public class EditorController {
 						new StateButtonListener(mlh, editorView,
 								new TypeState(editorView, typeButton)));
 
+				editorView.getSaveButton().addActionListener(
+						new SaveListener(editorView.getBoardDisplay()));
+
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 
 				for (Mark m : editorView.getBoard().getMarks()) {

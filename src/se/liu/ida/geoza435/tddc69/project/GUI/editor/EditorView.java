@@ -16,6 +16,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Board;
 public class EditorView extends JFrame {
 
 	JButton quitButton = new JButton("Quit");
+	JButton saveButton = new JButton("Save");
 	JButton addButton = new JButton("Add");
 	JButton moveButton = new JButton("Move");
 	JButton deleteButton = new JButton("Delete");
@@ -41,6 +42,7 @@ public class EditorView extends JFrame {
 		getContentPane().add(buttonPanel, BorderLayout.WEST);
 
 		buttonPanel.add(quitButton);
+		buttonPanel.add(saveButton);
 		buttonPanel.add(moveButton);
 		buttonPanel.add(addButton);
 		buttonPanel.add(deleteButton);
@@ -65,6 +67,10 @@ public class EditorView extends JFrame {
 
 	public JButton getQuitButton() {
 		return quitButton;
+	}
+
+	public JButton getSaveButton() {
+		return saveButton;
 	}
 
 	public JButton getAddButton() {
