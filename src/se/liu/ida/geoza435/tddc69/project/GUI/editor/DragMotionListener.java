@@ -1,6 +1,5 @@
 package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 
-import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -26,7 +25,6 @@ public class DragMotionListener extends MouseAdapter {
 	public void mouseMoved(MouseEvent e) {
 		// TODO: Better names
 		anchorPoint = e.getPoint();
-		md.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	}
 
 	@Override

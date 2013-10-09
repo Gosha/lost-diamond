@@ -3,6 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
@@ -35,18 +36,22 @@ public class EditorController {
 							}
 						});
 
-				editorView.getMoveButton().addActionListener(
+				JButton moveButton = editorView.getMoveButton();
+				moveButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new MoveState(editorView)));
-				editorView.getAddButton().addActionListener(
+								new MoveState(editorView, moveButton)));
+				JButton addButton = editorView.getAddButton();
+				addButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new AddState(editorView)));
-				editorView.getDeleteButton().addActionListener(
+								new AddState(editorView, addButton)));
+				JButton deleteButton = editorView.getDeleteButton();
+				deleteButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new DeleteState(editorView)));
-				editorView.getConnectButton().addActionListener(
+								new DeleteState(editorView, deleteButton)));
+				JButton connectButton = editorView.getConnectButton();
+				connectButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new ConnectState(editorView)));
+								new ConnectState(editorView, connectButton)));
 
 				BoardDisplay boardDisplay = editorView.getBoardDisplay();
 
@@ -58,7 +63,7 @@ public class EditorController {
 					boardDisplay.addConnection(c);
 				}
 
-				mlh.setState(new MoveState(editorView));
+				mlh.setState(new MoveState(editorView, moveButton));
 
 				editorView.setVisible(true);
 			}

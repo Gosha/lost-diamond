@@ -1,34 +1,23 @@
 package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 
-import java.awt.event.MouseListener;
+import javax.swing.JButton;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
 public class ConnectState extends AbstractEditorState {
 
-	public ConnectState(EditorView container) {
-		super(container);
+	public ConnectState(EditorView container, JButton button) {
+		super(container, button);
 	}
 
 	@Override
 	public void enterState(MouseListenerHandler mouseListenerHandler) {
-		container.getConnectButton().setEnabled(false);
+		super.enterState(mouseListenerHandler);
 		for (MarkDisplay md : mouseListenerHandler.getMarkDisplays()) {
 			md.addMouseListener(new SelectListener(md,
 					mouseListenerHandler.getBoardDisplay(),
 					new ConnectCallback()));
 		}
 	}
-
-	@Override
-	public void leaveState(MouseListenerHandler mouseListenerHandler) {
-		container.getConnectButton().setEnabled(true);
-		for (MarkDisplay md : mouseListenerHandler.getMarkDisplays()) {
-			for (MouseListener ml : md.getMouseListeners()) {
-				md.removeMouseListener(ml);
-			}
-		}
-	}
-
 }
