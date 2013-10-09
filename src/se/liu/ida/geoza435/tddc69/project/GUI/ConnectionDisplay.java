@@ -38,7 +38,6 @@ public class ConnectionDisplay extends JLabel implements Observer {
 				Math.min(a.getY(), b.getY()),
 				Math.abs(a.getX() - b.getX()),
 				Math.abs(a.getY() - b.getY()));
-		System.out.println(rv);
 		return rv;
 	}
 
