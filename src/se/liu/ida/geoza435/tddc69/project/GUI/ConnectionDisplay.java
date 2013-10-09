@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Point;
 
 import javax.swing.JLabel;
 
@@ -71,8 +72,7 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		g2d.setStroke(bs1);
 		int offset = MarkDisplay.SIZE / 2;
 
-		if (a.getX() > b.getX() && a.getY() < b.getY()
-				|| a.getX() < b.getX() && a.getY() > b.getY()) {
+		if (DrawingTools.connectionFromBottom(a, b)) {
 			// Connection: /
 			g2d.drawLine(
 					offset,
@@ -86,6 +86,30 @@ public class ConnectionDisplay extends JLabel implements Observer {
 					this.sizeSet().width - offset,
 					this.sizeSet().height - offset);
 		}
+	}
+
+	@Override
+	public boolean contains(int x, int y) {
+		if (super.contains(x, y)) {
+			int offset = MarkDisplay.SIZE / 2;
+
+			Point P = new Point(x, y);
+			Position a = connection.getA().getPosition();
+			Position b = connection.getB().getPosition();
+
+			Point A, B;
+			if (DrawingTools.connectionFromBottom(a, b)) {
+				A = new Point(offset, this.sizeSet().height - offset);
+				B = new Point(this.sizeSet().width - offset, offset);
+			} else {
+				A = new Point(offset, offset);
+				B = new Point(this.sizeSet().width - offset,
+						this.sizeSet().height - offset);
+			}
+
+			return DrawingTools.pointToLineDistance(A, B, P) < 5;
+		}
+		return false;
 	}
 
 	@Override

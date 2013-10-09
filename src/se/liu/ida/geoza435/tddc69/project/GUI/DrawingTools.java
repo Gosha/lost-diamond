@@ -2,7 +2,10 @@ package se.liu.ida.geoza435.tddc69.project.GUI;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.RenderingHints;
+
+import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 public class DrawingTools {
 
@@ -20,4 +23,16 @@ public class DrawingTools {
 		return g2d;
 	}
 
+	public static double pointToLineDistance(Point A, Point B, Point P) {
+		double normalLength =
+				Math.sqrt((B.x - A.x) * (B.x - A.x) + (B.y - A.y) * (B.y - A.y));
+		return Math.abs(
+				(P.x - A.x) * (B.y - A.y) - (P.y - A.y) * (B.x - A.x))
+				/ normalLength;
+	}
+
+	public static boolean connectionFromBottom(Position a, Position b) {
+		return a.getX() > b.getX() && a.getY() < b.getY()
+				|| a.getX() < b.getX() && a.getY() > b.getY();
+	}
 }
