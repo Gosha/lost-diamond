@@ -59,6 +59,40 @@ public class Mark extends Observable implements Serializable {
 		this.type = markType;
 	}
 
+	public ArrayList<MarkListContainer> getNextMarks(Integer upTo) {
+		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
+		System.out.println(this);
+		return getNextMarks(upTo, retMarks, this, 1);
+	}
+
+	private ArrayList<MarkListContainer> getNextMarks(Integer upTo,
+			ArrayList<MarkListContainer> retMarks, Mark from, Integer distance) {
+		if (upTo <= 0) {
+			return retMarks;
+		}
+		for (Mark m : this.getAdjacentMarks()) {
+			if (m != from) {
+				retMarks.add(new MarkListContainer(m, distance));
+				m.getNextMarks(upTo - 1, retMarks, this, distance + 1);
+			}
+		}
+		return retMarks;
+	}
+
+	private ArrayList<Mark> getAdjacentMarks() {
+		ArrayList<Mark> retMarks = new ArrayList<>();
+		Mark m;
+		for (Connection c : connections) {
+			m = c.getA();
+			if (m != this)
+				retMarks.add(m);
+			m = c.getB();
+			if (m != this)
+				retMarks.add(m);
+		}
+		return retMarks;
+	}
+
 	@Override
 	public String toString() {
 		return "[m:" + type.toString() + "@" + position.toString() + "]";

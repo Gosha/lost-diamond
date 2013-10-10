@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Connection implements Serializable {
 	private static final long serialVersionUID = 1L;
-	Mark a, b;
-	ConnectionType type;
+	private Mark a, b;
+	private ConnectionType type;
 
 	public Connection(Mark a, Mark b, ConnectionType type) {
 		this.a = a;

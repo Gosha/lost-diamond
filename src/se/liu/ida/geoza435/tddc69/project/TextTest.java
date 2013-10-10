@@ -11,7 +11,7 @@ import se.liu.ida.geoza435.tddc69.project.game.*;
 public class TextTest {
 	public static void main(String[] args) {
 		Mark m = new Mark(MarkType.normal, new Position(1, 1));
-		Player p = new Player(m);
+		Player p = new TextPlayer(m);
 		System.out.println(m);
 		System.out.println(p);
 
