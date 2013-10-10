@@ -2,8 +2,9 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.ArrayList;
 
-//TODO: Observable
-abstract public class Player {
+import se.liu.ida.geoza435.tddc69.project.Observable;
+
+abstract public class Player extends Observable {
 	Mark at;
 	ArrayList<Token> tokens;
 
@@ -17,6 +18,7 @@ abstract public class Player {
 
 	public void setAt(Mark at) {
 		this.at = at;
+		changed();
 	}
 
 	public ArrayList<Token> getTokens() {
@@ -24,8 +26,9 @@ abstract public class Player {
 	}
 
 	public void move(Mark to) {
-		if (to != null)
-			at = to;
+		if (to != null) {
+			setAt(to);
+		}
 	}
 
 	@Override
