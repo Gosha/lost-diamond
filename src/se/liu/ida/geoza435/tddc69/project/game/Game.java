@@ -33,11 +33,12 @@ public class Game {
 		currentPlayer = players.get(0);
 	}
 
-	public void main() {
+	public void main() throws InterruptedException {
 		init();
 		while (!gameEnd()) {
 			playTurn(currentPlayer);
 			nextPlayer();
+			Thread.sleep(1000);
 		}
 	}
 

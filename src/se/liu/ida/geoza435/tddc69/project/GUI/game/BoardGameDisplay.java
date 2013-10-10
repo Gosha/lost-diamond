@@ -19,6 +19,8 @@ public class BoardGameDisplay extends BoardDisplay {
 	public PlayerDisplay addPlayerDisplay(Player player) {
 		PlayerDisplay newPlayerDisplay = new PlayerDisplay(player);
 		playersDisplays.add(newPlayerDisplay);
+		add(newPlayerDisplay);
+		setComponentZOrder(newPlayerDisplay, 0);
 		return newPlayerDisplay;
 	}
 
