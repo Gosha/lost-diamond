@@ -29,9 +29,7 @@ public class MovementChoice extends Choice {
 
 		while (iterator.hasNext()) {
 			mlc = iterator.next();
-			if (mlc.getMark().getType() != MarkType.normal
-					&& mlc.getMark().getType() != MarkType.city
-					&& mlc.getMark().getType() != MarkType.start) {
+			if (mlc.getConnectionType() != ConnectionType.normal) {
 				iterator.remove();
 			} else if (mlc.getDistance() != die) {
 				iterator.remove();

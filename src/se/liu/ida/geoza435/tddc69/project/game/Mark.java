@@ -70,25 +70,26 @@ public class Mark extends Observable implements Serializable {
 		if (upTo <= 0) {
 			return retMarks;
 		}
-		for (Mark m : this.getAdjacentMarks()) {
-			if (m != from) {
+		for (MarkListContainer m : this.getAdjacentMarks()) {
+			if (m.getMark() != from) {
 				retMarks.add(new MarkListContainer(m, distance));
-				m.getNextMarks(upTo - 1, retMarks, this, distance + 1);
+				m.getMark()
+						.getNextMarks(upTo - 1, retMarks, this, distance + 1);
 			}
 		}
 		return retMarks;
 	}
 
-	private ArrayList<Mark> getAdjacentMarks() {
-		ArrayList<Mark> retMarks = new ArrayList<>();
+	private ArrayList<MarkListContainer> getAdjacentMarks() {
+		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
 		Mark m;
 		for (Connection c : connections) {
 			m = c.getA();
 			if (m != this)
-				retMarks.add(m);
+				retMarks.add(new MarkListContainer(m, c.getType()));
 			m = c.getB();
 			if (m != this)
-				retMarks.add(m);
+				retMarks.add(new MarkListContainer(m, c.getType()));
 		}
 		return retMarks;
 	}
