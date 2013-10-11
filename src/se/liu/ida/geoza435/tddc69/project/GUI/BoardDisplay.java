@@ -24,8 +24,9 @@ public class BoardDisplay extends JPanel {
 		this.cd = new ArrayList<ConnectionDisplay>();
 		this.board = board;
 		this.setLayout(null);
-		this.setSize(400, 400);
-		this.setPreferredSize(new Dimension(400, 400));
+		// TODO Automatic resizing / Set size of board
+		this.setSize(870, 550);
+		this.setPreferredSize(new Dimension(870, 550));
 	}
 
 	public MarkDisplay addMarkDisplay(Mark m) {
