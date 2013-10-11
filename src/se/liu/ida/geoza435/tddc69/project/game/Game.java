@@ -36,13 +36,13 @@ public class Game {
 	public void main() {
 		init();
 		while (!gameEnd()) {
-			playTurn(currentPlayer);
-			nextPlayer();
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(1000);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			playTurn(currentPlayer);
+			nextPlayer();
 		}
 	}
 

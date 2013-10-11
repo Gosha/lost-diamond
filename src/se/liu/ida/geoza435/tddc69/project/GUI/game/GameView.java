@@ -19,7 +19,6 @@ public class GameView extends JFrame {
 	}
 
 	public void initUI() {
-		boardGameDisplay = new BoardGameDisplay(game.getBoard());
 		JScrollPane spane = new JScrollPane();
 
 		spane.setViewportView(boardGameDisplay);

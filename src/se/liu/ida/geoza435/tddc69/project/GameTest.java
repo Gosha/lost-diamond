@@ -13,7 +13,6 @@ public class GameTest {
 		Player p1 = new TextPlayer(game.getMarksOfType(MarkType.start).get(0));
 		game.addPlayer(p1);
 		game.init();
-		p1.getAt().getNextMarks(3);
 		// o(p1.toString());
 		// for(Mark m : p1.getAt().getNextMarks(2))
 		// o(m.toString());

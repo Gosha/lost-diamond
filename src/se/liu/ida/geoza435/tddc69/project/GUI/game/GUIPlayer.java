@@ -30,12 +30,26 @@ public class GUIPlayer extends Player {
 	@Override
 	public Mark chooseMark(ArrayList<MarkListContainer> marks) {
 		boardGameDisplay.getBoard().selectNone();
+
+		ArrayList<MarkClickListener> listeners = new ArrayList<>();
+		final ClickedMarkDisplay clickedMark = new ClickedMarkDisplay();
 		for (MarkListContainer mlc : marks) {
 			Mark m = mlc.getMark();
 			m.setSelected(true);
+			MarkClickListener listener = new MarkClickListener(mlc.getMark(),
+					clickedMark, boardGameDisplay);
+			listeners.add(listener);
 		}
-		// Wait..
-		return marks.size() > 0 ? marks.get(0).getMark() : null;
+		try {
+			synchronized (clickedMark) {
+				clickedMark.wait();
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return marks.size() > 0 ? clickedMark.markDisplay.mark : null;
 	}
 
 }
