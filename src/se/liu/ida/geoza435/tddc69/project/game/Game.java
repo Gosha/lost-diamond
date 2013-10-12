@@ -22,6 +22,7 @@ public class Game {
 		this.gameComponents = new ArrayList<>();
 		// this.gameComponents.add(new AfricasStar());
 		this.gameComponents.add(new StandardMovement(this));
+		this.gameComponents.add(new Flight(this));
 	}
 
 	public void addPlayer(Player player) {
