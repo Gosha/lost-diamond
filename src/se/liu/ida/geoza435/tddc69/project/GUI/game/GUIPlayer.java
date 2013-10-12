@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import se.liu.ida.geoza435.tddc69.project.game.Choice;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
@@ -20,13 +22,22 @@ public class GUIPlayer extends Player {
 
 	@Override
 	public Choice presentChoices(List<Choice> choices) {
-		// TODO Actually present choices. JOption
-		// http://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
-		// ?
-		for (Choice choice : choices)
-			System.out.println(choice);
 
-		return choices == null ? null : choices.get(0);
+		if (choices == null) {
+			return null;
+		}
+
+		// TODO Better option choosing
+		Choice response = (Choice) JOptionPane.showInputDialog(
+				this.boardGameDisplay.getParent(),
+				"Penis",
+				"hej",
+				JOptionPane.INFORMATION_MESSAGE,
+				null,
+				choices.toArray(),
+				choices.get(0));
+
+		return response;
 	}
 
 	@Override
