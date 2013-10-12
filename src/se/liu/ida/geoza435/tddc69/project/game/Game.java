@@ -84,11 +84,10 @@ public class Game {
 			ObjectInputStream in = new ObjectInputStream(istream);
 			board = (Board) in.readObject();
 			in.close();
-			System.out.println(board);
 		} catch (IOException i) {
 			i.printStackTrace();
 		} catch (ClassNotFoundException c) {
-			System.out.println("Employee class not found");
+			System.out.println("Board class not found");
 			c.printStackTrace();
 		}
 	}
