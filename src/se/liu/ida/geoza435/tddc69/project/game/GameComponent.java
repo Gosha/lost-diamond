@@ -10,7 +10,8 @@ abstract class GameComponent {
 		this.game = game;
 	}
 
-	abstract void init(Game game);
+	void init(Game game) {
+	}
 
 	void visit(Token token, Player player) {
 	}

@@ -9,12 +9,6 @@ public class StandardMovement extends GameComponent {
 	}
 
 	@Override
-	public void init(Game game) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void addChoices(Player player, List<Choice> choices) {
 		choices.add(new MovementChoice(game));
 	}
