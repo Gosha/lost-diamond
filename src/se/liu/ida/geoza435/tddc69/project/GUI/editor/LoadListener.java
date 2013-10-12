@@ -45,6 +45,9 @@ public class LoadListener implements ActionListener {
 				bd.loadBoard();
 				mlh.reenterState();
 				bd.repaint();
+
+				oistream.close();
+				fistream.close();
 			} catch (IOException | ClassNotFoundException e) {
 				e.printStackTrace();
 			}
