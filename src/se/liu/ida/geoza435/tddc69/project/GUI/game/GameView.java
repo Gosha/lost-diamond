@@ -22,6 +22,7 @@ public class GameView extends JFrame {
 		JScrollPane spane = new JScrollPane();
 
 		spane.setViewportView(boardGameDisplay);
+		spane.getVerticalScrollBar().setUnitIncrement(16);
 
 		add(spane, BorderLayout.CENTER);
 		// TODO: Constants
