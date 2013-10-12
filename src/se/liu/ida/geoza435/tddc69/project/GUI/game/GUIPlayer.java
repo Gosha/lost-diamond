@@ -50,6 +50,9 @@ public class GUIPlayer extends Player {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		for (MarkClickListener mcl : listeners) {
+			mcl.remove();
+		}
 
 		return marks.isEmpty() ? null : clickedMark.markDisplay.mark;
 	}

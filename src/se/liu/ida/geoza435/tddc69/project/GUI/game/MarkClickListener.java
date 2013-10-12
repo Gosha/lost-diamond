@@ -1,5 +1,6 @@
 package se.liu.ida.geoza435.tddc69.project.GUI.game;
 
+import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -10,7 +11,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 public class MarkClickListener extends MouseAdapter {
 
 	MarkDisplay md;
-	ClickedMarkDisplay clickedMarkDisplay;
+	final ClickedMarkDisplay clickedMarkDisplay;
 
 	public MarkClickListener(Mark mark, ClickedMarkDisplay clickedMarkDisplay,
 			BoardDisplay bd) {
@@ -20,6 +21,7 @@ public class MarkClickListener extends MouseAdapter {
 			if (md.mark == mark) {
 				this.md = md;
 				md.addMouseListener(this);
+				md.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 				break;
 			}
 		}
@@ -33,4 +35,8 @@ public class MarkClickListener extends MouseAdapter {
 		}
 	}
 
+	public void remove() {
+		md.removeMouseListener(this);
+		md.setCursor(Cursor.getDefaultCursor());
+	}
 }
