@@ -32,13 +32,11 @@ public class LoadListener implements ActionListener {
 
 		int returnStatus = fChooser.showOpenDialog(bd.getParent());
 
-		FileInputStream fistream;
-		ObjectInputStream oistream;
-
 		if (returnStatus == JFileChooser.APPROVE_OPTION) {
 			try {
-				fistream = new FileInputStream(fChooser.getSelectedFile());
-				oistream = new ObjectInputStream(fistream);
+				FileInputStream fistream = new FileInputStream(
+						fChooser.getSelectedFile());
+				ObjectInputStream oistream = new ObjectInputStream(fistream);
 
 				Board board = (Board) oistream.readObject();
 

@@ -22,8 +22,8 @@ public class AddListener extends MouseAdapter {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		MarkDisplay selectedMark;
-		if ((selectedMark = bd.getSelectedMark()) != null) {
+		MarkDisplay selectedMark = bd.getSelectedMark();
+		if (selectedMark != null) {
 			Mark newmark = new Mark(MarkType.normal,
 					new Position(e.getX() - MarkDisplay.SIZE / 2,
 							e.getY() - MarkDisplay.SIZE / 2));

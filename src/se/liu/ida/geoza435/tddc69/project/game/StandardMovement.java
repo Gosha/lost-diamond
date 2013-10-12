@@ -1,6 +1,6 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class StandardMovement extends GameComponent {
 
@@ -15,7 +15,7 @@ public class StandardMovement extends GameComponent {
 	}
 
 	@Override
-	public void addChoices(Player player, ArrayList<Choice> choices) {
+	public void addChoices(Player player, List<Choice> choices) {
 		choices.add(new MovementChoice(game));
 	}
 

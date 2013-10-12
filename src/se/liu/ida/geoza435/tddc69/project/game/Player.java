@@ -1,6 +1,7 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
@@ -36,7 +37,7 @@ abstract public class Player extends Observable {
 		return "{p:" + at.toString() + "}";
 	}
 
-	public abstract Choice presentChoices(ArrayList<Choice> choices);
+	public abstract Choice presentChoices(List<Choice> choices);
 
-	public abstract Mark chooseMark(ArrayList<MarkListContainer> marks);
+	public abstract Mark chooseMark(List<MarkListContainer> marks);
 }

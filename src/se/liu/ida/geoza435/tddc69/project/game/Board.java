@@ -2,24 +2,24 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Board implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	ArrayList<Mark> marks;
-	ArrayList<Connection> connections;
+	List<Connection> connections;
 
 	public Board() {
-		this.marks = new ArrayList<Mark>();
-		this.connections = new ArrayList<Connection>();
+		this.marks = new ArrayList<>();
+		this.connections = new ArrayList<>();
 	}
 
 	public List<Connection> getConnections() {
 		return connections;
 	}
 
+	@SuppressWarnings("MagicNumber")
 	public void createStubBoard() {
 		Mark m1 = addMark(new Mark(MarkType.normal, new Position(50, 50)));
 		Mark m2 = addMark(new Mark(MarkType.boat, new Position(150, 150)));
@@ -38,33 +38,31 @@ public class Board implements Serializable {
 		addConnection(new Connection(m3, m8));
 	}
 
-	public Mark addMark(Mark m) {
-		this.marks.add(m);
-		return m;
+	public Mark addMark(Mark mark) {
+		this.marks.add(mark);
+		return mark;
 	}
 
-	public Connection addConnection(Connection c) {
-		this.connections.add(c);
-		return c;
+	public Connection addConnection(Connection connection) {
+		this.connections.add(connection);
+		return connection;
 	}
 
-	public void deleteMark(Mark m) {
-		marks.remove(m);
-		Iterator<Connection> iterator = m.getConnections().iterator();
-		while (iterator.hasNext()) {
-			Connection c = iterator.next();
-			if (c.getA() != m) {
-				c.getA().deleteConnection(c);
+	public void deleteMark(Mark mark) {
+		marks.remove(mark);
+		for (final Connection connection : mark.getConnections()) {
+			if (connection.getA() != mark) {
+				connection.getA().deleteConnection(connection);
 			}
-			if (c.getB() != m) {
-				c.getB().deleteConnection(c);
+			if (connection.getB() != mark) {
+				connection.getB().deleteConnection(connection);
 			}
-			deleteConnection(c);
+			deleteConnection(connection);
 		}
 	}
 
-	public void deleteConnection(Connection c) {
-		connections.remove(c);
+	public void deleteConnection(Connection connection) {
+		connections.remove(connection);
 	}
 
 	@Override
@@ -77,8 +75,8 @@ public class Board implements Serializable {
 	}
 
 	public void selectNone() {
-		for (Mark m : this.getMarks()) {
-			m.setSelected(false);
+		for (Mark mark : this.getMarks()) {
+			mark.setSelected(false);
 		}
 	}
 }

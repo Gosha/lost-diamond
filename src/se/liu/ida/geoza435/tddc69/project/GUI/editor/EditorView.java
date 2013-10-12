@@ -80,10 +80,6 @@ public class EditorView extends JFrame {
 		return moveButton;
 	}
 
-	public JPanel getButtonPanel() {
-		return buttonPanel;
-	}
-
 	public JButton getDeleteButton() {
 		return deleteButton;
 	}

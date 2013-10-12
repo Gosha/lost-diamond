@@ -86,11 +86,9 @@ public class Game {
 			System.out.println(board);
 		} catch (IOException i) {
 			i.printStackTrace();
-			return;
 		} catch (ClassNotFoundException c) {
 			System.out.println("Employee class not found");
 			c.printStackTrace();
-			return;
 		}
 	}
 

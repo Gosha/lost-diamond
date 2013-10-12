@@ -7,7 +7,7 @@ import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
 
 public class GameController {
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		final Game game = new Game();
 		game.loadBoard("/home/gosha/board2.dat");
 

@@ -26,10 +26,9 @@ public class MovementChoice extends Choice {
 		ArrayList<MarkListContainer> marks = player.getAt().getNextMarks(die,
 				ConnectionType.normal);
 		Iterator<MarkListContainer> iterator = marks.iterator();
-		MarkListContainer mlc;
 
 		while (iterator.hasNext()) {
-			mlc = iterator.next();
+			MarkListContainer mlc = iterator.next();
 			if (mlc.getDistance() != die
 					&& mlc.getMark().getType() != MarkType.city) {
 				iterator.remove();

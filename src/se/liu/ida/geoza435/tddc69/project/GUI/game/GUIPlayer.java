@@ -1,6 +1,8 @@
 package se.liu.ida.geoza435.tddc69.project.GUI.game;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.game.Choice;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
@@ -17,25 +19,25 @@ public class GUIPlayer extends Player {
 	}
 
 	@Override
-	public Choice presentChoices(ArrayList<Choice> choices) {
+	public Choice presentChoices(List<Choice> choices) {
 		// TODO Actually present choices. JOption
 		// http://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
 		// ?
-		for (Choice c : choices)
-			System.out.println(c);
+		for (Choice choice : choices)
+			System.out.println(choice);
 
 		return choices == null ? null : choices.get(0);
 	}
 
 	@Override
-	public Mark chooseMark(ArrayList<MarkListContainer> marks) {
+	public Mark chooseMark(List<MarkListContainer> marks) {
 		boardGameDisplay.getBoard().selectNone();
 
-		ArrayList<MarkClickListener> listeners = new ArrayList<>();
+		Collection<MarkClickListener> listeners = new ArrayList<>();
 		final ClickedMarkDisplay clickedMark = new ClickedMarkDisplay();
 		for (MarkListContainer mlc : marks) {
-			Mark m = mlc.getMark();
-			m.setSelected(true);
+			Mark mark = mlc.getMark();
+			mark.setSelected(true);
 			MarkClickListener listener = new MarkClickListener(mlc.getMark(),
 					clickedMark, boardGameDisplay);
 			listeners.add(listener);
@@ -49,7 +51,7 @@ public class GUIPlayer extends Player {
 			e.printStackTrace();
 		}
 
-		return marks.size() > 0 ? clickedMark.markDisplay.mark : null;
+		return marks.isEmpty() ? null : clickedMark.markDisplay.mark;
 	}
 
 }

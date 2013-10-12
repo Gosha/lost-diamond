@@ -16,7 +16,7 @@ abstract class AbstractEditorState implements MouseHandlerState {
 	EditorView container;
 	JButton button;
 
-	public AbstractEditorState(EditorView container, JButton button) {
+	AbstractEditorState(EditorView container, JButton button) {
 		this.container = container;
 		this.button = button;
 	}

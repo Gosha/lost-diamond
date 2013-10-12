@@ -2,7 +2,7 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.List;
 
 public class TextPlayer extends Player {
 
@@ -14,17 +14,17 @@ public class TextPlayer extends Player {
 	}
 
 	@Override
-	public Choice presentChoices(ArrayList<Choice> choices) {
-		for (Choice c : choices)
-			System.out.println(c);
+	public Choice presentChoices(List<Choice> choices) {
+		for (Choice choice : choices)
+			System.out.println(choice);
 
 		return choices == null ? null : choices.get(0);
 	}
 
 	@Override
-	public Mark chooseMark(ArrayList<MarkListContainer> marks) {
+	public Mark chooseMark(List<MarkListContainer> marks) {
 		// TODO Auto-generated method stub
-		return marks.size() > 0 ? marks.get(0).getMark() : null;
+		return marks.isEmpty() ? null : marks.get(0).getMark();
 	}
 
 }

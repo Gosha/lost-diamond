@@ -7,9 +7,9 @@ public class ConnectCallback implements SelectCallback {
 
 	@Override
 	public boolean run(SelectListener from) {
-		MarkDisplay md;
+		MarkDisplay md = from.bd.getSelectedMark();
 
-		if ((md = from.bd.getSelectedMark()) != null) {
+		if (md != null) {
 			if (md != from.md) {
 				from.bd.addNewConnectionDisplay(new Connection(md.mark,
 						from.md.mark));

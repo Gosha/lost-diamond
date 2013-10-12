@@ -5,20 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.Observable;
-import se.liu.ida.geoza435.tddc69.project.Observer;
 
+@SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Mark extends Observable implements Serializable {
 	private static final long serialVersionUID = 1L;
 	MarkType type;
 	Position position;
+
+	// Not List or Collection because they aren't serializable
 	ArrayList<Connection> connections;
-	ArrayList<Observer> observers;
 	boolean selected;
 
 	public Mark(MarkType type, Position position) {
 		this.type = type;
 		this.position = position;
-		this.connections = new ArrayList<Connection>();
+		this.connections = new ArrayList<>();
 	}
 
 	public Position getPosition() {
@@ -43,12 +44,12 @@ public class Mark extends Observable implements Serializable {
 		return connections;
 	}
 
-	public void deleteConnection(Connection c) {
-		connections.remove(c);
+	public void deleteConnection(Connection connection) {
+		connections.remove(connection);
 	}
 
-	public void addConnection(Connection c) {
-		connections.add(c);
+	public void addConnection(Connection connection) {
+		connections.add(connection);
 	}
 
 	public MarkType getType() {
@@ -60,25 +61,25 @@ public class Mark extends Observable implements Serializable {
 	}
 
 	public ArrayList<MarkListContainer> getNextMarks(Integer upTo,
-			ConnectionType type) {
+			ConnectionType ofType) {
 		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
 		System.out.println(this);
-		return getNextMarks(upTo, type, retMarks, this, 1);
+		return getNextMarks(upTo, ofType, retMarks, this, 1);
 	}
 
 	private ArrayList<MarkListContainer> getNextMarks(Integer upTo,
-			ConnectionType type, ArrayList<MarkListContainer> retMarks,
+			ConnectionType ofType, ArrayList<MarkListContainer> retMarks,
 			Mark from, Integer distance) {
 		if (upTo <= 0) {
 			return retMarks;
 		}
-		for (MarkListContainer m : this.getAdjacentMarks()) {
-			if (m.getMark() != from) {
-				if (type == m.getConnectionType() || type == null) {
-					retMarks.add(new MarkListContainer(m, distance));
+		for (MarkListContainer mlc : this.getAdjacentMarks()) {
+			if (mlc.getMark() != from) {
+				if (ofType == mlc.getConnectionType() || ofType == null) {
+					retMarks.add(new MarkListContainer(mlc, distance));
 
-					m.getMark()
-							.getNextMarks(upTo - 1, type, retMarks, this,
+					mlc.getMark()
+							.getNextMarks(upTo - 1, ofType, retMarks, this,
 									distance + 1);
 				}
 			}
@@ -88,14 +89,14 @@ public class Mark extends Observable implements Serializable {
 
 	private ArrayList<MarkListContainer> getAdjacentMarks() {
 		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
-		Mark m;
-		for (Connection c : connections) {
-			m = c.getA();
-			if (m != this)
-				retMarks.add(new MarkListContainer(m, c.getType()));
-			m = c.getB();
-			if (m != this)
-				retMarks.add(new MarkListContainer(m, c.getType()));
+
+		for (Connection connection : connections) {
+			Mark mark = connection.getA();
+			if (mark != this)
+				retMarks.add(new MarkListContainer(mark, connection.getType()));
+			mark = connection.getB();
+			if (mark != this)
+				retMarks.add(new MarkListContainer(mark, connection.getType()));
 		}
 		return retMarks;
 	}
