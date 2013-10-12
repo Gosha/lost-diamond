@@ -18,7 +18,7 @@ public class TextPlayer extends Player {
 		for (Choice choice : choices)
 			System.out.println(choice);
 
-		return choices == null ? null : choices.get(0);
+		return choices.get(0);
 	}
 
 	@Override

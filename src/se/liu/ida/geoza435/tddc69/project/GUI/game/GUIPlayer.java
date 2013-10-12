@@ -23,8 +23,8 @@ public class GUIPlayer extends Player {
 	@Override
 	public Choice presentChoices(List<Choice> choices) {
 
-		if (choices == null) {
-			return null;
+		if (choices.size() == 1) {
+			return choices.get(0);
 		}
 
 		// TODO Better option choosing

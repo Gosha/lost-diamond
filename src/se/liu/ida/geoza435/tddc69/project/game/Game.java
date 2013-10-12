@@ -58,9 +58,12 @@ public class Game {
 		for (GameComponent g : gameComponents) {
 			g.addChoices(player, choices);
 		}
-		Choice choice = player.presentChoices(choices);
-		choice.choose(player);
-		choice.execute(player);
+
+		if (!choices.isEmpty()) {
+			Choice choice = player.presentChoices(choices);
+			choice.choose(player);
+			choice.execute(player);
+		}
 
 	}
 
