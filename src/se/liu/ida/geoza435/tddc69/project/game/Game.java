@@ -1,9 +1,11 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+
+import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
 
 public class Game {
 	Board board;
@@ -78,11 +80,10 @@ public class Game {
 
 	public void loadBoard(String file) {
 		try {
-			FileInputStream fileIn = new FileInputStream(file);
-			ObjectInputStream in = new ObjectInputStream(fileIn);
+			InputStream istream = ResourceManagager.getStream(file);
+			ObjectInputStream in = new ObjectInputStream(istream);
 			board = (Board) in.readObject();
 			in.close();
-			fileIn.close();
 			System.out.println(board);
 		} catch (IOException i) {
 			i.printStackTrace();
