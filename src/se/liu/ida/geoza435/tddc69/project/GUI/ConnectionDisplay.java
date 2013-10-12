@@ -64,6 +64,7 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		// TODO: Better names
 		Position a = connection.getA().getPosition();
 		Position b = connection.getB().getPosition();
+		// TODO: Color constants
 
 		BasicStroke bs1;
 		switch (connection.getType()) {

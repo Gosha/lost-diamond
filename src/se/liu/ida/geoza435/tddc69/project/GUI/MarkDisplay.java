@@ -35,6 +35,7 @@ public class MarkDisplay extends JLabel implements Observer {
 
 	@Override
 	protected void paintComponent(Graphics g) {
+		// TODO Radius constants
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
 		// TODO Color constants, ugh
 

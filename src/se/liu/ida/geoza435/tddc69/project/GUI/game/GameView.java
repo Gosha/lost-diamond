@@ -24,6 +24,7 @@ public class GameView extends JFrame {
 		spane.setViewportView(boardGameDisplay);
 
 		add(spane, BorderLayout.CENTER);
+		// TODO: Constants
 		setSize(600, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
