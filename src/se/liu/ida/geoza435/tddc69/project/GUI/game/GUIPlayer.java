@@ -28,14 +28,17 @@ public class GUIPlayer extends Player {
 		}
 
 		// TODO Better option choosing
-		Choice response = (Choice) JOptionPane.showInputDialog(
-				this.boardGameDisplay.getParent(),
-				"Penis",
-				"hej",
-				JOptionPane.INFORMATION_MESSAGE,
-				null,
-				choices.toArray(),
-				choices.get(0));
+		Choice response = null;
+		while (response == null) {
+			response = (Choice) JOptionPane.showInputDialog(
+					this.boardGameDisplay.getParent(),
+					"You can...",
+					"Chose what you want to do",
+					JOptionPane.INFORMATION_MESSAGE,
+					null,
+					choices.toArray(),
+					choices.get(0));
+		}
 
 		return response;
 	}
