@@ -42,7 +42,7 @@ public class MovementChoice extends Choice {
 
 	@Override
 	public String toString() {
-		return "Standard movement";
+		return "Move";
 	}
 
 }

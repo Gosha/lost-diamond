@@ -28,7 +28,7 @@ public class FlightChoice extends Choice {
 
 	@Override
 	public String toString() {
-		return "Flight";
+		return "Fly";
 	}
 
 }
