@@ -56,19 +56,14 @@ public class GUIPlayer extends Player {
 					clickedMark, boardGameDisplay);
 			listeners.add(listener);
 		}
-		try {
-			synchronized (clickedMark) {
-				clickedMark.wait();
-			}
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		clickedMark.waitUntilSet();
+
 		for (MarkClickListener mcl : listeners) {
 			mcl.remove();
 		}
 
-		return marks.isEmpty() ? null : clickedMark.markDisplay.mark;
+		return clickedMark.getMarkDisplay().mark;
 	}
 
 }

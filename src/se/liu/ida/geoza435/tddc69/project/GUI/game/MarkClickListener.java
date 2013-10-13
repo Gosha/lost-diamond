@@ -29,10 +29,7 @@ public class MarkClickListener extends MouseAdapter {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		synchronized (clickedMarkDisplay) {
-			this.clickedMarkDisplay.markDisplay = md;
-			this.clickedMarkDisplay.notifyAll();
-		}
+		clickedMarkDisplay.setMarkDisplay(md);
 	}
 
 	public void remove() {
