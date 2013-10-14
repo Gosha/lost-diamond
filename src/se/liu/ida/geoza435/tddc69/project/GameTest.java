@@ -9,7 +9,7 @@ public class GameTest {
 	public static void main(String[] args) {
 		Game game = new Game();
 		game.loadBoard("/home/gosha/small.dat");
-		Player p1 = new TextPlayer(game.getMarksOfType(MarkType.start).get(0));
+		Player p1 = new TextPlayer(game.getBoard().getMarksOfType(MarkType.start).get(0));
 		game.addPlayer(p1);
 		game.init();
 		// o(p1.toString());

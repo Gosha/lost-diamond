@@ -13,9 +13,9 @@ public class GameController {
 
 		final GameView gameView = new GameView(game);
 
-		final TextPlayer p1 = new TextPlayer(game.getMarksOfType(
+		final TextPlayer p1 = new TextPlayer(game.getBoard().getMarksOfType(
 				MarkType.start).get(0));
-		final GUIPlayer p2 = new GUIPlayer(game.getMarksOfType(
+		final GUIPlayer p2 = new GUIPlayer(game.getBoard().getMarksOfType(
 				MarkType.start).get(0), gameView.boardGameDisplay);
 
 		game.addPlayer(p1);

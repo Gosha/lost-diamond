@@ -72,16 +72,6 @@ public class Game {
 		return gameEnded;
 	}
 
-	public ArrayList<Mark> getMarksOfType(MarkType type) {
-		// TODO: Move to Board?
-		ArrayList<Mark> retMarks = new ArrayList<>();
-		for (Mark m : board.getMarks()) {
-			if (m.type == type)
-				retMarks.add(m);
-		}
-		return retMarks;
-	}
-
 	public void loadBoard(String file) {
 		try {
 			InputStream istream = ResourceManagager.getStream(file);

@@ -65,6 +65,17 @@ public class Board implements Serializable {
 		connections.remove(connection);
 	}
 
+	public ArrayList<Mark> getMarksOfType(MarkType type) {
+		ArrayList<Mark> retMarks = new ArrayList<>();
+
+		for (Mark mark : getMarks()) {
+			if (mark.type == type)
+				retMarks.add(mark);
+		}
+
+		return retMarks;
+	}
+
 	@Override
 	public String toString() {
 		return "Board [marks=" + marks + ", connections=" + connections + "]";
