@@ -7,7 +7,9 @@ import java.awt.RenderingHints;
 
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
-public class DrawingTools {
+public final class DrawingTools {
+
+	private DrawingTools() {}
 
 	public static Graphics2D setupGraphics(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import javax.swing.WindowConstants;
 
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 
@@ -28,7 +29,7 @@ public class GameView extends JFrame {
 		add(spane, BorderLayout.CENTER);
 		// TODO: Constants
 		setSize(600, 500);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 

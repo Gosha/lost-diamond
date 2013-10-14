@@ -7,7 +7,7 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
 
 abstract public class Player extends Observable {
 	Mark at;
-	ArrayList<Token> tokens;
+	List<Token> tokens = new ArrayList<>();
 
 	public Player(Mark at) {
 		this.at = at;
@@ -22,7 +22,7 @@ abstract public class Player extends Observable {
 		changed();
 	}
 
-	public ArrayList<Token> getTokens() {
+	public List<Token> getTokens() {
 		return tokens;
 	}
 

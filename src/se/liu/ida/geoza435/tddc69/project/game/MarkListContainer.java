@@ -1,13 +1,13 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
 public class MarkListContainer {
-	Mark mark;
-	Integer distance;
-	ConnectionType connectionType;
+	private Mark mark;
+	private Integer distance = 0;
+	private ConnectionType connectionType;
 
 	public MarkListContainer(MarkListContainer mlc, Integer distance) {
-		this.mark = mlc.getMark();
-		this.connectionType = mlc.getConnectionType();
+		this.mark = mlc.mark;
+		this.connectionType = mlc.connectionType;
 		this.distance = distance;
 	}
 

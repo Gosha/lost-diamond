@@ -6,9 +6,16 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import se.liu.ida.geoza435.tddc69.project.game.*;
+import se.liu.ida.geoza435.tddc69.project.game.Board;
+import se.liu.ida.geoza435.tddc69.project.game.Mark;
+import se.liu.ida.geoza435.tddc69.project.game.MarkType;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Position;
+import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
 
-public class TextTest {
+public final class TextTest {
+	private TextTest() {}
+
 	public static void main(String[] args) {
 		Mark m = new Mark(MarkType.normal, new Position(1, 1));
 		Player p = new TextPlayer(m);

@@ -1,6 +1,6 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class FlightChoice extends Choice {
 
@@ -18,7 +18,7 @@ public class FlightChoice extends Choice {
 	@Override
 	public void choose(Player player) {
 
-		ArrayList<MarkListContainer> marks = player.getAt().getNextMarks(1,
+		List<MarkListContainer> marks = player.getAt().getNextMarks(1,
 				ConnectionType.flight);
 
 		Debug.o(marks);

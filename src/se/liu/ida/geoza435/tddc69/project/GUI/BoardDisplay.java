@@ -86,18 +86,18 @@ public class BoardDisplay extends JPanel {
 	}
 
 	public void loadBoard() {
-		for (Mark mark : getBoard().getMarks()) {
+		for (Mark mark : board.getMarks()) {
 			addMarkDisplay(mark);
 		}
 
-		for (Connection connection : getBoard().getConnections()) {
+		for (Connection connection : board.getConnections()) {
 			addConnection(connection);
 		}
 	}
 
 	public void selectNone() {
 		selectedMark = null;
-		getBoard().selectNone();
+		board.selectNone();
 	}
 
 	public void selectOne(MarkDisplay markDisplay) {

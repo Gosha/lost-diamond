@@ -43,9 +43,8 @@ public class Board implements Serializable {
 		return mark;
 	}
 
-	public Connection addConnection(Connection connection) {
+	public void addConnection(Connection connection) {
 		this.connections.add(connection);
-		return connection;
 	}
 
 	public void deleteMark(Mark mark) {

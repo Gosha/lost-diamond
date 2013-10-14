@@ -5,7 +5,7 @@ public class Token {
 	GameComponent gameComponent;
 
 	public Token(Mark at, GameComponent gameComponent) {
-		this.setAt(at);
+		this.at = at;
 		this.gameComponent = gameComponent;
 	}
 

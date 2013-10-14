@@ -87,6 +87,7 @@ public class Mark extends Observable implements Serializable {
 		return retMarks;
 	}
 
+	@SuppressWarnings("ReuseOfLocalVariable")
 	private ArrayList<MarkListContainer> getAdjacentMarks() {
 		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
 
