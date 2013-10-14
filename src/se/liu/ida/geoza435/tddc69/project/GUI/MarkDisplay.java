@@ -4,7 +4,6 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Point;
 import java.awt.Rectangle;
 
 import javax.swing.JLabel;
@@ -17,10 +16,22 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 public class MarkDisplay extends JLabel implements Observer {
 	public Mark mark;
 	Rectangle bounds;
-	public Point anchorPoint;
-	public boolean overbearing;
 
 	public final static int SIZE = 40;
+
+	public final static int NORMAL_RADIUS = 15;
+	public final static int BOAT_RADIUS = 15;
+	public final static int CITY_RADIUS = 20;
+	public final static int START_RADIUS = 20;
+	public final static int DEFAULT_RADIUS = 20;
+
+	public final static Color NORMAL_COLOR = new Color(10, 10, 10);
+	public final static Color BOAT_COLOR = new Color(20, 20, 200);
+	public final static Color CITY_COLOR = new Color(200, 20, 20);
+	public final static Color START_COLOR = new Color(20, 200, 20);
+	public final static Color RING_COLOR = new Color(10, 10, 10);
+	public final static Color SELECT_COLOR = new Color(200, 200, 0);
+	public final static Color DEFAULT_COLOR = new Color(0, 0, 0);
 
 	public MarkDisplay(Mark mark) {
 		this.mark = mark;
@@ -30,52 +41,49 @@ public class MarkDisplay extends JLabel implements Observer {
 				SIZE, SIZE);
 		this.setText(mark.toString());
 		this.setBounds(bounds);
-		this.setForeground(Color.BLUE);
 	}
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		// TODO Radius constants
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
-		// TODO Color constants, ugh
 
-		Integer radius = 20;
+		Integer radius = DEFAULT_RADIUS;
 		switch (mark.getType()) {
 		case normal:
-			radius = 15;
-			g2d.setColor(new Color(10, 10, 10, 255));
+			radius = NORMAL_RADIUS;
+			g2d.setColor(NORMAL_COLOR);
 			break;
 		case boat:
-			radius = 15;
-			g2d.setColor(new Color(20, 20, 200));
+			radius = BOAT_RADIUS;
+			g2d.setColor(BOAT_COLOR);
 			break;
 		case city:
-			radius = 20;
-			g2d.setColor(new Color(10, 10, 10));
-			g2d.fillOval((SIZE / 2) - radius, (SIZE / 2) - radius,
+			radius = CITY_RADIUS;
+			g2d.setColor(RING_COLOR);
+			g2d.fillOval((SIZE / 2) - radius,
+					(SIZE / 2) - radius,
 					2 * radius, 2 * radius);
-			radius = 18;
-			g2d.setColor(new Color(200, 20, 20));
+			radius = CITY_RADIUS - 2;
+			g2d.setColor(CITY_COLOR);
 			break;
 		case start:
-			radius = 20;
-			g2d.setColor(new Color(200, 200, 20));
+			radius = START_RADIUS;
+			g2d.setColor(START_COLOR);
 			break;
 		default:
-			g2d.setColor(new Color(0, 0, 0, 255));
+			g2d.setColor(DEFAULT_COLOR);
 			break;
 		}
 
-		g2d.fillOval((SIZE / 2) - radius, (SIZE / 2) - radius,
+		g2d.fillOval((SIZE / 2) - radius,
+				(SIZE / 2) - radius,
 				2 * radius, 2 * radius);
 
 		if (mark.isSelected()) {
 			g2d.setStroke(new BasicStroke(3));
-			g2d.setColor(new Color(200, 200, 0, 255));
+			g2d.setColor(SELECT_COLOR);
 			g2d.drawOval(0, 0, SIZE, SIZE);
 		}
-		// Paint Label text / Other super stuff
-		// super.paintComponent(g);
 	}
 
 	@Override

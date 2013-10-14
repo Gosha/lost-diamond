@@ -46,7 +46,7 @@ public class DragMotionListener extends MouseAdapter {
 				position.y));
 
 		// Change Z-Buffer if it is "overbearing"
-		if (md.overbearing) {
+		if (overbearing) {
 			md.getParent().setComponentZOrder(md, 0);
 			// repaint();
 		}
