@@ -25,7 +25,6 @@ public class ClickedMarkDisplay {
 	}
 
 	public MarkDisplay getMarkDisplay() {
-		// TODO Auto-generated method stub
 		return markDisplay;
 	}
 

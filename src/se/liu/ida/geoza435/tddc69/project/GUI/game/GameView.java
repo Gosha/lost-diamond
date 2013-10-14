@@ -10,6 +10,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Game;
 @SuppressWarnings("serial")
 public class GameView extends JFrame {
 
+	// TODO Public variables
 	BoardGameDisplay boardGameDisplay;
 	Game game;
 
