@@ -6,11 +6,13 @@ import java.util.List;
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 @SuppressWarnings("serial")
 public class BoardGameDisplay extends BoardDisplay {
 
-	List<PlayerDisplay> playersDisplays = new ArrayList<PlayerDisplay>();
+	List<PlayerDisplay> playerDisplays = new ArrayList<>();
+	List<TokenDisplay> tokenDisplays = new ArrayList<>();
 
 	public BoardGameDisplay(Board board) {
 		super(board);
@@ -18,10 +20,18 @@ public class BoardGameDisplay extends BoardDisplay {
 
 	public PlayerDisplay addPlayerDisplay(Player player) {
 		PlayerDisplay newPlayerDisplay = new PlayerDisplay(player);
-		playersDisplays.add(newPlayerDisplay);
+		playerDisplays.add(newPlayerDisplay);
 		add(newPlayerDisplay);
 		setComponentZOrder(newPlayerDisplay, 0);
 		return newPlayerDisplay;
+	}
+
+	public TokenDisplay addTokenDisplay(Token token) {
+		TokenDisplay newTokenDisplay = new TokenDisplay(token);
+		tokenDisplays.add(newTokenDisplay);
+		add(newTokenDisplay);
+		setComponentZOrder(newTokenDisplay, 0);
+		return newTokenDisplay;
 	}
 
 }

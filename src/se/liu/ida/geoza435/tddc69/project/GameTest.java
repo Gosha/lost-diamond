@@ -6,7 +6,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
 
 public class GameTest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Game game = new Game();
 		game.loadBoard("/home/gosha/small.dat");
 		Player p1 = new TextPlayer(game.getBoard().getMarksOfType(MarkType.start).get(0));

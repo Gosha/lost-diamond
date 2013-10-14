@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
 
@@ -14,13 +15,14 @@ public class Game {
 	ArrayList<GameComponent> gameComponents;
 	Player currentPlayer;
 	boolean gameEnded = false;
+	private boolean initialized = false;
 
 	public Game() {
 		this.board = new Board();
 		this.players = new ArrayList<>();
 		this.tokens = new ArrayList<>();
 		this.gameComponents = new ArrayList<>();
-		// this.gameComponents.add(new AfricasStar());
+		this.gameComponents.add(new AfricasStar(this));
 		this.gameComponents.add(new StandardMovement(this));
 		this.gameComponents.add(new Flight(this));
 	}
@@ -34,10 +36,15 @@ public class Game {
 			g.init(this);
 		}
 		currentPlayer = players.get(0);
+		initialized = true;
 	}
 
-	public void main() {
-		init();
+	public void main() throws Exception {
+
+		if (!initialized) {
+			throw new Exception("Game not initialized");
+		}
+
 		while (!gameEnd()) {
 			try {
 				Thread.sleep(1000);
@@ -96,6 +103,10 @@ public class Game {
 
 	public void setBoard(Board board) {
 		this.board = board;
+	}
+
+	public List<Token> getTokens() {
+		return tokens;
 	}
 
 }
