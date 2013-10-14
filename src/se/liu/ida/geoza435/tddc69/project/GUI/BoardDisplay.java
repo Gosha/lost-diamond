@@ -18,20 +18,17 @@ import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
 @SuppressWarnings("serial")
 public class BoardDisplay extends JPanel {
 	private Board board;
-	// TODO: Better names
-	List<MarkDisplay> md;
-	List<ConnectionDisplay> cd;
+	List<MarkDisplay> markDisplays;
+	List<ConnectionDisplay> connectionDisplays;
 	MarkDisplay selectedMark;
 	ImageIcon background;
 
 	public BoardDisplay(Board board) {
-		this.md = new ArrayList<MarkDisplay>();
-		this.cd = new ArrayList<ConnectionDisplay>();
+		this.markDisplays = new ArrayList<MarkDisplay>();
+		this.connectionDisplays = new ArrayList<ConnectionDisplay>();
 		this.board = board;
 		this.setLayout(null);
 		// TODO Automatic resizing / Set size of board
-		this.setSize(870, 550);
-		this.setPreferredSize(new Dimension(870, 550));
 		// TODO Loadable map
 		URL url = ResourceManagager.getURL("africa.jpg");
 		background = new ImageIcon(url);
@@ -43,44 +40,45 @@ public class BoardDisplay extends JPanel {
 
 	}
 
-	public MarkDisplay addMarkDisplay(Mark m) {
-		MarkDisplay newMarkDisplay = new MarkDisplay(m);
-		this.md.add(newMarkDisplay);
+	public MarkDisplay addMarkDisplay(Mark mark) {
+		MarkDisplay newMarkDisplay = new MarkDisplay(mark);
+		this.markDisplays.add(newMarkDisplay);
 		this.add(newMarkDisplay);
 		return newMarkDisplay;
 	}
 
-	public ConnectionDisplay addConnection(Connection c) {
-		ConnectionDisplay newCD = new ConnectionDisplay(c);
-		this.cd.add(newCD);
-		this.add(newCD);
-		return newCD;
+	public ConnectionDisplay addConnection(Connection connection) {
+		ConnectionDisplay newConnDisplay = new ConnectionDisplay(connection);
+		this.connectionDisplays.add(newConnDisplay);
+		this.add(newConnDisplay);
+		return newConnDisplay;
 	}
 
-	public void addNewConnectionDisplay(Connection c) {
-		addConnection(c);
-		this.board.addConnection(c);
+	public void addNewConnectionDisplay(Connection connection) {
+		addConnection(connection);
+		this.board.addConnection(connection);
 	}
 
 	public List<MarkDisplay> getMarkDisplays() {
-		return this.md;
+		return this.markDisplays;
 	}
 
-	public void deleteMarkDisplay(MarkDisplay md) {
+	public void deleteMarkDisplay(MarkDisplay markDisplay) {
 
-		Iterator<ConnectionDisplay> iterator = cd.iterator();
+		Iterator<ConnectionDisplay> iterator = connectionDisplays.iterator();
 
 		while (iterator.hasNext()) {
-			ConnectionDisplay c = iterator.next();
-			if (md.mark.getConnections().contains(c.connection)) {
-				this.remove(c);
+			ConnectionDisplay connectionDisplay = iterator.next();
+			if (markDisplay.mark.getConnections()
+					.contains(connectionDisplay.connection)) {
+				this.remove(connectionDisplay);
 				iterator.remove();
 			}
 		}
 
-		board.deleteMark(md.mark);
-		md.remove(md);
-		this.remove(md);
+		board.deleteMark(markDisplay.mark);
+		markDisplay.remove(markDisplay);
+		this.remove(markDisplay);
 	}
 
 	public void setBoard(Board board) {
@@ -88,12 +86,12 @@ public class BoardDisplay extends JPanel {
 	}
 
 	public void loadBoard() {
-		for (Mark m : getBoard().getMarks()) {
-			addMarkDisplay(m);
+		for (Mark mark : getBoard().getMarks()) {
+			addMarkDisplay(mark);
 		}
 
-		for (Connection c : getBoard().getConnections()) {
-			addConnection(c);
+		for (Connection connection : getBoard().getConnections()) {
+			addConnection(connection);
 		}
 	}
 
@@ -102,9 +100,9 @@ public class BoardDisplay extends JPanel {
 		getBoard().selectNone();
 	}
 
-	public void selectOne(MarkDisplay md) {
-		selectedMark = md;
-		md.mark.setSelected(true);
+	public void selectOne(MarkDisplay markDisplay) {
+		selectedMark = markDisplay;
+		markDisplay.mark.setSelected(true);
 	}
 
 	public MarkDisplay getSelectedMark() {
@@ -112,8 +110,8 @@ public class BoardDisplay extends JPanel {
 	}
 
 	public void clearBoard() {
-		this.cd.clear();
-		this.md.clear();
+		this.connectionDisplays.clear();
+		this.markDisplays.clear();
 		this.removeAll();
 	}
 
@@ -122,7 +120,7 @@ public class BoardDisplay extends JPanel {
 	}
 
 	public List<ConnectionDisplay> getConnectionDisplays() {
-		return this.cd;
+		return this.connectionDisplays;
 	}
 
 	@Override
