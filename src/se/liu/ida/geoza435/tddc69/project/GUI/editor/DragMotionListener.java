@@ -10,11 +10,10 @@ import se.liu.ida.geoza435.tddc69.project.game.Position;
 public class DragMotionListener extends MouseAdapter {
 
 	protected Point anchorPoint;
-	protected boolean overbearing;
-	protected MarkDisplay md;
+	protected MarkDisplay markDisplay;
 
-	public DragMotionListener(MarkDisplay md) {
-		this.md = md;
+	public DragMotionListener(MarkDisplay markDisplay) {
+		this.markDisplay = markDisplay;
 	}
 
 	public DragMotionListener() throws Exception {
@@ -22,35 +21,28 @@ public class DragMotionListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseMoved(MouseEvent e) {
-		// TODO: Better names
-		anchorPoint = e.getPoint();
+	public void mouseMoved(MouseEvent mouseEvent) {
+		anchorPoint = mouseEvent.getPoint();
 	}
 
 	@Override
-	public void mouseDragged(MouseEvent e) {
-		// TODO: Better names
+	public void mouseDragged(MouseEvent mouseEvent) {
 		int anchorX = anchorPoint.x;
 		int anchorY = anchorPoint.y;
 
-		Point parentOnScreen = md.getParent()
+		Point parentOnScreen = markDisplay.getParent()
 				.getLocationOnScreen();
-		Point mouseOnScreen = e.getLocationOnScreen();
+		Point mouseOnScreen = mouseEvent.getLocationOnScreen();
 		Point position = new Point(
 				mouseOnScreen.x - parentOnScreen.x - anchorX,
 				mouseOnScreen.y - parentOnScreen.y - anchorY);
 
-		md.setLocation(position);
+		markDisplay.setLocation(position);
 
-		md.mark.setPosition(new Position(position.x,
+		markDisplay.mark.setPosition(new Position(position.x,
 				position.y));
 
-		// Change Z-Buffer if it is "overbearing"
-		if (overbearing) {
-			md.getParent().setComponentZOrder(md, 0);
-			// repaint();
-		}
-		md.getParent().getParent().repaint();
+		markDisplay.getParent().getParent().repaint();
 	}
 
 }
