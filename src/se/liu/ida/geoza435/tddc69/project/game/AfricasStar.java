@@ -8,7 +8,8 @@ public class AfricasStar extends GameComponent {
 
 	@Override
 	public void init(Game game) {
-		game.tokens.add(new Token(game.board.marks.get(0), this));
+		game.tokens.add(new Token(game.board.getMarksOfType(MarkType.city)
+				.get(0), this));
 	}
 
 	@Override
