@@ -19,90 +19,88 @@ import se.liu.ida.geoza435.tddc69.project.game.Position;
 public class ConnectionDisplay extends JLabel implements Observer {
 	Connection connection;
 
+	public final static Color STANDARD_COLOR = new Color(10, 10, 10);
+	public final static Color FLIGHT_COLOR = new Color(200, 20, 20);
+	public final static Color BOAT_COLOR = new Color(20, 20, 200);
+
 	public ConnectionDisplay(Connection c) {
 		this.connection = c;
-		this.setBounds(boundsSet(new Rectangle()));
-		this.setSize(sizeSet());
+		this.setBounds(rectangleSize());
+		this.setSize(dimensionSize());
 		this.connection.getA().observe(this);
 		this.connection.getB().observe(this);
 	}
 
-	public Rectangle boundsSet(Rectangle rv) {
-		/*
-		 * TODO: Better name
-		 */
-		Position a = connection.getA().getPosition();
-		Position b = connection.getB().getPosition();
+	public Rectangle rectangleSize() {
 
-		rv.setBounds(Math.min(a.getX(), b.getX()),
-				Math.min(a.getY(), b.getY()),
-				Math.abs(a.getX() - b.getX()),
-				Math.abs(a.getY() - b.getY()));
-		return rv;
+		Rectangle rectangle = new Rectangle();
+
+		Position posa = connection.getA().getPosition();
+		Position posb = connection.getB().getPosition();
+
+		rectangle.setBounds(Math.min(posa.getX(), posb.getX()),
+				Math.min(posa.getY(), posb.getY()),
+				Math.abs(posa.getX() - posb.getX()),
+				Math.abs(posa.getY() - posb.getY()));
+
+		return rectangle;
 	}
 
-	public Dimension sizeSet() {
-		/*
-		 * TODO: Better name
-		 */
-		Position a = connection.getA().getPosition();
-		Position b = connection.getB().getPosition();
-		Dimension d = new Dimension(Math.abs(a.getX() - b.getX())
+	public Dimension dimensionSize() {
+		Position posa = connection.getA().getPosition();
+		Position posb = connection.getB().getPosition();
+		return new Dimension(Math.abs(posa.getX() - posb.getX())
 				+ MarkDisplay.SIZE,
-				Math.abs(a.getY() - b.getY()) + MarkDisplay.SIZE);
-		return d;
+				Math.abs(posa.getY() - posb.getY()) + MarkDisplay.SIZE);
 	}
 
 	@Override
 	public void paintComponent(Graphics g) {
-		/*
-		 * TODO: Clean up
-		 */
 		super.paintComponent(g);
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
 
-		// TODO: Better names
-		Position a = connection.getA().getPosition();
-		Position b = connection.getB().getPosition();
-		// TODO: Color constants
+		Position posa = connection.getA().getPosition();
+		Position posb = connection.getB().getPosition();
 
-		BasicStroke bs1;
+		BasicStroke stroke;
+
 		switch (connection.getType()) {
 		case normal:
-			bs1 = new BasicStroke(3, BasicStroke.CAP_BUTT,
+			stroke = new BasicStroke(3, BasicStroke.CAP_BUTT,
 					BasicStroke.JOIN_BEVEL);
+			g2d.setColor(STANDARD_COLOR);
 			break;
 		case flight:
-			bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
+			stroke = new BasicStroke(8, BasicStroke.CAP_BUTT,
 					BasicStroke.JOIN_BEVEL);
-			g2d.setColor(new Color(200, 20, 20));
+			g2d.setColor(FLIGHT_COLOR);
 			break;
 		case boat:
-			bs1 = new BasicStroke(5, BasicStroke.CAP_BUTT,
+			stroke = new BasicStroke(5, BasicStroke.CAP_BUTT,
 					BasicStroke.JOIN_BEVEL);
-			g2d.setColor(new Color(20, 20, 200));
+			g2d.setColor(BOAT_COLOR);
 			break;
 		default:
-			bs1 = new BasicStroke(8, BasicStroke.CAP_BUTT,
+			stroke = new BasicStroke(8, BasicStroke.CAP_BUTT,
 					BasicStroke.JOIN_BEVEL);
 		}
 
-		g2d.setStroke(bs1);
+		g2d.setStroke(stroke);
 		int offset = MarkDisplay.SIZE / 2;
 
-		if (DrawingTools.connectionFromBottom(a, b)) {
+		if (DrawingTools.connectionFromBottom(posa, posb)) {
 			// Connection: /
 			g2d.drawLine(
 					offset,
-					this.sizeSet().height - offset,
-					this.sizeSet().width - offset,
+					this.dimensionSize().height - offset,
+					this.dimensionSize().width - offset,
 					offset);
 		} else {
 			// Connection: \
 			g2d.drawLine(
 					offset, offset,
-					this.sizeSet().width - offset,
-					this.sizeSet().height - offset);
+					this.dimensionSize().width - offset,
+					this.dimensionSize().height - offset);
 		}
 	}
 
@@ -117,12 +115,12 @@ public class ConnectionDisplay extends JLabel implements Observer {
 
 			Point A, B;
 			if (DrawingTools.connectionFromBottom(a, b)) {
-				A = new Point(offset, this.sizeSet().height - offset);
-				B = new Point(this.sizeSet().width - offset, offset);
+				A = new Point(offset, this.dimensionSize().height - offset);
+				B = new Point(this.dimensionSize().width - offset, offset);
 			} else {
 				A = new Point(offset, offset);
-				B = new Point(this.sizeSet().width - offset,
-						this.sizeSet().height - offset);
+				B = new Point(this.dimensionSize().width - offset,
+						this.dimensionSize().height - offset);
 			}
 
 			return DrawingTools.pointToLineDistance(A, B, P) < 5;
@@ -132,8 +130,8 @@ public class ConnectionDisplay extends JLabel implements Observer {
 
 	@Override
 	public void notifyChange(Observable observable) {
-		this.setBounds(this.boundsSet(new Rectangle()));
-		this.setSize(this.sizeSet());
+		this.setBounds(rectangleSize());
+		this.setSize(dimensionSize());
 		this.repaint();
 	}
 
