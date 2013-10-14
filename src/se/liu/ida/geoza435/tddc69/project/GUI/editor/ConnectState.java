@@ -14,11 +14,12 @@ public class ConnectState extends AbstractEditorState {
 	@Override
 	public void enterState(MouseListenerHandler mouseListenerHandler) {
 		super.enterState(mouseListenerHandler);
-		for (MarkDisplay md : mouseListenerHandler.getMarkDisplays()) {
-			md.addMouseListener(new SelectListener(md,
+		for (MarkDisplay markDisplay : mouseListenerHandler.getMarkDisplays()) {
+			markDisplay.addMouseListener(new SelectListener(markDisplay,
 					mouseListenerHandler.getBoardDisplay(),
 					new ConnectCallback()));
-			md.addMouseMotionListener(new MouseOverListener(md));
+			markDisplay.addMouseMotionListener(new MouseOverListener(
+					markDisplay));
 		}
 	}
 }

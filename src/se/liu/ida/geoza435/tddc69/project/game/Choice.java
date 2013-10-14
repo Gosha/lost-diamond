@@ -3,7 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.game;
 public abstract class Choice {
 	Game game;
 
-	public Choice(Game game) {
+	protected Choice(Game game) {
 		this.game = game;
 	}
 

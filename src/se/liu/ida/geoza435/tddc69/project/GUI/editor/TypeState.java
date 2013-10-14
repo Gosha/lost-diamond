@@ -13,13 +13,14 @@ public class TypeState extends AbstractEditorState {
 	}
 
 	@Override
-	public void enterState(MouseListenerHandler mlh) {
-		super.enterState(mlh);
-		for (MarkDisplay md : mlh.getMarkDisplays()) {
+	public void enterState(MouseListenerHandler mouseListenerHandler) {
+		super.enterState(mouseListenerHandler);
+		for (MarkDisplay md : mouseListenerHandler.getMarkDisplays()) {
 			md.addMouseListener(new MarkTypeListener(md));
 			md.addMouseMotionListener(new MouseOverListener(md));
 		}
-		for (ConnectionDisplay cd : mlh.getConnectionDisplays()) {
+		for (ConnectionDisplay cd : mouseListenerHandler
+				.getConnectionDisplays()) {
 			cd.addMouseListener(new ConnectionTypeListener(cd));
 			cd.addMouseMotionListener(new MouseOverListener(cd));
 		}

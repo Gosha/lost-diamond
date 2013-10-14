@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class MovementChoice extends Choice {
 
-	Mark to;
+	Mark to = null;
 
 	public MovementChoice(Game game) {
 		super(game);

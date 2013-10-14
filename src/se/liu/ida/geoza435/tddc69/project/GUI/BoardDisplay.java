@@ -20,12 +20,12 @@ public class BoardDisplay extends JPanel {
 	private Board board;
 	List<MarkDisplay> markDisplays;
 	List<ConnectionDisplay> connectionDisplays;
-	MarkDisplay selectedMark;
+	MarkDisplay selectedMark = null;
 	ImageIcon background;
 
 	public BoardDisplay(Board board) {
-		this.markDisplays = new ArrayList<MarkDisplay>();
-		this.connectionDisplays = new ArrayList<ConnectionDisplay>();
+		this.markDisplays = new ArrayList<>();
+		this.connectionDisplays = new ArrayList<>();
 		this.board = board;
 		this.setLayout(null);
 		// TODO Automatic resizing / Set size of board

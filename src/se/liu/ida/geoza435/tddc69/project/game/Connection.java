@@ -2,6 +2,8 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.io.Serializable;
 
+// Already serialized
+@SuppressWarnings("StandardVariableNames")
 public class Connection implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Mark a, b;

@@ -13,7 +13,7 @@ public class Game {
 	List<Token> tokens = new ArrayList<>();
 	List<Player> players = new ArrayList<>();
 	List<GameComponent> gameComponents = new ArrayList<>();
-	Player currentPlayer;
+	Player currentPlayer = null;
 	boolean gameEnded = false;
 	private boolean initialized = false;
 
@@ -30,13 +30,13 @@ public class Game {
 
 	public void init() {
 		for (GameComponent g : gameComponents) {
-			g.init(this);
+			g.init();
 		}
 		currentPlayer = players.get(0);
 		initialized = true;
 	}
 
-	public void main() throws Exception {
+	public void start() throws Exception {
 
 		if (!initialized) {
 			throw new Exception("Game not initialized");
@@ -82,11 +82,11 @@ public class Game {
 			ObjectInputStream in = new ObjectInputStream(istream);
 			board = (Board) in.readObject();
 			in.close();
-		} catch (IOException i) {
-			i.printStackTrace();
-		} catch (ClassNotFoundException c) {
+		} catch (IOException ioException) {
+			ioException.printStackTrace();
+		} catch (ClassNotFoundException classNotFoundException) {
 			System.out.println("Board class not found");
-			c.printStackTrace();
+			classNotFoundException.printStackTrace();
 		}
 	}
 

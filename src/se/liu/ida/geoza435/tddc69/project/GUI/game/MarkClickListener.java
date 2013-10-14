@@ -10,18 +10,20 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
 public class MarkClickListener extends MouseAdapter {
 
-	MarkDisplay md;
+	MarkDisplay markDisplay = null;
 	final ClickedMarkDisplay clickedMarkDisplay;
 
+	@SuppressWarnings("ObjectEquality")
 	public MarkClickListener(Mark mark, ClickedMarkDisplay clickedMarkDisplay,
 			BoardDisplay bd) {
 		this.clickedMarkDisplay = clickedMarkDisplay;
 
-		for (MarkDisplay md : bd.getMarkDisplays()) {
-			if (md.mark == mark) {
-				this.md = md;
-				md.addMouseListener(this);
-				md.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		for (MarkDisplay aMarkDisplay : bd.getMarkDisplays()) {
+			if (aMarkDisplay.mark == mark) {
+				this.markDisplay = aMarkDisplay;
+				aMarkDisplay.addMouseListener(this);
+				aMarkDisplay.setCursor(Cursor
+						.getPredefinedCursor(Cursor.HAND_CURSOR));
 				break;
 			}
 		}
@@ -29,11 +31,11 @@ public class MarkClickListener extends MouseAdapter {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		clickedMarkDisplay.setMarkDisplay(md);
+		clickedMarkDisplay.setMarkDisplay(markDisplay);
 	}
 
 	public void remove() {
-		md.removeMouseListener(this);
-		md.setCursor(Cursor.getDefaultCursor());
+		markDisplay.removeMouseListener(this);
+		markDisplay.setCursor(Cursor.getDefaultCursor());
 	}
 }

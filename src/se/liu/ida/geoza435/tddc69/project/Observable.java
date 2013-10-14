@@ -6,8 +6,8 @@ import java.util.List;
 public abstract class Observable {
 	List<Observer> observers;
 
-	public Observable() {
-		this.observers = new ArrayList<Observer>();
+	protected Observable() {
+		this.observers = new ArrayList<>();
 	}
 
 	public void observe(Observer observer) {

@@ -9,15 +9,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 public class DragMotionListener extends MouseAdapter {
 
-	protected Point anchorPoint;
+	protected Point anchorPoint = null;
 	protected MarkDisplay markDisplay;
 
 	public DragMotionListener(MarkDisplay markDisplay) {
 		this.markDisplay = markDisplay;
-	}
-
-	public DragMotionListener() throws Exception {
-		throw new Exception("Has to be created with a MarkDisplay");
 	}
 
 	@Override

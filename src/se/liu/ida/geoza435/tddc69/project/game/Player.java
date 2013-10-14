@@ -9,7 +9,7 @@ abstract public class Player extends Observable {
 	Mark at;
 	List<Token> tokens = new ArrayList<>();
 
-	public Player(Mark at) {
+	protected Player(Mark at) {
 		this.at = at;
 	}
 

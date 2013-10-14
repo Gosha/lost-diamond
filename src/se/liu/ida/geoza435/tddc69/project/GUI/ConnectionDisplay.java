@@ -23,8 +23,8 @@ public class ConnectionDisplay extends JLabel implements Observer {
 	public final static Color FLIGHT_COLOR = new Color(200, 20, 20);
 	public final static Color BOAT_COLOR = new Color(20, 20, 200);
 
-	public ConnectionDisplay(Connection c) {
-		this.connection = c;
+	public ConnectionDisplay(Connection connection) {
+		this.connection = connection;
 		this.setBounds(rectangleSize());
 		this.setSize(dimensionSize());
 		this.connection.getA().observe(this);
@@ -88,7 +88,7 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		g2d.setStroke(stroke);
 		int offset = MarkDisplay.SIZE / 2;
 
-		if (DrawingTools.connectionFromBottom(posa, posb)) {
+		if (DrawingTools.isConnectionFromBottom(posa, posb)) {
 			// Connection: /
 			g2d.drawLine(
 					offset,
@@ -109,21 +109,21 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		if (super.contains(x, y)) {
 			int offset = MarkDisplay.SIZE / 2;
 
-			Point P = new Point(x, y);
-			Position a = connection.getA().getPosition();
-			Position b = connection.getB().getPosition();
+			Point mousePoint = new Point(x, y);
+			Position pointa = connection.getA().getPosition();
+			Position pointb = connection.getB().getPosition();
 
-			Point A, B;
-			if (DrawingTools.connectionFromBottom(a, b)) {
-				A = new Point(offset, this.dimensionSize().height - offset);
-				B = new Point(this.dimensionSize().width - offset, offset);
+			Point pointA, pointB;
+			if (DrawingTools.isConnectionFromBottom(pointa, pointb)) {
+				pointA = new Point(offset, this.dimensionSize().height - offset);
+				pointB = new Point(this.dimensionSize().width - offset, offset);
 			} else {
-				A = new Point(offset, offset);
-				B = new Point(this.dimensionSize().width - offset,
+				pointA = new Point(offset, offset);
+				pointB = new Point(this.dimensionSize().width - offset,
 						this.dimensionSize().height - offset);
 			}
 
-			return DrawingTools.pointToLineDistance(A, B, P) < 5;
+			return DrawingTools.pointToLineDistance(pointA, pointB, mousePoint) < 5;
 		}
 		return false;
 	}

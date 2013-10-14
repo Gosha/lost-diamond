@@ -1,5 +1,6 @@
 package se.liu.ida.geoza435.tddc69.project;
 
+import se.liu.ida.geoza435.tddc69.project.game.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
@@ -18,12 +19,8 @@ public final class GameTest {
 		// o(p1.toString());
 		// for(Mark m : p1.getAt().getNextMarks(2))
 		// o(m.toString());
-		// game.main();
-		o("Start");
-		game.main();
+		Debug.o("Start");
+		game.start();
 	}
 
-	private static void o(String str) {
-		System.out.println(str);
-	}
 }

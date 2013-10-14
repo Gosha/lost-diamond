@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+// Because List is not Serializable
+@SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Board implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -47,6 +49,7 @@ public class Board implements Serializable {
 		this.connections.add(connection);
 	}
 
+	@SuppressWarnings("ObjectEquality")
 	public void deleteMark(Mark mark) {
 		marks.remove(mark);
 		for (final Connection connection : mark.getConnections()) {

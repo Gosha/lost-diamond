@@ -6,8 +6,9 @@ public final class Debug {
 
 	private Debug() {}
 
-	public static void o(Object str) {
+	@SuppressWarnings("StaticMethodNamingConvention")
+	public static void o(Object object) {
 		if (debug)
-			System.out.println(str.toString());
+			System.out.println(object.toString());
 	}
 }

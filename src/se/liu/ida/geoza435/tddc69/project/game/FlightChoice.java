@@ -4,7 +4,7 @@ import java.util.List;
 
 public class FlightChoice extends Choice {
 
-	Mark to;
+	Mark to = null;
 
 	public FlightChoice(Game game) {
 		super(game);

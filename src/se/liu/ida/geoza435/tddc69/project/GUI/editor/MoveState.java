@@ -12,11 +12,13 @@ public class MoveState extends AbstractEditorState {
 	}
 
 	@Override
-	public void enterState(MouseListenerHandler mlh) {
-		super.enterState(mlh);
-		for (MarkDisplay md : mlh.getMarkDisplays()) {
-			md.addMouseMotionListener(new DragMotionListener(md));
-			md.addMouseMotionListener(new MouseOverListener(md));
+	public void enterState(MouseListenerHandler mouseListenerHandler) {
+		super.enterState(mouseListenerHandler);
+		for (MarkDisplay markDisplay : mouseListenerHandler.getMarkDisplays()) {
+			markDisplay.addMouseMotionListener(new DragMotionListener(
+					markDisplay));
+			markDisplay.addMouseMotionListener(new MouseOverListener(
+					markDisplay));
 		}
 	}
 }

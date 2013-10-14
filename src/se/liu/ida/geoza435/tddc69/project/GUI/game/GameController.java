@@ -44,7 +44,7 @@ public final class GameController {
 
 		});
 
-		game.main();
+		game.start();
 
 	}
 }

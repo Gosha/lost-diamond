@@ -67,6 +67,7 @@ public class Mark extends Observable implements Serializable {
 		return getNextMarks(upTo, ofType, retMarks, this, 1);
 	}
 
+	@SuppressWarnings("ObjectEquality")
 	private ArrayList<MarkListContainer> getNextMarks(Integer upTo,
 			ConnectionType ofType, ArrayList<MarkListContainer> retMarks,
 			Mark from, Integer distance) {
@@ -87,7 +88,7 @@ public class Mark extends Observable implements Serializable {
 		return retMarks;
 	}
 
-	@SuppressWarnings("ReuseOfLocalVariable")
+	@SuppressWarnings({ "ReuseOfLocalVariable", "ObjectEquality" })
 	private ArrayList<MarkListContainer> getAdjacentMarks() {
 		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
 

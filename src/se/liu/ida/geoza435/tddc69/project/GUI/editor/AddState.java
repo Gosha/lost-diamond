@@ -13,22 +13,23 @@ public class AddState extends AbstractEditorState {
 	}
 
 	@Override
-	public void enterState(MouseListenerHandler mlh) {
-		super.enterState(mlh);
-		BoardDisplay bd = mlh.getBoardDisplay();
+	public void enterState(MouseListenerHandler mouseListenerHandler) {
+		super.enterState(mouseListenerHandler);
+		BoardDisplay bd = mouseListenerHandler.getBoardDisplay();
 		bd.addMouseListener(new AddListener(bd));
 
-		for (MarkDisplay md : mlh.getMarkDisplays()) {
-			md.addMouseListener(new SelectListener(md, bd));
-			md.addMouseMotionListener(new MouseOverListener(md));
+		for (MarkDisplay markDisplay : mouseListenerHandler.getMarkDisplays()) {
+			markDisplay.addMouseListener(new SelectListener(markDisplay, bd));
+			markDisplay.addMouseMotionListener(new MouseOverListener(
+					markDisplay));
 		}
 	}
 
 	@Override
-	public void leaveState(MouseListenerHandler mlh) {
-		BoardDisplay bd = mlh.getBoardDisplay();
-		bd.selectNone();
-		super.leaveState(mlh);
+	public void leaveState(MouseListenerHandler mouseListenerHandler) {
+		BoardDisplay boardDisplay = mouseListenerHandler.getBoardDisplay();
+		boardDisplay.selectNone();
+		super.leaveState(mouseListenerHandler);
 	}
 
 }

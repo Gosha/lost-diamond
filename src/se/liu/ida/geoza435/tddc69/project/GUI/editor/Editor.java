@@ -4,6 +4,7 @@ public final class Editor {
 
 	private Editor() {}
 
+	@SuppressWarnings("ResultOfObjectAllocationIgnored")
 	public static void main(String[] args) {
 		new EditorController();
 	}
