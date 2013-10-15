@@ -32,6 +32,21 @@ abstract public class Player extends Observable {
 		}
 	}
 
+	public boolean isOn(MarkType... types) {
+		boolean ret = false;
+		for (MarkType type : types) {
+			if (at.getType() == type) {
+				ret = true;
+				break;
+			}
+		}
+		return ret;
+	}
+
+	public boolean isNextTo(ConnectionType type) {
+		return !at.getNextMarks(1, type).isEmpty();
+	}
+
 	@Override
 	public String toString() {
 		return "{p:" + at.toString() + "}";

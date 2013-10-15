@@ -10,9 +10,8 @@ public class Flight extends GameComponent {
 
 	@Override
 	public void addChoices(Player player, List<Choice> choices) {
-		if ((player.at.getType() == MarkType.city
-				|| player.at.getType() == MarkType.start)
-				&& !player.at.getNextMarks(1, ConnectionType.flight).isEmpty())
+		if (player.isOn(MarkType.city, MarkType.start)
+				&& player.isNextTo(ConnectionType.flight))
 			choices.add(new FlightChoice(game));
 	}
 
