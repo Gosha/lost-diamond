@@ -9,6 +9,8 @@ abstract public class Player extends Observable {
 	Mark at;
 	List<Token> tokens = new ArrayList<>();
 
+	Integer money = 5000;
+
 	protected Player(Mark at) {
 		this.at = at;
 	}
@@ -45,6 +47,20 @@ abstract public class Player extends Observable {
 
 	public boolean isNextTo(ConnectionType type) {
 		return !at.getNextMarks(1, type).isEmpty();
+	}
+
+	public boolean hasAtLeast(Integer money) {
+		return this.money >= money;
+	}
+
+	public void addMoney(Integer add) {
+		money += add;
+		changed();
+	}
+
+	public void takeMoney(Integer take) {
+		money -= take;
+		changed();
 	}
 
 	@Override

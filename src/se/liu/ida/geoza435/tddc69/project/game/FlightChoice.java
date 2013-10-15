@@ -13,6 +13,7 @@ public class FlightChoice extends Choice {
 	@Override
 	public void execute(Player player) {
 		player.move(to);
+		player.takeMoney(3000);
 	}
 
 	@Override
