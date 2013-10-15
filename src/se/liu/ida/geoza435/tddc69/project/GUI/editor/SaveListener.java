@@ -37,6 +37,8 @@ public class SaveListener implements ActionListener {
 				ObjectOutputStream oostream = new ObjectOutputStream(fostream);
 				oostream.writeObject(bd.getBoard());
 
+				oostream.close();
+				fostream.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
