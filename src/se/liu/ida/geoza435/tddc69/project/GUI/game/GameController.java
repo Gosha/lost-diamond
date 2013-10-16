@@ -18,11 +18,14 @@ public final class GameController {
 
 		final TextPlayer p1 = new TextPlayer(game.getBoard().getMarksOfType(
 				MarkType.start).get(0), game);
+		final TextPlayer p3 = new TextPlayer(game.getBoard().getMarksOfType(
+				MarkType.start).get(0), game);
 		final GUIPlayer p2 = new GUIPlayer(game.getBoard().getMarksOfType(
 				MarkType.start).get(0), gameView.boardGameDisplay, game);
 
 		game.addPlayer(p1);
 		game.addPlayer(p2);
+		game.addPlayer(p3);
 
 		game.init();
 
@@ -39,7 +42,8 @@ public final class GameController {
 				}
 
 				gameView.boardGameDisplay.addPlayerDisplay(p1);
-				gameView.boardGameDisplay.addPlayerDisplay(p2);
+				// gameView.boardGameDisplay.addPlayerDisplay(p2);
+				gameView.boardGameDisplay.addPlayerDisplay(p3);
 			}
 
 		});

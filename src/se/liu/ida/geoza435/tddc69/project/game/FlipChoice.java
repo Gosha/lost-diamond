@@ -24,15 +24,10 @@ public class FlipChoice implements Choice {
 		Debug.o("FlipChoice execute()");
 		if (shouldPay) {
 			player.takeMoney(1000);
-			removeToken(player, token);
+			token.visit(player);
 		} else if (game.rollDie() >= 4) {
-			removeToken(player, token);
+			token.visit(player);
 		}
-	}
-
-	private void removeToken(Player player, Token token) {
-		player.tokens.add(token);
-		game.tokens.remove(token);
 	}
 
 	@Override
