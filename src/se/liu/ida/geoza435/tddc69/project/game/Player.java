@@ -7,7 +7,7 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
 
 abstract public class Player extends Observable {
 	Mark at;
-	List<Token> tokens = new ArrayList<>();
+	private List<Token> tokens = new ArrayList<>();
 	Game game;
 	boolean hasMoved = false;
 
@@ -89,6 +89,11 @@ abstract public class Player extends Observable {
 	public abstract Mark chooseMark(List<MarkListContainer> marks);
 
 	public abstract boolean presentBinaryChoice(String str);
+
+	public void addToken(Token token) {
+		tokens.add(token);
+		changed();
+	}
 
 	public boolean standsOnToken() {
 		for (Token t : game.getTokens()) {
