@@ -12,6 +12,7 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
 import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 @SuppressWarnings("serial")
 public class StatusDisplay extends JPanel implements Observer {
@@ -69,6 +70,11 @@ public class StatusDisplay extends JPanel implements Observer {
 			}
 			l += "<br>";
 			l += "Money: " + p.getMoney() + "<br>";
+			l += "Has: ";
+			for (Token token : p.getTokens()) {
+				l += token + " ";
+			}
+			l += "<br>";
 		}
 		l = "<html>" + l + "</html>";
 		label.setText(l);

@@ -7,6 +7,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import se.liu.ida.geoza435.tddc69.project.game.Choice;
+import se.liu.ida.geoza435.tddc69.project.game.Debug;
+import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
@@ -15,8 +17,8 @@ public class GUIPlayer extends Player {
 
 	BoardGameDisplay boardGameDisplay;
 
-	public GUIPlayer(Mark at, BoardGameDisplay boardGameDisplay) {
-		super(at);
+	public GUIPlayer(Mark at, BoardGameDisplay boardGameDisplay, Game game) {
+		super(at, game);
 		this.boardGameDisplay = boardGameDisplay;
 	}
 
@@ -64,6 +66,17 @@ public class GUIPlayer extends Player {
 		}
 
 		return clickedMark.getMarkDisplay().mark;
+	}
+
+	@Override
+	public boolean presentBinaryChoice(String str) {
+		int response = -1;
+		while (response < 0) {
+			response = JOptionPane.showConfirmDialog(boardGameDisplay, str,
+					"Choose", JOptionPane.YES_NO_OPTION);
+		}
+		Debug.o(response);
+		return response == 0 ? false : true;
 	}
 
 }

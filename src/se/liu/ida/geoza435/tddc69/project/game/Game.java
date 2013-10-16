@@ -19,9 +19,11 @@ public class Game {
 
 	public Game() {
 		this.board = new Board();
-		this.gameComponents.add(new AfricasStar(this));
 		this.gameComponents.add(new StandardMovement(this));
 		this.gameComponents.add(new Flight(this));
+		this.gameComponents.add(new Tokens(this));
+		this.gameComponents.add(new AfricasStar(this));
+		this.gameComponents.add(new DoNothing(this));
 	}
 
 	public void addPlayer(Player player) {
@@ -51,6 +53,7 @@ public class Game {
 			playTurn(currentPlayer);
 			nextPlayer();
 		}
+		Debug.o("Game end!");
 	}
 
 	private void nextPlayer() {
@@ -60,16 +63,36 @@ public class Game {
 
 	private void playTurn(Player player) {
 		List<Choice> choices = new ArrayList<>();
+
+		player.hasMoved = false;
+
 		for (GameComponent g : gameComponents) {
 			g.addChoices(player, choices);
 		}
 
+		playerChoices(player, choices);
+
+		choices.clear();
+
+		if (player.hasMoved) {
+			for (GameComponent g : gameComponents) {
+				g.addPostMoveChoices(player, choices);
+			}
+		}
+
+		playerChoices(player, choices);
+
+		for (GameComponent g : gameComponents) {
+			g.postTurn(player);
+		}
+	}
+
+	private void playerChoices(Player player, List<Choice> choices) {
 		if (!choices.isEmpty()) {
 			Choice choice = player.presentChoices(choices);
 			choice.choose(player);
 			choice.execute(player);
 		}
-
 	}
 
 	private boolean isGameEnd() {
@@ -91,7 +114,9 @@ public class Game {
 	}
 
 	public int rollDie() {
-		return (int) (Math.random() * 5 + 1);
+		int die = (int) (Math.random() * 5 + 1);
+		Debug.o(die);
+		return die;
 	}
 
 	public Board getBoard() {
@@ -104,6 +129,22 @@ public class Game {
 
 	public List<Token> getTokens() {
 		return tokens;
+	}
+
+	public List<Player> getPlayers() {
+		return players;
+	}
+
+	public Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	public Token getTokenAt(Mark at) {
+		for (Token t : tokens) {
+			if (t.getAt() == at)
+				return t;
+		}
+		return null;
 	}
 
 }

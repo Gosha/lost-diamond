@@ -18,4 +18,16 @@ public class AfricasStar extends GameComponent {
 		player.getTokens().add(token);
 	}
 
+	@Override
+	public String toString() {
+		return "Africas Star";
+	}
+
+	@Override
+	public void postTurn(Player player) {
+		Debug.o("postTurn in AfricasStar");
+		if (player.hasToken(this) && player.isOn(MarkType.start))
+			game.gameEnded = true;
+	}
+
 }

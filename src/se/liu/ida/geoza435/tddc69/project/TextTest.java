@@ -18,7 +18,7 @@ public final class TextTest {
 
 	public static void main(String[] args) {
 		Mark mark = new Mark(MarkType.normal, new Position(1, 1));
-		Player p = new TextPlayer(mark);
+		Player p = new TextPlayer(mark, null);
 		System.out.println(mark);
 		System.out.println(p);
 

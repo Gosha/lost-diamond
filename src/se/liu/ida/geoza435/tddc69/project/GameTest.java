@@ -13,7 +13,7 @@ public final class GameTest {
 		Game game = new Game();
 		game.loadBoard("/home/gosha/small.dat");
 		Player p1 = new TextPlayer(game.getBoard()
-				.getMarksOfType(MarkType.start).get(0));
+				.getMarksOfType(MarkType.start).get(0), game);
 		game.addPlayer(p1);
 		game.init();
 		// o(p1.toString());

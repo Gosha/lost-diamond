@@ -3,25 +3,25 @@ package se.liu.ida.geoza435.tddc69.project.game;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class MovementChoice extends Choice {
+public class MovementChoice implements Choice {
 
 	Mark to = null;
+	Game game;
 
 	public MovementChoice(Game game) {
-		super(game);
+		this.game = game;
 	}
 
 	@Override
 	public void execute(Player player) {
 		player.move(to);
+		player.hasMoved = true;
 	}
 
 	@Override
 	public void choose(Player player) {
 
 		int die = game.rollDie();
-
-		Debug.o(die);
 
 		ArrayList<MarkListContainer> marks = player.getAt().getNextMarks(die,
 				ConnectionType.normal);

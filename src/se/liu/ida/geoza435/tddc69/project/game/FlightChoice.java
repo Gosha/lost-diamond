@@ -2,18 +2,20 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
-public class FlightChoice extends Choice {
+public class FlightChoice implements Choice {
 
 	Mark to = null;
+	Game game;
 
 	public FlightChoice(Game game) {
-		super(game);
+		this.game = game;
 	}
 
 	@Override
 	public void execute(Player player) {
 		player.move(to);
 		player.takeMoney(3000);
+		player.hasMoved = true;
 	}
 
 	@Override

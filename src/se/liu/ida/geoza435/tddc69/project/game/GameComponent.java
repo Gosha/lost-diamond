@@ -17,4 +17,8 @@ public abstract class GameComponent {
 
 	void addChoices(Player player, List<Choice> choices) {}
 
+	public void addPostMoveChoices(Player player, List<Choice> choices) {}
+
+	public void postTurn(Player player) {}
+
 }

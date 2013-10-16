@@ -8,11 +8,18 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
 abstract public class Player extends Observable {
 	Mark at;
 	List<Token> tokens = new ArrayList<>();
+	Game game;
+	boolean hasMoved = false;
+
+	int playerId;
+	static int staticId = 1;
 
 	Integer money = 5000;
 
-	protected Player(Mark at) {
+	protected Player(Mark at, Game game) {
 		this.at = at;
+		this.game = game;
+		playerId = staticId++;
 	}
 
 	public Mark getAt() {
@@ -32,6 +39,7 @@ abstract public class Player extends Observable {
 		if (to != null) {
 			setAt(to);
 		}
+		hasMoved = true;
 	}
 
 	public boolean isOn(MarkType... types) {
@@ -63,12 +71,48 @@ abstract public class Player extends Observable {
 		changed();
 	}
 
+	public Integer getMoney() {
+		return money;
+	}
+
 	@Override
 	public String toString() {
-		return "{p:" + at.toString() + "}";
+		return "{p" + playerId + ":" + at.toString() + "}";
 	}
 
 	public abstract Choice presentChoices(List<Choice> choices);
 
+	public Choice presentChoices(List<Choice> choices, boolean compulsory) {
+		return presentChoices(choices);
+	}
+
 	public abstract Mark chooseMark(List<MarkListContainer> marks);
+
+	public abstract boolean presentBinaryChoice(String str);
+
+	public boolean standsOnToken() {
+		for (Token t : game.getTokens()) {
+			if (t.getAt() == this.at)
+				return true;
+		}
+		return false;
+	}
+
+	public boolean standsOnToken(GameComponent gameComponent) {
+		Debug.o(this);
+		for (Token t : game.getTokens()) {
+			if (t.getAt() == this.at && t.getGameComponent() == gameComponent)
+				return true;
+		}
+		return false;
+	}
+
+	public boolean hasToken(GameComponent gameComponent) {
+		for (Token t : tokens) {
+			if (t.getGameComponent() == gameComponent) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

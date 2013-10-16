@@ -9,6 +9,9 @@ public final class Debug {
 	@SuppressWarnings("StaticMethodNamingConvention")
 	public static void o(Object object) {
 		if (debug)
-			System.out.println(object.toString());
+			if (object == null)
+				System.out.println("Null");
+			else
+				System.out.println(object.toString());
 	}
 }

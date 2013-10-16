@@ -24,4 +24,9 @@ public class Token {
 	public GameComponent getGameComponent() {
 		return gameComponent;
 	}
+
+	@Override
+	public String toString() {
+		return gameComponent.toString();
+	}
 }
