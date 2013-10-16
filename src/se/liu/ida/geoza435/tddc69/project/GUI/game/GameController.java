@@ -7,7 +7,9 @@ import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
-public class GameController {
+public final class GameController {
+	private GameController() {}
+
 	public static void main(String[] args) throws Exception {
 		final Game game = new Game();
 		game.loadBoard("africa.dat");
@@ -42,7 +44,7 @@ public class GameController {
 
 		});
 
-		game.main();
+		game.start();
 
 	}
 }

@@ -7,9 +7,11 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
 
 abstract public class Player extends Observable {
 	Mark at;
-	ArrayList<Token> tokens;
+	List<Token> tokens = new ArrayList<>();
 
-	public Player(Mark at) {
+	Integer money = 5000;
+
+	protected Player(Mark at) {
 		this.at = at;
 	}
 
@@ -22,7 +24,7 @@ abstract public class Player extends Observable {
 		changed();
 	}
 
-	public ArrayList<Token> getTokens() {
+	public List<Token> getTokens() {
 		return tokens;
 	}
 
@@ -30,6 +32,35 @@ abstract public class Player extends Observable {
 		if (to != null) {
 			setAt(to);
 		}
+	}
+
+	public boolean isOn(MarkType... types) {
+		boolean ret = false;
+		for (MarkType type : types) {
+			if (at.getType() == type) {
+				ret = true;
+				break;
+			}
+		}
+		return ret;
+	}
+
+	public boolean isNextTo(ConnectionType type) {
+		return !at.getNextMarks(1, type).isEmpty();
+	}
+
+	public boolean hasAtLeast(Integer money) {
+		return this.money >= money;
+	}
+
+	public void addMoney(Integer add) {
+		money += add;
+		changed();
+	}
+
+	public void takeMoney(Integer take) {
+		money -= take;
+		changed();
 	}
 
 	@Override

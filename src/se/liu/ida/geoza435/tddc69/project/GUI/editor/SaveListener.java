@@ -29,17 +29,16 @@ public class SaveListener implements ActionListener {
 
 		int returnStatus = fChooser.showSaveDialog(bd.getParent());
 
-		FileOutputStream fostream;
-		ObjectOutputStream oostream;
-
 		if (returnStatus == JFileChooser.APPROVE_OPTION) {
 			try {
-				fostream = new FileOutputStream(
+				FileOutputStream fostream = new FileOutputStream(
 						fChooser.getSelectedFile());
 
-				oostream = new ObjectOutputStream(fostream);
+				ObjectOutputStream oostream = new ObjectOutputStream(fostream);
 				oostream.writeObject(bd.getBoard());
 
+				oostream.close();
+				fostream.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

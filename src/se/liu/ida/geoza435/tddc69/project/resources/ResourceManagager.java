@@ -3,7 +3,9 @@ package se.liu.ida.geoza435.tddc69.project.resources;
 import java.io.InputStream;
 import java.net.URL;
 
-public class ResourceManagager {
+public final class ResourceManagager {
+	private ResourceManagager() {}
+
 	public static URL getURL(String file) {
 		return ResourceManagager.class.getResource(file);
 	}

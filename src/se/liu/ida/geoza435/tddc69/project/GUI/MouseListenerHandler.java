@@ -5,7 +5,7 @@ import java.util.List;
 public class MouseListenerHandler {
 
 	BoardDisplay bd;
-	MouseHandlerState state;
+	MouseHandlerState state = null;
 
 	public MouseListenerHandler(BoardDisplay bd) {
 		this.bd = bd;

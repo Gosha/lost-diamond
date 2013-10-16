@@ -7,7 +7,9 @@ import java.awt.RenderingHints;
 
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
-public class DrawingTools {
+public final class DrawingTools {
+
+	private DrawingTools() {}
 
 	public static Graphics2D setupGraphics(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
@@ -23,16 +25,23 @@ public class DrawingTools {
 		return g2d;
 	}
 
-	public static double pointToLineDistance(Point A, Point B, Point P) {
+	@SuppressWarnings("OverlyComplexArithmeticExpression")
+	public static double pointToLineDistance(Point linePointA,
+			Point linePointB, Point mousePoint) {
 		double normalLength =
-				Math.sqrt((B.x - A.x) * (B.x - A.x) + (B.y - A.y) * (B.y - A.y));
+				Math.sqrt((linePointB.x - linePointA.x)
+						* (linePointB.x - linePointA.x)
+						+ (linePointB.y - linePointA.y)
+						* (linePointB.y - linePointA.y));
 		return Math.abs(
-				(P.x - A.x) * (B.y - A.y) - (P.y - A.y) * (B.x - A.x))
+				(mousePoint.x - linePointA.x) * (linePointB.y - linePointA.y)
+						- (mousePoint.y - linePointA.y)
+						* (linePointB.x - linePointA.x))
 				/ normalLength;
 	}
 
-	public static boolean connectionFromBottom(Position a, Position b) {
-		return a.getX() > b.getX() && a.getY() < b.getY()
-				|| a.getX() < b.getX() && a.getY() > b.getY();
+	public static boolean isConnectionFromBottom(Position posa, Position posb) {
+		return posa.getX() > posb.getX() && posa.getY() < posb.getY()
+				|| posa.getX() < posb.getX() && posa.getY() > posb.getY();
 	}
 }

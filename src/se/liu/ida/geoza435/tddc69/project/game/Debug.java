@@ -1,11 +1,14 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
-public class Debug {
+public final class Debug {
 
 	static boolean debug = true;
 
-	public static void o(Object str) {
+	private Debug() {}
+
+	@SuppressWarnings("StaticMethodNamingConvention")
+	public static void o(Object object) {
 		if (debug)
-			System.out.println(str.toString());
+			System.out.println(object.toString());
 	}
 }

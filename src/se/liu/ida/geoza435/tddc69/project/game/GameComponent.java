@@ -2,7 +2,8 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
-abstract class GameComponent {
+@SuppressWarnings("NoopMethodInAbstractClass")
+public abstract class GameComponent {
 
 	Game game;
 
@@ -10,13 +11,10 @@ abstract class GameComponent {
 		this.game = game;
 	}
 
-	void init(Game game) {
-	}
+	void init() {}
 
-	void visit(Token token, Player player) {
-	}
+	void visit(Token token, Player player) {}
 
-	void addChoices(Player player, List<Choice> choices) {
-	}
+	void addChoices(Player player, List<Choice> choices) {}
 
 }

@@ -14,27 +14,27 @@ import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 public class AddListener extends MouseAdapter {
 
-	BoardDisplay bd;
+	BoardDisplay boardDisplay;
 
-	public AddListener(BoardDisplay bd) {
-		this.bd = bd;
+	public AddListener(BoardDisplay boardDisplay) {
+		this.boardDisplay = boardDisplay;
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		MarkDisplay selectedMark = bd.getSelectedMark();
+	public void mouseClicked(MouseEvent mouseEvent) {
+		MarkDisplay selectedMark = boardDisplay.getSelectedMark();
 		if (selectedMark != null) {
 			Mark newmark = new Mark(MarkType.normal,
-					new Position(e.getX() - MarkDisplay.SIZE / 2,
-							e.getY() - MarkDisplay.SIZE / 2));
-			bd.getBoard().addMark(newmark);
+					new Position(mouseEvent.getX() - MarkDisplay.SIZE / 2,
+							mouseEvent.getY() - MarkDisplay.SIZE / 2));
+			boardDisplay.getBoard().addMark(newmark);
 			Connection newConnection = new Connection(selectedMark.mark,
 					newmark);
-			MarkDisplay newmd = bd.addMarkDisplay(newmark);
-			bd.addNewConnectionDisplay(newConnection);
-			bd.selectNone();
-			bd.selectOne(newmd);
-			bd.repaint();
+			MarkDisplay newmd = boardDisplay.addMarkDisplay(newmark);
+			boardDisplay.addNewConnectionDisplay(newConnection);
+			boardDisplay.selectNone();
+			boardDisplay.selectOne(newmd);
+			boardDisplay.repaint();
 		} else {
 			JOptionPane.showMessageDialog(null,
 					"You have to select a mark first.");

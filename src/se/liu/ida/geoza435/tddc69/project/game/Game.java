@@ -10,18 +10,15 @@ import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
 
 public class Game {
 	Board board;
-	ArrayList<Token> tokens;
-	ArrayList<Player> players;
-	ArrayList<GameComponent> gameComponents;
-	Player currentPlayer;
+	List<Token> tokens = new ArrayList<>();
+	List<Player> players = new ArrayList<>();
+	List<GameComponent> gameComponents = new ArrayList<>();
+	Player currentPlayer = null;
 	boolean gameEnded = false;
 	private boolean initialized = false;
 
 	public Game() {
 		this.board = new Board();
-		this.players = new ArrayList<>();
-		this.tokens = new ArrayList<>();
-		this.gameComponents = new ArrayList<>();
 		this.gameComponents.add(new AfricasStar(this));
 		this.gameComponents.add(new StandardMovement(this));
 		this.gameComponents.add(new Flight(this));
@@ -33,19 +30,19 @@ public class Game {
 
 	public void init() {
 		for (GameComponent g : gameComponents) {
-			g.init(this);
+			g.init();
 		}
 		currentPlayer = players.get(0);
 		initialized = true;
 	}
 
-	public void main() throws Exception {
+	public void start() throws Exception {
 
 		if (!initialized) {
 			throw new Exception("Game not initialized");
 		}
 
-		while (!gameEnd()) {
+		while (!isGameEnd()) {
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
@@ -62,7 +59,7 @@ public class Game {
 	}
 
 	private void playTurn(Player player) {
-		ArrayList<Choice> choices = new ArrayList<>();
+		List<Choice> choices = new ArrayList<>();
 		for (GameComponent g : gameComponents) {
 			g.addChoices(player, choices);
 		}
@@ -75,7 +72,7 @@ public class Game {
 
 	}
 
-	private boolean gameEnd() {
+	private boolean isGameEnd() {
 		return gameEnded;
 	}
 
@@ -85,11 +82,11 @@ public class Game {
 			ObjectInputStream in = new ObjectInputStream(istream);
 			board = (Board) in.readObject();
 			in.close();
-		} catch (IOException i) {
-			i.printStackTrace();
-		} catch (ClassNotFoundException c) {
+		} catch (IOException ioException) {
+			ioException.printStackTrace();
+		} catch (ClassNotFoundException classNotFoundException) {
 			System.out.println("Board class not found");
-			c.printStackTrace();
+			classNotFoundException.printStackTrace();
 		}
 	}
 

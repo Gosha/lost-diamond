@@ -24,7 +24,7 @@ public class PlayerDisplay extends JLabel implements Observer {
 	public final static int HEIGHT = 50;
 	public final static int WIDTH = 40;
 	public final static int Y_OFFSET = 25;
-	public Color color;
+	Color color;
 
 	public PlayerDisplay(Player player) {
 		this.player = player;

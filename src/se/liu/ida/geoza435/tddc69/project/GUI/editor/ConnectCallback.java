@@ -5,17 +5,19 @@ import se.liu.ida.geoza435.tddc69.project.game.Connection;
 
 public class ConnectCallback implements SelectCallback {
 
+	@SuppressWarnings("ObjectEquality")
 	@Override
 	public boolean run(SelectListener from) {
-		MarkDisplay md = from.bd.getSelectedMark();
+		MarkDisplay markDisplay = from.boardDisplay.getSelectedMark();
 
-		if (md != null) {
-			if (md != from.md) {
-				from.bd.addNewConnectionDisplay(new Connection(md.mark,
-						from.md.mark));
+		if (markDisplay != null) {
+			if (markDisplay != from.markDisplay) {
+				from.boardDisplay.addNewConnectionDisplay(new Connection(
+						markDisplay.mark,
+						from.markDisplay.mark));
 			}
-			from.bd.selectNone();
-			from.bd.repaint();
+			from.boardDisplay.selectNone();
+			from.boardDisplay.repaint();
 			return false;
 		} else {
 			return true;
