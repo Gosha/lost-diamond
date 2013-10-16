@@ -18,19 +18,20 @@ public class TextPlayer extends Player {
 		for (Choice choice : choices)
 			System.out.println(choice);
 
-		return choices.get(0);
+		return choices.get((int) (Math.random() * (choices.size())));
 	}
 
 	@Override
 	public Mark chooseMark(List<MarkListContainer> marks) {
-		// TODO Auto-generated method stub
-		return marks.isEmpty() ? null : marks.get(0).getMark();
+		return marks.isEmpty() ? null : marks.get(
+				(int) (Math.random() * (marks.size()))).getMark();
 	}
 
 	@Override
 	public boolean presentBinaryChoice(String message) {
-		System.out.println(message);
-		return false;
+		boolean response = (int) Math.random() == 0 ? false : true;
+		System.out.println(message + " " + response);
+		return response;
 	}
 
 }
