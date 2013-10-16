@@ -7,8 +7,8 @@ import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
 public class DeleteState extends AbstractEditorState {
 
-	public DeleteState(EditorView container, JButton button) {
-		super(container, button);
+	public DeleteState(JButton button) {
+		super(button);
 	}
 
 	@Override

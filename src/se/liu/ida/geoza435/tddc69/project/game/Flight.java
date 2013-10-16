@@ -10,10 +10,11 @@ public class Flight extends GameComponent {
 
 	@Override
 	public void addChoices(Player player, List<Choice> choices) {
+		// noinspection MagicNumber
 		if (player.isOn(MarkType.city, MarkType.start)
 				&& player.isNextTo(ConnectionType.flight)
 				&& player.hasAtLeast(3000))
-			choices.add(new FlightChoice(game));
+			choices.add(new FlightChoice());
 	}
 
 }

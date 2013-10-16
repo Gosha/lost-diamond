@@ -18,20 +18,18 @@ public class BoardGameDisplay extends BoardDisplay {
 		super(board);
 	}
 
-	public PlayerDisplay addPlayerDisplay(Player player) {
+	public void addPlayerDisplay(Player player) {
 		PlayerDisplay newPlayerDisplay = new PlayerDisplay(player);
 		playerDisplays.add(newPlayerDisplay);
 		add(newPlayerDisplay);
 		setComponentZOrder(newPlayerDisplay, 0);
-		return newPlayerDisplay;
 	}
 
-	public TokenDisplay addTokenDisplay(Token token) {
+	public void addTokenDisplay(Token token) {
 		TokenDisplay newTokenDisplay = new TokenDisplay(token);
 		tokenDisplays.add(newTokenDisplay);
 		add(newTokenDisplay);
 		setComponentZOrder(newTokenDisplay, 0);
-		return newTokenDisplay;
 	}
 
 }

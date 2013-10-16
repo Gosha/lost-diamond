@@ -11,13 +11,12 @@ import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseHandlerState;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
+@SuppressWarnings("AbstractClassWithoutAbstractMethods")
 abstract class AbstractEditorState implements MouseHandlerState {
 
-	EditorView container;
 	JButton button;
 
-	AbstractEditorState(EditorView container, JButton button) {
-		this.container = container;
+	AbstractEditorState(JButton button) {
 		this.button = button;
 	}
 

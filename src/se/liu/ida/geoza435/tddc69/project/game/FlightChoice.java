@@ -5,15 +5,11 @@ import java.util.List;
 public class FlightChoice implements Choice {
 
 	Mark to = null;
-	Game game;
-
-	public FlightChoice(Game game) {
-		this.game = game;
-	}
 
 	@Override
 	public void execute(Player player) {
 		player.move(to);
+		// noinspection MagicNumber
 		player.takeMoney(3000);
 		player.hasMoved = true;
 	}

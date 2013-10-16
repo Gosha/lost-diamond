@@ -40,19 +40,19 @@ public class EditorController {
 				JButton addButton = editorView.getAddButton();
 				addButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new AddState(editorView, addButton)));
+								new AddState(addButton)));
 				JButton deleteButton = editorView.getDeleteButton();
 				deleteButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new DeleteState(editorView, deleteButton)));
+								new DeleteState(deleteButton)));
 				JButton connectButton = editorView.getConnectButton();
 				connectButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new ConnectState(editorView, connectButton)));
+								new ConnectState(connectButton)));
 				JButton typeButton = editorView.getTypeButton();
 				typeButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
-								new TypeState(editorView, typeButton)));
+								new TypeState(typeButton)));
 
 				editorView.getSaveButton().addActionListener(
 						new SaveListener(editorView.getBoardDisplay()));

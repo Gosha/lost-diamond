@@ -17,9 +17,9 @@ public class TokenDisplay extends JLabel {
 	public static final int MARGIN = 5;
 	public static final Color COLOR = new Color(255, 255, 255);
 
-	@SuppressWarnings("ObjectToString")
 	public TokenDisplay(Token token) {
 		// TODO Finish TokenDisplay
+		// noinspection DynamicRegexReplaceableByCompiledPattern
 		super(token.getGameComponent().getClass().getCanonicalName()
 				.split("\\.")[7]);
 
@@ -37,7 +37,7 @@ public class TokenDisplay extends JLabel {
 	protected void paintComponent(Graphics graphics) {
 		Graphics2D g2d = DrawingTools.setupGraphics(graphics);
 
-		g2d.setColor(new Color(200, 200, 200));
+		g2d.setColor(COLOR);
 
 		int size = MarkDisplay.SIZE - MARGIN * 2;
 		g2d.fillRect(MARGIN, MARGIN, size, size);

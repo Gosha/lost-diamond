@@ -53,6 +53,7 @@ public class EditorView extends JFrame {
 
 		setTitle("Editor");
 		setLocationByPlatform(true);
+		// noinspection MagicNumber
 		setSize(600, 500);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}

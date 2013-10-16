@@ -25,16 +25,8 @@ public class Connection implements Serializable {
 		return a;
 	}
 
-	public void setA(Mark a) {
-		this.a = a;
-	}
-
 	public Mark getB() {
 		return b;
-	}
-
-	public void setB(Mark b) {
-		this.b = b;
 	}
 
 	public ConnectionType getType() {

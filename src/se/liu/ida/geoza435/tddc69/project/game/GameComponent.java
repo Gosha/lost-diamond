@@ -2,7 +2,8 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
-@SuppressWarnings("NoopMethodInAbstractClass")
+@SuppressWarnings({ "NoopMethodInAbstractClass",
+		"AbstractClassWithoutAbstractMethods" })
 public abstract class GameComponent {
 
 	Game game;
@@ -20,5 +21,10 @@ public abstract class GameComponent {
 	public void addPostMoveChoices(Player player, List<Choice> choices) {}
 
 	public void postTurn(Player player) {}
+
+	@Override
+	public String toString() {
+		return this.getClass().toString();
+	}
 
 }

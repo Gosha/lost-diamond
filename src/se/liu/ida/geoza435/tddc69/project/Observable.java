@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings("AbstractClassWithoutAbstractMethods")
 public abstract class Observable {
-	List<Observer> observers;
+	private List<Observer> observers;
 
 	protected Observable() {
 		this.observers = Collections

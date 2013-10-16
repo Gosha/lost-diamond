@@ -8,7 +8,7 @@ import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 public class MoveState extends AbstractEditorState {
 
 	public MoveState(EditorView editorView, JButton button) {
-		super(editorView, button);
+		super(button);
 	}
 
 	@Override

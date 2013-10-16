@@ -30,7 +30,7 @@ public class StatusDisplay extends JPanel implements Observer {
 		panel.setBounds(20, 20, 0, 0);
 
 		label = new JLabel("NOT SET");
-		label.setForeground(new Color(200, 200, 200));
+		label.setForeground(new Color(242, 242, 242));
 
 		panel.add(label);
 
@@ -47,8 +47,8 @@ public class StatusDisplay extends JPanel implements Observer {
 
 	@Override
 	public boolean contains(int x, int y) {
-		for (Component c : this.getComponents()) {
-			if (c.contains(x, y)) {
+		for (Component component : this.getComponents()) {
+			if (component.contains(x, y)) {
 				return true;
 			}
 		}
@@ -60,24 +60,25 @@ public class StatusDisplay extends JPanel implements Observer {
 		updateDisplay();
 	}
 
+	@SuppressWarnings({ "NonConstantStringShouldBeStringBuffer",
+			"StringContatenationInLoop", "ObjectEquality" })
 	private void updateDisplay() {
-		String l = "";
-		int i = 1;
+		String txt = "";
 		for (Player p : game.getPlayers()) {
-			l += "Player " + i++;
+			txt += "Player " + p.getNum();
 			if (game.getCurrentPlayer() == p) {
-				l += " *";
+				txt += " *";
 			}
-			l += "<br>";
-			l += "Money: " + p.getMoney() + "<br>";
-			l += "Has: ";
+			txt += "<br>";
+			txt += "Money: " + p.getMoney() + "<br>";
+			txt += "Has: ";
 			for (Token token : p.getTokens()) {
-				l += token + " ";
+				txt += token + " ";
 			}
-			l += "<br>";
+			txt += "<br>";
 		}
-		l = "<html>" + l + "</html>";
-		label.setText(l);
+		txt = "<html>" + txt + "</html>";
+		label.setText(txt);
 		panel.setSize(label.getPreferredSize());
 		repaint();
 	}

@@ -14,12 +14,15 @@ abstract public class Player extends Observable {
 	int playerId;
 	static int staticId = 1;
 
+	@SuppressWarnings("MagicNumber")
 	Integer money = 5000;
 
+	@SuppressWarnings("AssignmentToStaticFieldFromInstanceMethod")
 	protected Player(Mark at, Game game) {
 		this.at = at;
 		this.game = game;
-		playerId = staticId++;
+		playerId = staticId;
+		staticId += 1;
 	}
 
 	public Mark getAt() {
@@ -57,8 +60,8 @@ abstract public class Player extends Observable {
 		return !at.getNextMarks(1, type).isEmpty();
 	}
 
-	public boolean hasAtLeast(Integer money) {
-		return this.money >= money;
+	public boolean hasAtLeast(Integer thisMuch) {
+		return this.money >= thisMuch;
 	}
 
 	public void addMoney(Integer add) {
@@ -82,19 +85,18 @@ abstract public class Player extends Observable {
 
 	public abstract Choice presentChoices(List<Choice> choices);
 
-	public Choice presentChoices(List<Choice> choices, boolean compulsory) {
-		return presentChoices(choices);
-	}
-
 	public abstract Mark chooseMark(List<MarkListContainer> marks);
 
-	public abstract boolean presentBinaryChoice(String str);
+	@SuppressWarnings("BooleanMethodNameMustStartWithQuestion")
+	public abstract boolean presentBinaryChoice(String message);
 
 	public void addToken(Token token) {
 		tokens.add(token);
 		changed();
 	}
 
+	@SuppressWarnings({ "BooleanMethodNameMustStartWithQuestion",
+			"ObjectEquality" })
 	public boolean standsOnToken() {
 		for (Token t : game.getTokens()) {
 			if (t.getAt() == this.at)
@@ -103,6 +105,8 @@ abstract public class Player extends Observable {
 		return false;
 	}
 
+	@SuppressWarnings({ "BooleanMethodNameMustStartWithQuestion",
+			"ObjectEquality" })
 	public boolean standsOnToken(GameComponent gameComponent) {
 		Debug.o(this);
 		for (Token t : game.getTokens()) {
@@ -112,6 +116,7 @@ abstract public class Player extends Observable {
 		return false;
 	}
 
+	@SuppressWarnings("ObjectEquality")
 	public boolean hasToken(GameComponent gameComponent) {
 		for (Token t : tokens) {
 			if (t.getGameComponent() == gameComponent) {
@@ -119,5 +124,9 @@ abstract public class Player extends Observable {
 			}
 		}
 		return false;
+	}
+
+	public Integer getNum() {
+		return playerId;
 	}
 }

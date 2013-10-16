@@ -29,7 +29,7 @@ public class TextPlayer extends Player {
 
 	@Override
 	public boolean presentBinaryChoice(String message) {
-		boolean response = (int) Math.random() == 0 ? false : true;
+		boolean response = (int) (Math.random() + 1) != 0;
 		System.out.println(message + " " + response);
 		return response;
 	}

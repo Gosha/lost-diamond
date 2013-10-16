@@ -20,7 +20,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Position;
 public class PlayerDisplay extends JLabel implements Observer {
 
 	Player player;
-	public final static int SIZE = 40;
 	public final static int HEIGHT = 50;
 	public final static int WIDTH = 40;
 	public final static int Y_OFFSET = 25;
@@ -35,12 +34,14 @@ public class PlayerDisplay extends JLabel implements Observer {
 				WIDTH, HEIGHT);
 		this.setText(player.toString());
 		this.setBounds(bounds);
+		// noinspection MagicNumber
 		this.color = new Color((int) (Math.random() * 200),
 				(int) (Math.random() * 200),
 				(int) (Math.random() * 200));
 		Debug.o("New Player: " + player);
 	}
 
+	@SuppressWarnings("MagicNumber")
 	@Override
 	protected void paintComponent(Graphics arg0) {
 		Graphics2D g2d = DrawingTools.setupGraphics(arg0);

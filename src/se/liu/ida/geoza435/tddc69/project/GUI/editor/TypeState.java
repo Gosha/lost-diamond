@@ -8,8 +8,8 @@ import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
 public class TypeState extends AbstractEditorState {
 
-	public TypeState(EditorView container, JButton button) {
-		super(container, button);
+	public TypeState(JButton button) {
+		super(button);
 	}
 
 	@Override

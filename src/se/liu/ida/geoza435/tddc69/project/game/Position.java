@@ -22,10 +22,6 @@ public class Position implements Serializable {
 		this.y = y;
 	}
 
-	public Position() {
-		this(0, 0);
-	}
-
 	@Override
 	public String toString() {
 		return "(" + x + "," + y + ")";

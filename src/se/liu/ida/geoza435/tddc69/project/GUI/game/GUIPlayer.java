@@ -69,14 +69,14 @@ public class GUIPlayer extends Player {
 	}
 
 	@Override
-	public boolean presentBinaryChoice(String str) {
+	public boolean presentBinaryChoice(String message) {
 		int response = -1;
 		while (response < 0) {
-			response = JOptionPane.showConfirmDialog(boardGameDisplay, str,
+			response = JOptionPane.showConfirmDialog(boardGameDisplay, message,
 					"Choose", JOptionPane.YES_NO_OPTION);
 		}
 		Debug.o(response);
-		return response == 0 ? false : true;
+		return response != 0;
 	}
 
 }

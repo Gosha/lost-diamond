@@ -44,6 +44,7 @@ public class Game {
 			throw new Exception("Game not initialized");
 		}
 
+		// noinspection CallToSimpleGetterFromWithinClass
 		while (!isGameEnd()) {
 			try {
 				Thread.sleep(1000);
@@ -139,6 +140,7 @@ public class Game {
 		return currentPlayer;
 	}
 
+	@SuppressWarnings("ObjectEquality")
 	public Token getTokenAt(Mark at) {
 		for (Token t : tokens) {
 			if (t.getAt() == at)

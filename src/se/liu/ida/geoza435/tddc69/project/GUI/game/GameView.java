@@ -24,6 +24,7 @@ public class GameView extends JFrame {
 		JScrollPane spane = new JScrollPane();
 
 		spane.setViewportView(boardGameDisplay);
+		// noinspection MagicNumber
 		spane.getVerticalScrollBar().setUnitIncrement(16);
 
 		add(spane, BorderLayout.CENTER);
@@ -33,6 +34,7 @@ public class GameView extends JFrame {
 		status.setVisible(true);
 
 		// TODO: Constants
+		// noinspection MagicNumber
 		setSize(600, 500);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);

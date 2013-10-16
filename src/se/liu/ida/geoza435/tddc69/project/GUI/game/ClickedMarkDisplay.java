@@ -2,10 +2,11 @@ package se.liu.ida.geoza435.tddc69.project.GUI.game;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 
+@SuppressWarnings({ "WaitNotInLoop", "WaitOrAwaitWithoutTimeout" })
 public class ClickedMarkDisplay {
 	private MarkDisplay markDisplay = null;
 
-	public MarkDisplay waitUntilSet() {
+	public void waitUntilSet() {
 		synchronized (this) {
 			try {
 				this.wait();
@@ -14,7 +15,6 @@ public class ClickedMarkDisplay {
 				e.printStackTrace();
 			}
 		}
-		return this.markDisplay;
 	}
 
 	public void setMarkDisplay(MarkDisplay markDisplay) {
