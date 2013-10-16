@@ -20,4 +20,8 @@ public class Token {
 	public void setAt(Mark at) {
 		this.at = at;
 	}
+
+	public GameComponent getGameComponent() {
+		return gameComponent;
+	}
 }

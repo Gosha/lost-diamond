@@ -3,7 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.game;
 import java.util.List;
 
 @SuppressWarnings("NoopMethodInAbstractClass")
-abstract class GameComponent {
+public abstract class GameComponent {
 
 	Game game;
 

@@ -11,7 +11,9 @@ public class TokenDisplay extends JLabel {
 	@SuppressWarnings("ObjectToString")
 	public TokenDisplay(Token token) {
 		// TODO Finish TokenDisplay
-		super(token.toString());
+		super(token.getGameComponent().getClass().getCanonicalName()
+				.split("\\.")[7]);
+
 		Position position = token.getAt().getPosition();
 		this.setBounds(0, 0, 100, 20);
 		this.setLocation(position.getX(), position.getY());
