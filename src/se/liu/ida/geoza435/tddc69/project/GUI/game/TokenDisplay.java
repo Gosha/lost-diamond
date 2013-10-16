@@ -8,11 +8,13 @@ import javax.swing.JLabel;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.DrawingTools;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
+import se.liu.ida.geoza435.tddc69.project.Observable;
+import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 @SuppressWarnings("serial")
-public class TokenDisplay extends JLabel {
+public class TokenDisplay extends JLabel implements Observer {
 
 	public static final int MARGIN = 5;
 	public static final Color COLOR = new Color(255, 255, 255);
@@ -45,4 +47,13 @@ public class TokenDisplay extends JLabel {
 		super.paintComponent(graphics);
 	}
 
+	@Override
+	public void notifyChange(Observable observable) {
+		if (observable instanceof Token) {
+			Token token = (Token) observable;
+			if (token.getAt() == null) {
+				this.getParent().remove(this);
+			}
+		}
+	}
 }

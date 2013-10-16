@@ -16,6 +16,7 @@ public class AfricasStar extends GameComponent {
 	@Override
 	public void visit(Token token, Player player) {
 		player.addToken(token);
+		token.setAt(null);
 		game.tokens.remove(token);
 	}
 

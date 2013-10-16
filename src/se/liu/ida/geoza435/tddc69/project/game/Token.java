@@ -1,6 +1,8 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
-public class Token {
+import se.liu.ida.geoza435.tddc69.project.Observable;
+
+public class Token extends Observable {
 	private Mark at;
 	GameComponent gameComponent;
 
@@ -19,6 +21,7 @@ public class Token {
 
 	public void setAt(Mark at) {
 		this.at = at;
+		changed();
 	}
 
 	public GameComponent getGameComponent() {
