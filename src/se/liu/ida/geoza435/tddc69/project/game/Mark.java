@@ -19,11 +19,11 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
 @SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Mark extends Observable implements Serializable {
 	private static final long serialVersionUID = 1L;
-	MarkType type;
-	Position position;
+	private MarkType type;
+	private Position position;
 
 	// Not List or Collection because they aren't serializable
-	ArrayList<Connection> connections;
+	private ArrayList<Connection> connections;
 	boolean selected;
 
 	public Mark(MarkType type, Position position) {

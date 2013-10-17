@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Position implements Serializable {
 	private static final long serialVersionUID = 1L;
-	int x, y;
+	private int x, y;
 
 	public int getX() {
 		return x;

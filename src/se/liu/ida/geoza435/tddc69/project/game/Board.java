@@ -75,7 +75,7 @@ public class Board implements Serializable {
 		ArrayList<Mark> retMarks = new ArrayList<>();
 
 		for (Mark mark : getMarks()) {
-			if (mark.type == type)
+			if (mark.getType() == type)
 				retMarks.add(mark);
 		}
 
