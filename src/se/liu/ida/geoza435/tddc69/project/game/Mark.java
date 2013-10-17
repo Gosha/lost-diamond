@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
-import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
+import se.liu.ida.geoza435.tddc69.project.gui.ConnectionDisplay;
+import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
 /**

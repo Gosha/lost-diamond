@@ -3,7 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.game;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.liu.ida.geoza435.tddc69.project.GUI.game.GUIPlayer;
+import se.liu.ida.geoza435.tddc69.project.gui.game.GUIPlayer;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
 /**
