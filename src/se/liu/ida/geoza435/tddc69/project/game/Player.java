@@ -3,6 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.game;
 import java.util.ArrayList;
 import java.util.List;
 
+import se.liu.ida.geoza435.tddc69.project.GUI.game.GUIPlayer;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
 /**
@@ -12,7 +13,7 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
  * defined by GameComponents
  * 
  * @see TextPlayer
- * @see se.liu.ida.geoza435.tddc69.project.GUI.game.GUIPlayer
+ * @see GUIPlayer
  */
 abstract public class Player extends Observable {
 	Mark at;

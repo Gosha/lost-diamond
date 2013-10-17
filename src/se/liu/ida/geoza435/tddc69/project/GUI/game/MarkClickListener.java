@@ -3,6 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.GUI.game;
 import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
@@ -15,7 +16,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
  * clicked mark is found in a ClickedMarkDisplay.
  * 
  * @see ClickedMarkDisplay
- * @see GUIPlayer#chooseMark(java.util.List)
+ * @see GUIPlayer#chooseMark(List)
  */
 @SuppressWarnings("RefusedBequest")
 public class MarkClickListener extends MouseAdapter {

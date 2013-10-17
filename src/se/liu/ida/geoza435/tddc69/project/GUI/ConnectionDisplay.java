@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
+import se.liu.ida.geoza435.tddc69.project.game.ConnectionType;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
 /**
@@ -62,7 +63,7 @@ public class ConnectionDisplay extends JLabel implements Observer {
 
 	/**
 	 * Draws the connection based on
-	 * {@link se.liu.ida.geoza435.tddc69.project.game.ConnectionType} and
+	 * {@link ConnectionType} and
 	 * {@link DrawingTools#isConnectionFromBottom}
 	 */
 	@Override

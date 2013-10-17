@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
 /**
@@ -12,8 +14,8 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
  * Knows how to traverse the Board.
  * 
  * Uses the Observer/Observable pattern. Known observers are:
- * {@link se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay}
- * {@link se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay}
+ * {@link MarkDisplay}
+ * {@link ConnectionDisplay}
  */
 @SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Mark extends Observable implements Serializable {

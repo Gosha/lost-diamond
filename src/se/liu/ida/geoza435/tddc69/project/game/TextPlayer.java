@@ -1,5 +1,7 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+import se.liu.ida.geoza435.tddc69.project.GameTest;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
  * 
  * Can be used as a AI opponent in a game or as a test user.
  * 
- * @see se.liu.ida.geoza435.tddc69.project.GameTest
+ * @see GameTest
  */
 public class TextPlayer extends Player {
 
