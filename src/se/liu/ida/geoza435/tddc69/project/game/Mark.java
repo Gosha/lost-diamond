@@ -77,16 +77,26 @@ public class Mark extends Observable implements Serializable {
 	 * @param upTo
 	 *            Maximal distance
 	 * @param ofType
-	 *            Only of this type
+	 *            Only of this type - null if any type
 	 * @return List of MarkListContainer
 	 */
 	public ArrayList<MarkListContainer> getNextMarks(Integer upTo,
 			ConnectionType ofType) {
 		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
-		System.out.println(this);
 		return getNextMarks(upTo, ofType, retMarks, this, 1);
 	}
 
+	/**
+	 * Actually searches the board graph.
+	 * Pretty much does a recursive DFS.
+	 *
+	 * @param upTo Decresas every recursion
+	 * @param ofType Only of this type - null if any type
+	 * @param retMarks A list that is built up
+	 * @param from The parent of a Mark
+	 * @param distance Increases every recursion
+	 * @return The built up List retMarks
+	 */
 	@SuppressWarnings("ObjectEquality")
 	private ArrayList<MarkListContainer> getNextMarks(Integer upTo,
 			ConnectionType ofType, ArrayList<MarkListContainer> retMarks,

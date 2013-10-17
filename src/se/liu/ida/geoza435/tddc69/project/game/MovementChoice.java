@@ -41,7 +41,7 @@ public class MovementChoice implements Choice {
 			}
 		}
 
-		Debug.o(marks);
+		Debug.o("Can move to: " + marks);
 
 		to = player.chooseMark(marks);
 	}
