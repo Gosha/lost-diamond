@@ -1,4 +1,6 @@
-package se.liu.ida.geoza435.tddc69.project.gui.editor;
+package se.liu.ida.geoza435.tddc69.project;
+
+import se.liu.ida.geoza435.tddc69.project.gui.editor.EditorController;
 
 @SuppressWarnings("JavaDoc")
 public final class Editor {

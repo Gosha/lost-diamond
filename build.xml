@@ -6,7 +6,7 @@
         <jar destfile="/home/gosha/workspace/LostDiamond/Game.jar">
             <manifest>
                 <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
-                <attribute name="Rsrc-Main-Class" value="se.liu.ida.geoza435.tddc69.project.GUI.game.GameController"/>
+                <attribute name="Rsrc-Main-Class" value="se.liu.ida.geoza435.tddc69.project.Game"/>
                 <attribute name="Class-Path" value="."/>
                 <attribute name="Rsrc-Class-Path" value="./"/>
             </manifest>

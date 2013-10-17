@@ -13,9 +13,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  * Also fires up the actual game.
  */
 public final class GameController {
-	private GameController() {}
-
-	public static void main(String[] args) throws Exception {
+	public GameController() throws Exception {
 		final Game game = new Game();
 		game.loadBoard("africa.dat");
 
@@ -54,7 +52,12 @@ public final class GameController {
 
 		});
 
-		game.start();
+		try {
+			game.start();
+		} catch (Exception e) {
+			game.init();
+			game.start();
+		}
 
 	}
 }
