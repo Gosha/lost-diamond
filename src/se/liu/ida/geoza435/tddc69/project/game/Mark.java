@@ -14,8 +14,7 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
  * Knows how to traverse the Board.
  * 
  * Uses the Observer/Observable pattern. Known observers are:
- * {@link MarkDisplay}
- * {@link ConnectionDisplay}
+ * {@link MarkDisplay} {@link ConnectionDisplay}
  */
 @SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Mark extends Observable implements Serializable {
@@ -87,14 +86,18 @@ public class Mark extends Observable implements Serializable {
 	}
 
 	/**
-	 * Actually searches the board graph.
-	 * Pretty much does a recursive DFS.
-	 *
-	 * @param upTo Decresas every recursion
-	 * @param ofType Only of this type - null if any type
-	 * @param retMarks A list that is built up
-	 * @param from The parent of a Mark
-	 * @param distance Increases every recursion
+	 * Actually searches the board graph. Pretty much does a recursive DFS.
+	 * 
+	 * @param upTo
+	 *            Decresas every recursion
+	 * @param ofType
+	 *            Only of this type - null if any type
+	 * @param retMarks
+	 *            A list that is built up
+	 * @param from
+	 *            The parent of a Mark
+	 * @param distance
+	 *            Increases every recursion
 	 * @return The built up List retMarks
 	 */
 	@SuppressWarnings("ObjectEquality")

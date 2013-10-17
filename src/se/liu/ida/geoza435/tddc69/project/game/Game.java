@@ -54,7 +54,7 @@ public class Game {
 		// noinspection CallToSimpleGetterFromWithinClass
 		while (!isGameEnd()) {
 			try {
-				//noinspection BusyWait
+				// noinspection BusyWait
 				Thread.sleep(100);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -83,7 +83,7 @@ public class Game {
 
 		choices.clear();
 
-		//noinspection ConstantConditions
+		// noinspection ConstantConditions
 		if (player.hasMoved) {
 			for (GameComponent g : gameComponents) {
 				g.addPostMoveChoices(player, choices);

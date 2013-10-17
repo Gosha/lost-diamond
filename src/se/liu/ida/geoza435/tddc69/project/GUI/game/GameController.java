@@ -46,6 +46,7 @@ public final class GameController {
 					gameView.boardGameDisplay.addTokenDisplay(token);
 				}
 
+				// TODO Add to load
 				gameView.boardGameDisplay.addPlayerDisplay(p1);
 				// gameView.boardGameDisplay.addPlayerDisplay(p2);
 				gameView.boardGameDisplay.addPlayerDisplay(p3);

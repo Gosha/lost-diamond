@@ -62,8 +62,7 @@ public class ConnectionDisplay extends JLabel implements Observer {
 	}
 
 	/**
-	 * Draws the connection based on
-	 * {@link ConnectionType} and
+	 * Draws the connection based on {@link ConnectionType} and
 	 * {@link DrawingTools#isConnectionFromBottom}
 	 */
 	@Override
