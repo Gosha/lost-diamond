@@ -43,12 +43,6 @@ public final class GameController {
 
 		});
 
-		try {
-			game.start();
-		} catch (Exception e) {
-			game.init();
-			game.start();
-		}
-
+		game.start();
 	}
 }
