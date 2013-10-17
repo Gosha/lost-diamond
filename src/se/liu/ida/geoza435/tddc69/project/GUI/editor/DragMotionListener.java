@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
+@SuppressWarnings("RefusedBequest")
 public class DragMotionListener extends MouseAdapter {
 
 	protected Point anchorPoint = null;

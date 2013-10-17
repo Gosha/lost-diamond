@@ -1,5 +1,6 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+@SuppressWarnings("RefusedBequest")
 public class AfricasStar extends GameComponent {
 
 	public AfricasStar(Game game) {

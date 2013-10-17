@@ -8,6 +8,7 @@ import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
+@SuppressWarnings("RefusedBequest")
 public class MarkClickListener extends MouseAdapter {
 
 	MarkDisplay markDisplay = null;

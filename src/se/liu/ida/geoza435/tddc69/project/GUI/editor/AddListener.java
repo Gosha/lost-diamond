@@ -12,6 +12,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
+@SuppressWarnings("RefusedBequest")
 public class AddListener extends MouseAdapter {
 
 	BoardDisplay boardDisplay;

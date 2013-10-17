@@ -2,6 +2,7 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
+@SuppressWarnings("RefusedBequest")
 public class DoNothing extends GameComponent implements Choice {
 
 	DoNothing(Game game) {

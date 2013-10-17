@@ -45,6 +45,7 @@ public class StatusDisplay extends JPanel implements Observer {
 		}
 	}
 
+	@SuppressWarnings("RefusedBequest")
 	@Override
 	public boolean contains(int x, int y) {
 		for (Component component : this.getComponents()) {

@@ -43,6 +43,7 @@ public class MarkDisplay extends JLabel implements Observer {
 		this.setBounds(bounds);
 	}
 
+	@SuppressWarnings("RefusedBequest")
 	@Override
 	protected void paintComponent(Graphics g) {
 		Graphics2D g2d = DrawingTools.setupGraphics(g);

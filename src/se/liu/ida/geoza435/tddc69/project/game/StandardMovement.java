@@ -2,6 +2,7 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
+@SuppressWarnings("RefusedBequest")
 public class StandardMovement extends GameComponent {
 
 	public StandardMovement(Game game) {

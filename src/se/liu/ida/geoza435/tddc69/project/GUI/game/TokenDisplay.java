@@ -30,6 +30,7 @@ public class TokenDisplay extends JLabel implements Observer {
 		this.setLocation(position.getX(), position.getY());
 	}
 
+	@SuppressWarnings("RefusedBequest")
 	@Override
 	public boolean contains(int x, int y) {
 		return false;

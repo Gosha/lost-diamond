@@ -41,7 +41,7 @@ public class PlayerDisplay extends JLabel implements Observer {
 		Debug.o("New Player: " + player);
 	}
 
-	@SuppressWarnings("MagicNumber")
+	@SuppressWarnings({ "MagicNumber", "RefusedBequest" })
 	@Override
 	protected void paintComponent(Graphics arg0) {
 		Graphics2D g2d = DrawingTools.setupGraphics(arg0);
