@@ -8,11 +8,9 @@ import javax.swing.JButton;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
-import se.liu.ida.geoza435.tddc69.project.GUI.MouseHandlerState;
-import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
 @SuppressWarnings("AbstractClassWithoutAbstractMethods")
-abstract class AbstractEditorState implements MouseHandlerState {
+abstract class AbstractEditorState {
 
 	JButton button;
 
@@ -20,12 +18,10 @@ abstract class AbstractEditorState implements MouseHandlerState {
 		this.button = button;
 	}
 
-	@Override
 	public void enterState(MouseListenerHandler mouseListenerHandler) {
 		button.setEnabled(false);
 	}
 
-	@Override
 	public void leaveState(MouseListenerHandler mouseListenerHandler) {
 		BoardDisplay bd = mouseListenerHandler.getBoardDisplay();
 

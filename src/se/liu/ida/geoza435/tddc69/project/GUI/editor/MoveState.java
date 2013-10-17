@@ -3,7 +3,6 @@ package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 import javax.swing.JButton;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
-import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
 /**
  * Adds {@link DragMotionListener}s and {@link MouseOverListener} to all Marks

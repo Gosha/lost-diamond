@@ -4,7 +4,6 @@ import javax.swing.JButton;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
-import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
 /**
  * Adds {@link MarkTypeListener} to all {@link MarkDisplay}

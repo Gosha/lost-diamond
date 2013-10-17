@@ -1,6 +1,10 @@
-package se.liu.ida.geoza435.tddc69.project.GUI;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor;
 
 import java.util.List;
+
+import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 
 /**
  * Handles the MouseListeners for the radio-like button in the EditorView.
@@ -10,13 +14,13 @@ import java.util.List;
 public class MouseListenerHandler {
 
 	BoardDisplay bd;
-	MouseHandlerState state = null;
+	AbstractEditorState state = null;
 
 	public MouseListenerHandler(BoardDisplay bd) {
 		this.bd = bd;
 	}
 
-	public void setState(MouseHandlerState state) {
+	public void setState(AbstractEditorState state) {
 		if (this.state != null) {
 			this.state.leaveState(this);
 		}

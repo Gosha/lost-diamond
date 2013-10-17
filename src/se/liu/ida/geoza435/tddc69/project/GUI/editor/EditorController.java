@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
-import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 
 /**
