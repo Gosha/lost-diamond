@@ -33,6 +33,8 @@ public class TokenDisplay extends JLabel implements Observer {
 		Position position = token.getAt().getPosition();
 		this.setBounds(0, 0, 100, 50);
 		this.setLocation(position.getX(), position.getY());
+
+		token.observe(this);
 	}
 
 	@SuppressWarnings("RefusedBequest")
