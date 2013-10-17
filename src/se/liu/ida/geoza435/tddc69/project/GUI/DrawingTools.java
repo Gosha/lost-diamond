@@ -7,10 +7,16 @@ import java.awt.RenderingHints;
 
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
+/**
+ * Utility class for graphics and geometry.
+ */
 public final class DrawingTools {
 
 	private DrawingTools() {}
 
+	/**
+	 * Change Graphics to Graphics2D and use antialiasing.
+	 */
 	public static Graphics2D setupGraphics(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		RenderingHints rh = new RenderingHints(
@@ -25,6 +31,9 @@ public final class DrawingTools {
 		return g2d;
 	}
 
+	/**
+	 * Uses Linear Algebra to decide the shortest length from a line to a point.
+	 */
 	@SuppressWarnings("OverlyComplexArithmeticExpression")
 	public static double pointToLineDistance(Point linePointA,
 			Point linePointB, Point mousePoint) {
@@ -40,6 +49,18 @@ public final class DrawingTools {
 				/ normalLength;
 	}
 
+	/**
+	 * A connection is of two types:
+	 * 
+	 * <pre>
+	 *        posa    posa
+	 *     +--+         +--+
+	 *     | /|         |\ |
+	 *     |/ |         | \|
+	 *     +--+         +--+
+	 * posb             pos
+	 * 
+	 */
 	public static boolean isConnectionFromBottom(Position posa, Position posb) {
 		return posa.getX() > posb.getX() && posa.getY() < posb.getY()
 				|| posa.getX() < posb.getX() && posa.getY() > posb.getY();

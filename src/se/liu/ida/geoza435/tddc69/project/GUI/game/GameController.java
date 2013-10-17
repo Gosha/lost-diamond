@@ -7,6 +7,11 @@ import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
+/**
+ * Sets up a {@link Game} and a GUI (BoardGameDisplay).
+ * 
+ * Also fires up the actual game.
+ */
 public final class GameController {
 	private GameController() {}
 

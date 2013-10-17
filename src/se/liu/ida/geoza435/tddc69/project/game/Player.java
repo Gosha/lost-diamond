@@ -5,6 +5,15 @@ import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
+/**
+ * Defines some common functions all Players should use.
+ * 
+ * Subclasses of this class should make a player able to chose between choices
+ * defined by GameComponents
+ * 
+ * @see TextPlayer
+ * @see se.liu.ida.geoza435.tddc69.project.GUI.game.GUIPlayer
+ */
 abstract public class Player extends Observable {
 	Mark at;
 	private List<Token> tokens = new ArrayList<>();

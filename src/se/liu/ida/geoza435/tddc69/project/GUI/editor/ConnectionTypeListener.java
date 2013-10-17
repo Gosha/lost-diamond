@@ -6,6 +6,9 @@ import java.awt.event.MouseEvent;
 import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.ConnectionType;
 
+/**
+ * Changes type of a Connection when mouseClicked
+ * */
 @SuppressWarnings("RefusedBequest")
 public class ConnectionTypeListener extends MouseAdapter {
 

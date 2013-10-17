@@ -8,6 +8,13 @@ import javax.swing.WindowConstants;
 
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 
+/**
+ * Sets up the GameView.
+ * 
+ * A boardGameDisplay spans the whole frame in a JScrollPane. Status of the
+ * players is showed in separate JPanel on the Glass Pane
+ * 
+ */
 @SuppressWarnings("serial")
 public class GameView extends JFrame {
 

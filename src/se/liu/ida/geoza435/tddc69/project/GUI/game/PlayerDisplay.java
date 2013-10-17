@@ -16,7 +16,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
-@SuppressWarnings("serial")
+/**
+ * Displays a player based on a random color and the Position of the Mark the
+ * Player is standing on.
+ */
+@SuppressWarnings({ "serial", "JavaDoc" })
 public class PlayerDisplay extends JLabel implements Observer {
 
 	Player player;
@@ -38,6 +42,7 @@ public class PlayerDisplay extends JLabel implements Observer {
 		this.color = new Color((int) (Math.random() * 200),
 				(int) (Math.random() * 200),
 				(int) (Math.random() * 200));
+
 		Debug.o("New Player: " + player);
 	}
 
@@ -55,6 +60,7 @@ public class PlayerDisplay extends JLabel implements Observer {
 		g2d.fillPolygon(p);
 	}
 
+	// Update the GUI position when the Player moves.
 	@Override
 	public void notifyChange(Observable observable) {
 		Position markPosition = player.getAt().getPosition();

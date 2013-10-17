@@ -7,6 +7,10 @@ import java.awt.event.MouseEvent;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
+/**
+ * Moves {@link MarkDisplay}s when mouse is dragged. Also updates the Marks
+ * position.
+ */
 @SuppressWarnings("RefusedBequest")
 public class DragMotionListener extends MouseAdapter {
 

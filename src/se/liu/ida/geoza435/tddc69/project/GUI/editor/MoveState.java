@@ -5,6 +5,10 @@ import javax.swing.JButton;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
+/**
+ * Adds {@link DragMotionListener}s and {@link MouseOverListener} to all Marks
+ * so they can be moved.
+ */
 public class MoveState extends AbstractEditorState {
 
 	public MoveState(EditorView editorView, JButton button) {

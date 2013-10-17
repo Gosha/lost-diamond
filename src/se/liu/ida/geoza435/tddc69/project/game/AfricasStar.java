@@ -1,5 +1,14 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+/**
+ * Handles logic for what happens when one flips a {@link Token} with Africas
+ * Star on it and the rules that apply to it;
+ * <ul>
+ * <li>There is only one Africa's Star</li> TODO
+ * <li>If a player has the Africa's Star and is on a Start-{@link Mark} the game
+ * ends.</li>
+ * </ul>
+ */
 @SuppressWarnings("RefusedBequest")
 public class AfricasStar extends GameComponent {
 

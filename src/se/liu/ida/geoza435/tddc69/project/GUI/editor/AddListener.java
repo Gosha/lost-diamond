@@ -12,6 +12,16 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
+/**
+ * Add a new connected mark on mouseClicked() on {@link BoardDisplay}
+ * 
+ * Initially no {@link Mark}s are selected. The first time mouseClicked() is
+ * called a mark is selected if a user pressed one, otherwise a warning is
+ * issued.
+ * 
+ * If a mark is selected and the user presses somewhere on the board, a mark is
+ * added there and connected to the selected mark.
+ */
 @SuppressWarnings("RefusedBequest")
 public class AddListener extends MouseAdapter {
 

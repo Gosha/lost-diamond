@@ -9,6 +9,10 @@ import javax.swing.SwingUtilities;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 
+/**
+ * Sets up the Editor. Adds states for the Radio-like buttons. And
+ * ActionListeners for the Load and Save facilities.
+ */
 public class EditorController {
 
 	final EditorView editorView;
@@ -33,6 +37,7 @@ public class EditorController {
 							}
 						});
 
+				// Radio buttons
 				JButton moveButton = editorView.getMoveButton();
 				moveButton.addActionListener(
 						new StateButtonListener(mlh, editorView,
@@ -54,6 +59,7 @@ public class EditorController {
 						new StateButtonListener(mlh, editorView,
 								new TypeState(typeButton)));
 
+				// Load/Save buttons
 				editorView.getSaveButton().addActionListener(
 						new SaveListener(editorView.getBoardDisplay()));
 				editorView.getLoadButton().addActionListener(

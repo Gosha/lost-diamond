@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Knows what {@link Mark}s and {@link Connection}s there are on the board.
+ * Connection information is stored in the individual Connections
+ */
 // Because List is not Serializable
 @SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Board implements Serializable {

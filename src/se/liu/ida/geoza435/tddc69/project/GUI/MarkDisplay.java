@@ -12,7 +12,10 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
 import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
-@SuppressWarnings({ "serial", "PublicField" })
+/**
+ * Displays a Mark based on Type and Position
+ */
+@SuppressWarnings({ "serial", "PublicField", "JavaDoc" })
 public class MarkDisplay extends JLabel implements Observer {
 	public Mark mark;
 	Rectangle bounds;

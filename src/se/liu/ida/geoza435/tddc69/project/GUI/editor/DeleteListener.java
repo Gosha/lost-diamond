@@ -6,6 +6,9 @@ import java.awt.event.MouseEvent;
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 
+/**
+ * Deletes a Mark when mouseClicked.
+ */
 @SuppressWarnings("RefusedBequest")
 public class DeleteListener extends MouseAdapter {
 

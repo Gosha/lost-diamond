@@ -2,6 +2,9 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
+/**
+ * A player can always chose to do a standard movement.
+ */
 @SuppressWarnings("RefusedBequest")
 public class StandardMovement extends GameComponent {
 

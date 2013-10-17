@@ -8,6 +8,15 @@ import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 
+/**
+ * Added to all Marks a GUIPlayer can move to.
+ * 
+ * When the first Mark is clicked, all MarkClickListeners are removed and the
+ * clicked mark is found in a ClickedMarkDisplay.
+ * 
+ * @see ClickedMarkDisplay
+ * @see GUIPlayer#chooseMark(java.util.List)
+ */
 @SuppressWarnings("RefusedBequest")
 public class MarkClickListener extends MouseAdapter {
 

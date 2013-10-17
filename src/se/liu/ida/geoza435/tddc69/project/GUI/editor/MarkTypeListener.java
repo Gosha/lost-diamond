@@ -6,6 +6,11 @@ import java.awt.event.MouseEvent;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 
+/**
+ * Changes the type of a Mark when it is pressed.
+ * 
+ * Cycles through all available MarkTypes
+ */
 @SuppressWarnings("RefusedBequest")
 public class MarkTypeListener extends MouseAdapter {
 

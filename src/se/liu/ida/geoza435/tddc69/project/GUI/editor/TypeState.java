@@ -6,6 +6,11 @@ import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
+/**
+ * Adds {@link MarkTypeListener} to all {@link MarkDisplay}
+ * {@link ConnectionTypeListener} to all {@link ConnectionDisplay} and
+ * {@link MouseOverListener} to all of them.
+ */
 public class TypeState extends AbstractEditorState {
 
 	public TypeState(JButton button) {

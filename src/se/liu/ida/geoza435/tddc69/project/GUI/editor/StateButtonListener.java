@@ -5,6 +5,12 @@ import java.awt.event.ActionListener;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
+/**
+ * Common behavior for a state-button listener.
+ * 
+ * Shortens instantiation of ActionListeners for the Radio-like buttons in
+ * {@link EditorView}.
+ */
 public class StateButtonListener implements ActionListener {
 
 	MouseListenerHandler mlh;

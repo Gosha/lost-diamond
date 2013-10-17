@@ -1,5 +1,11 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+/**
+ * Presents the choice of paying for flipping a Token or throwing the die. If
+ * one doesn't have at least 1000 one has to throw the die.
+ * 
+ * @see Tokens
+ */
 public class FlipChoice implements Choice {
 
 	boolean shouldPay;

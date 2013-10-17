@@ -15,6 +15,14 @@ import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
 
+/**
+ * Contains {@link MarkDisplay}s and {@link ConnectionDisplay}s.
+ * 
+ * Can load and display a {@link Board}.
+ * 
+ * Has a predefined image <br>
+ * TODO Make Image changeable
+ */
 @SuppressWarnings("serial")
 public class BoardDisplay extends JPanel {
 	private Board board;

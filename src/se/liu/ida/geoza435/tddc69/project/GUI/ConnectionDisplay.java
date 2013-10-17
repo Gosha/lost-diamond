@@ -15,7 +15,13 @@ import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Connection;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 
-@SuppressWarnings("serial")
+/**
+ * Displays a {@link Connection} based on ConnectionType and the Marks it
+ * connects.
+ * 
+ * @see DrawingTools#isConnectionFromBottom
+ */
+@SuppressWarnings({ "serial", "JavaDoc" })
 public class ConnectionDisplay extends JLabel implements Observer {
 	Connection connection;
 
@@ -54,6 +60,11 @@ public class ConnectionDisplay extends JLabel implements Observer {
 				Math.abs(posa.getY() - posb.getY()) + MarkDisplay.SIZE);
 	}
 
+	/**
+	 * Draws the connection based on
+	 * {@link se.liu.ida.geoza435.tddc69.project.game.ConnectionType} and
+	 * {@link DrawingTools#isConnectionFromBottom}
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -104,6 +115,10 @@ public class ConnectionDisplay extends JLabel implements Observer {
 		}
 	}
 
+	/**
+	 * Returns true is the mouse pointer is closer than 5 units to the
+	 * connection
+	 */
 	@Override
 	public boolean contains(int x, int y) {
 		if (super.contains(x, y)) {

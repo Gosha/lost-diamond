@@ -2,6 +2,13 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
+/**
+ * Under some circumstances a player can chose to do nothing;
+ * <ul>
+ * <li>When player stands on a City</li>
+ * <li>When player has moved</li>
+ * </ul>
+ */
 @SuppressWarnings("RefusedBequest")
 public class DoNothing extends GameComponent implements Choice {
 

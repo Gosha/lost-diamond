@@ -3,6 +3,12 @@ package se.liu.ida.geoza435.tddc69.project.game;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Gives a Player a standard movement choice. A list of MarkListContainer is
+ * given to the Player.
+ * 
+ * @see StandardMovement
+ */
 public class MovementChoice implements Choice {
 
 	Mark to = null;

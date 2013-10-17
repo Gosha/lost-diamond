@@ -2,6 +2,9 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.util.List;
 
+/**
+ * Presents choices of Marks the player can fly to.
+ */
 public class FlightChoice implements Choice {
 
 	Mark to = null;

@@ -1,5 +1,8 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+/**
+ * Simple debugging facilities
+ */
 public final class Debug {
 
 	static boolean debug = true;

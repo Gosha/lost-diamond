@@ -14,6 +14,9 @@ import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
+/**
+ * Displays status for all Players in text-format
+ */
 @SuppressWarnings("serial")
 public class StatusDisplay extends JPanel implements Observer {
 

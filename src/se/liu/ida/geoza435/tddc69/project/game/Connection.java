@@ -2,6 +2,11 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import java.io.Serializable;
 
+/**
+ * Connects two {@link Mark}s.
+ * 
+ * Positional data is stored in the two Marks the connection connects.
+ */
 // Already serialized
 @SuppressWarnings("StandardVariableNames")
 public class Connection implements Serializable {

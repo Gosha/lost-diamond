@@ -1,5 +1,10 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
+/**
+ * Helper class for representing Marks a player can go to.
+ * 
+ * @see Mark#getNextMarks(Integer, ConnectionType)
+ */
 public class MarkListContainer {
 	private Mark mark;
 	private Integer distance = 0;

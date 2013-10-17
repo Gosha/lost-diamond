@@ -13,7 +13,12 @@ import se.liu.ida.geoza435.tddc69.project.Observer;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
-@SuppressWarnings("serial")
+/**
+ * Displays a Token based on the Mark it is located at.
+ * 
+ * If the Mark it is located at is null, it removes itself.
+ */
+@SuppressWarnings({ "serial", "JavaDoc" })
 public class TokenDisplay extends JLabel implements Observer {
 
 	public static final int MARGIN = 5;

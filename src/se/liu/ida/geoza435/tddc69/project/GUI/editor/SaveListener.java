@@ -12,6 +12,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 
+/**
+ * Saves the Board to a file when the Save button is pressed and a file is
+ * chosen.
+ */
 public class SaveListener implements ActionListener {
 
 	BoardDisplay bd;
@@ -40,6 +44,7 @@ public class SaveListener implements ActionListener {
 				oostream.close();
 				fostream.close();
 			} catch (IOException e) {
+				// TODO Show error
 				e.printStackTrace();
 			}
 		}

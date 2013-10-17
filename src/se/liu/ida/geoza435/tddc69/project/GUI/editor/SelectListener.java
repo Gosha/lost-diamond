@@ -6,6 +6,12 @@ import java.awt.event.MouseEvent;
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 
+/**
+ * Marks a Mark as selected when it is clicked. Uses optional callbacks
+ * 
+ * @see SelectCallback
+ * @see ConnectCallback
+ */
 @SuppressWarnings("RefusedBequest")
 public class SelectListener extends MouseAdapter {
 

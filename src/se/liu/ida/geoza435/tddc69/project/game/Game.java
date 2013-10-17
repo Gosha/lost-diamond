@@ -8,6 +8,13 @@ import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
 
+/**
+ * Handles game logic.
+ * 
+ * All rules are different {@link GameComponent}. (Strategy Pattern)
+ * 
+ * @see #start()
+ */
 public class Game {
 	Board board;
 	List<Token> tokens = new ArrayList<>();

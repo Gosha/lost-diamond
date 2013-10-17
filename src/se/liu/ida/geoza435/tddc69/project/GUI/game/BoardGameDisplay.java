@@ -8,6 +8,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Board;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
+/**
+ * Contains {@link PlayerDisplay}s and {@link TokenDisplay}s
+ * 
+ * @see BoardDisplay
+ */
 @SuppressWarnings("serial")
 public class BoardGameDisplay extends BoardDisplay {
 

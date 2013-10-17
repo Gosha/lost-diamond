@@ -12,6 +12,24 @@ import javax.swing.WindowConstants;
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 
+/**
+ * Layout for the Editor.
+ * 
+ * <pre>
+ *         BorderLayout
+ *       /              \
+ *      |                |
+ *   GridLayout in WEST
+ *      \  /
+ *      +--+-------------+
+ *      +--+             |
+ *      +--+             |
+ *      +--+             |
+ *      +--+-------------+
+ *          \           /
+ *          BoardDisplay in CENTER
+ * </pre>
+ */
 @SuppressWarnings("serial")
 public class EditorView extends JFrame {
 

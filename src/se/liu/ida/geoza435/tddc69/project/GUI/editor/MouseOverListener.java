@@ -6,6 +6,12 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JComponent;
 
+/**
+ * Changes the cursor to HAND_CURSOR on mouse-over.
+ * 
+ * Can apply to any component, but used only for MarkDisplays and
+ * ConnectionDisplays
+ */
 @SuppressWarnings("RefusedBequest")
 public class MouseOverListener extends MouseAdapter {
 	JComponent component;

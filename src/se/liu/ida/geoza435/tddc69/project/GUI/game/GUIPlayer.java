@@ -13,6 +13,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 
+/**
+ * Gives a player using the GUI ability to make choices.
+ * 
+ * The actual visualization of the player is in {@link PlayerDisplay}.
+ */
 public class GUIPlayer extends Player {
 
 	BoardGameDisplay boardGameDisplay;

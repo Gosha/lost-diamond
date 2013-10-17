@@ -2,6 +2,11 @@ package se.liu.ida.geoza435.tddc69.project.GUI;
 
 import java.util.List;
 
+/**
+ * Handles the MouseListeners for the radio-like button in the EditorView.
+ * 
+ * Uses the State Pattern
+ */
 public class MouseListenerHandler {
 
 	BoardDisplay bd;

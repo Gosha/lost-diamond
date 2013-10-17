@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * A simple slightly thread-safe Observer/Observable Pattern implementation.
+ * 
+ * A {@link Observer} interface is defined, too.
+ */
 @SuppressWarnings("AbstractClassWithoutAbstractMethods")
 public abstract class Observable {
 	private List<Observer> observers;

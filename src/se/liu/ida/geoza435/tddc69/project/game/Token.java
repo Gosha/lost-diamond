@@ -2,6 +2,12 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
+/**
+ * Knows where a token is and which GameComponent made it.
+ * 
+ * When a player flips a token, the corresponding gameComponent.visit(...) is
+ * called.
+ */
 public class Token extends Observable {
 	private Mark at;
 	GameComponent gameComponent;

@@ -6,6 +6,15 @@ import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
+/**
+ * Holds information about type and position.
+ * 
+ * Knows how to traverse the Board.
+ * 
+ * Uses the Observer/Observable pattern. Known observers are:
+ * {@link se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay}
+ * {@link se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay}
+ */
 @SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Mark extends Observable implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -60,6 +69,15 @@ public class Mark extends Observable implements Serializable {
 		this.type = markType;
 	}
 
+	/**
+	 * Get a list of reachable Marks
+	 * 
+	 * @param upTo
+	 *            Maximal distance
+	 * @param ofType
+	 *            Only of this type
+	 * @return List of MarkListContainer
+	 */
 	public ArrayList<MarkListContainer> getNextMarks(Integer upTo,
 			ConnectionType ofType) {
 		ArrayList<MarkListContainer> retMarks = new ArrayList<>();

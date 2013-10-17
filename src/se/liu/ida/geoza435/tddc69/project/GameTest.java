@@ -6,12 +6,15 @@ import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
 
+/**
+ * Simple CLI, non-interactive test of the Game
+ */
 public final class GameTest {
 	private GameTest() {}
 
 	public static void main(String[] args) throws Exception {
 		Game game = new Game();
-		game.loadBoard("/home/gosha/small.dat");
+		game.loadBoard("africa.dat");
 		Player p1 = new TextPlayer(game.getBoard()
 				.getMarksOfType(MarkType.start).get(0), game);
 		game.addPlayer(p1);

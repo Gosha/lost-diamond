@@ -14,6 +14,10 @@ import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 
+/**
+ * Loads a Board from a file when the Load button is pressed and a file is
+ * chosen.
+ */
 public class LoadListener implements ActionListener {
 
 	BoardDisplay bd;
@@ -49,6 +53,7 @@ public class LoadListener implements ActionListener {
 				oistream.close();
 				fistream.close();
 			} catch (IOException | ClassNotFoundException e) {
+				// TODO Display error
 				e.printStackTrace();
 			}
 		}

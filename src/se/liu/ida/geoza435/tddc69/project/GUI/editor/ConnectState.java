@@ -5,6 +5,9 @@ import javax.swing.JButton;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MouseListenerHandler;
 
+/**
+ * Adds {@link SelectListener} with {@link ConnectCallback}s to all Marks
+ */
 public class ConnectState extends AbstractEditorState {
 
 	public ConnectState(JButton button) {
