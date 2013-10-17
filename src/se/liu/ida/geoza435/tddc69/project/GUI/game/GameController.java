@@ -29,7 +29,7 @@ public final class GameController {
 				MarkType.start).get(0), gameView.boardGameDisplay, game);
 
 		game.addPlayer(p1);
-		game.addPlayer(p2);
+		// game.addPlayer(p2);
 		game.addPlayer(p3);
 
 		game.init();
