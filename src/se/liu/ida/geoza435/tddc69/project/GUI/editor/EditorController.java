@@ -41,23 +41,23 @@ public class EditorController {
 				// Radio buttons
 				JButton moveButton = editorView.getMoveButton();
 				moveButton.addActionListener(
-						new StateButtonListener(mlh, editorView,
-								new MoveState(editorView, moveButton)));
+						new StateButtonListener(mlh,
+								new MoveState(moveButton)));
 				JButton addButton = editorView.getAddButton();
 				addButton.addActionListener(
-						new StateButtonListener(mlh, editorView,
+						new StateButtonListener(mlh,
 								new AddState(addButton)));
 				JButton deleteButton = editorView.getDeleteButton();
 				deleteButton.addActionListener(
-						new StateButtonListener(mlh, editorView,
+						new StateButtonListener(mlh,
 								new DeleteState(deleteButton)));
 				JButton connectButton = editorView.getConnectButton();
 				connectButton.addActionListener(
-						new StateButtonListener(mlh, editorView,
+						new StateButtonListener(mlh,
 								new ConnectState(connectButton)));
 				JButton typeButton = editorView.getTypeButton();
 				typeButton.addActionListener(
-						new StateButtonListener(mlh, editorView,
+						new StateButtonListener(mlh,
 								new TypeState(typeButton)));
 
 				// Load/Save buttons
@@ -69,7 +69,7 @@ public class EditorController {
 
 				editorView.getBoardDisplay().loadBoard();
 
-				mlh.setState(new MoveState(editorView, moveButton));
+				mlh.setState(new MoveState(moveButton));
 
 				editorView.setVisible(true);
 			}

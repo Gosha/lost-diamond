@@ -17,7 +17,6 @@ public class StateButtonListener implements ActionListener {
 	AbstractEditorState state;
 
 	public StateButtonListener(MouseListenerHandler mlh,
-			EditorView editorView,
 			AbstractEditorState state) {
 		this.mlh = mlh;
 		this.state = state;
