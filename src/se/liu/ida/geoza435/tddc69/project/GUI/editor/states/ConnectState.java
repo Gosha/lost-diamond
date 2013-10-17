@@ -1,8 +1,12 @@
-package se.liu.ida.geoza435.tddc69.project.GUI.editor;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor.states;
 
 import javax.swing.JButton;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.MouseListenerHandler;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners.ConnectCallback;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners.MouseOverListener;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners.SelectListener;
 
 /**
  * Adds {@link SelectListener} with {@link ConnectCallback}s to all Marks

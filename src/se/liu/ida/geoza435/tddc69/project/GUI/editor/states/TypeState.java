@@ -1,9 +1,13 @@
-package se.liu.ida.geoza435.tddc69.project.GUI.editor;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor.states;
 
 import javax.swing.JButton;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.MouseListenerHandler;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners.ConnectionTypeListener;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners.MarkTypeListener;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners.MouseOverListener;
 
 /**
  * Adds {@link MarkTypeListener} to all {@link MarkDisplay}

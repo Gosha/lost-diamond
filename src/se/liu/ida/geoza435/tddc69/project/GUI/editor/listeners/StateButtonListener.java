@@ -1,7 +1,11 @@
-package se.liu.ida.geoza435.tddc69.project.GUI.editor;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.EditorView;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.MouseListenerHandler;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.states.AbstractEditorState;
 
 /**
  * Common behavior for a state-button listener.

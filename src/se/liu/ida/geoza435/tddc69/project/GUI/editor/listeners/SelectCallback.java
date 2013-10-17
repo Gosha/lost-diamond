@@ -1,4 +1,5 @@
-package se.liu.ida.geoza435.tddc69.project.GUI.editor;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners;
+
 
 /**
  * Trying out using callbacks instead of subclasses.

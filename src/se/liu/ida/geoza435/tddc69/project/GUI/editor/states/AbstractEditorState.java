@@ -1,4 +1,4 @@
-package se.liu.ida.geoza435.tddc69.project.GUI.editor;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor.states;
 
 import java.awt.Cursor;
 import java.awt.event.MouseListener;
@@ -8,9 +8,10 @@ import javax.swing.JButton;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.MouseListenerHandler;
 
 @SuppressWarnings("AbstractClassWithoutAbstractMethods")
-abstract class AbstractEditorState {
+public abstract class AbstractEditorState {
 
 	JButton button;
 

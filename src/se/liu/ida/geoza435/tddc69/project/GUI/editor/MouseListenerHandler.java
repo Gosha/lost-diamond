@@ -5,6 +5,7 @@ import java.util.List;
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.ConnectionDisplay;
 import se.liu.ida.geoza435.tddc69.project.GUI.MarkDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.states.AbstractEditorState;
 
 /**
  * Handles the MouseListeners for the radio-like button in the EditorView.

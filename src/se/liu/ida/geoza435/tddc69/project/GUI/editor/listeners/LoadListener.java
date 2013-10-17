@@ -1,4 +1,4 @@
-package se.liu.ida.geoza435.tddc69.project.GUI.editor;
+package se.liu.ida.geoza435.tddc69.project.GUI.editor.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +11,7 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import se.liu.ida.geoza435.tddc69.project.GUI.BoardDisplay;
+import se.liu.ida.geoza435.tddc69.project.GUI.editor.MouseListenerHandler;
 import se.liu.ida.geoza435.tddc69.project.game.Board;
 
 /**
