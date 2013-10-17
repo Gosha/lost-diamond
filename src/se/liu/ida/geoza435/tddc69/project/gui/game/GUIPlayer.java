@@ -6,12 +6,12 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import se.liu.ida.geoza435.tddc69.project.game.Choice;
-import se.liu.ida.geoza435.tddc69.project.game.Debug;
+import se.liu.ida.geoza435.tddc69.project.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 
 /**
  * Gives a player using the GUI ability to make choices.

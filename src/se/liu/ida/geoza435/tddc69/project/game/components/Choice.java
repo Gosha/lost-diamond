@@ -1,4 +1,6 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
+
+import se.liu.ida.geoza435.tddc69.project.game.Player;
 
 /**
  * A single choice is first chosen and then executed.

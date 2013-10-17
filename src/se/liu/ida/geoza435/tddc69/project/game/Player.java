@@ -3,7 +3,10 @@ package se.liu.ida.geoza435.tddc69.project.game;
 import java.util.ArrayList;
 import java.util.List;
 
+import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
+import se.liu.ida.geoza435.tddc69.project.game.components.GameComponent;
 import se.liu.ida.geoza435.tddc69.project.gui.game.GUIPlayer;
+import se.liu.ida.geoza435.tddc69.project.Debug;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
 /**
@@ -19,7 +22,7 @@ abstract public class Player extends Observable {
 	Mark at;
 	private List<Token> tokens = new ArrayList<>();
 	Game game;
-	boolean hasMoved = false;
+	private boolean hasMoved = false;
 
 	int playerId;
 	static int staticId = 1;
@@ -52,7 +55,7 @@ abstract public class Player extends Observable {
 		if (to != null) {
 			setAt(to);
 		}
-		hasMoved = true;
+		setHasMoved(true);
 	}
 
 	public boolean isOn(MarkType... types) {
@@ -138,5 +141,13 @@ abstract public class Player extends Observable {
 
 	public Integer getNum() {
 		return playerId;
+	}
+
+	public boolean hasMoved() {
+		return hasMoved;
+	}
+
+	public void setHasMoved(boolean hasMoved) {
+		this.hasMoved = hasMoved;
 	}
 }

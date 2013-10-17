@@ -1,4 +1,10 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
+
+import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.Mark;
+import se.liu.ida.geoza435.tddc69.project.game.MarkType;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 /**
  * Handles logic for what happens when one flips a {@link Token} with Africas
@@ -18,7 +24,7 @@ public class AfricasStar extends GameComponent {
 
 	@Override
 	public void init() {
-		game.tokens.add(new Token(game.board
+		game.getTokens().add(new Token(game.getBoard()
 				.getMarksOfType(MarkType.city)
 				.get(0), this));
 	}
@@ -27,7 +33,7 @@ public class AfricasStar extends GameComponent {
 	public void visit(Token token, Player player) {
 		player.addToken(token);
 		token.setAt(null);
-		game.tokens.remove(token);
+		game.getTokens().remove(token);
 	}
 
 	@Override
@@ -38,7 +44,7 @@ public class AfricasStar extends GameComponent {
 	@Override
 	public void postTurn(Player player) {
 		if (player.hasToken(this) && player.isOn(MarkType.start))
-			game.gameEnded = true;
+			game.setGameEnded(true);
 	}
 
 }

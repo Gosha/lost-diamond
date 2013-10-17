@@ -1,6 +1,10 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
 
 import java.util.List;
+
+import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 /**
  * All game rules are subclasses of GameComponent.
@@ -16,17 +20,17 @@ import java.util.List;
 		"AbstractClassWithoutAbstractMethods" })
 public abstract class GameComponent {
 
-	Game game;
+	protected Game game;
 
-	GameComponent(Game game) {
+	protected GameComponent(Game game) {
 		this.game = game;
 	}
 
-	void init() {}
+	public void init() {}
 
-	void visit(Token token, Player player) {}
+	public void visit(Token token, Player player) {}
 
-	void addChoices(Player player, List<Choice> choices) {}
+	public void addChoices(Player player, List<Choice> choices) {}
 
 	public void addPostMoveChoices(Player player, List<Choice> choices) {}
 

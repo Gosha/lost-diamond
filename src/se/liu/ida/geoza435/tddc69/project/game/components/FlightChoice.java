@@ -1,6 +1,12 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
 
 import java.util.List;
+
+import se.liu.ida.geoza435.tddc69.project.Debug;
+import se.liu.ida.geoza435.tddc69.project.game.ConnectionType;
+import se.liu.ida.geoza435.tddc69.project.game.Mark;
+import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
 
 /**
  * Presents choices of Marks the player can fly to.
@@ -14,7 +20,7 @@ public class FlightChoice implements Choice {
 		player.move(to);
 		// noinspection MagicNumber
 		player.takeMoney(3000);
-		player.hasMoved = true;
+		player.setHasMoved(true);
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
 import se.liu.ida.geoza435.tddc69.project.Observable;
+import se.liu.ida.geoza435.tddc69.project.game.components.GameComponent;
 
 /**
  * Knows where a token is and which GameComponent made it.

@@ -1,6 +1,5 @@
 package se.liu.ida.geoza435.tddc69.project;
 
-import se.liu.ida.geoza435.tddc69.project.game.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.Player;

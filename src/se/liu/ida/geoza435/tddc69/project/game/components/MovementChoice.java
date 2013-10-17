@@ -1,7 +1,15 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import se.liu.ida.geoza435.tddc69.project.Debug;
+import se.liu.ida.geoza435.tddc69.project.game.ConnectionType;
+import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.Mark;
+import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
+import se.liu.ida.geoza435.tddc69.project.game.MarkType;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
 
 /**
  * Gives a Player a standard movement choice. A list of MarkListContainer is
@@ -21,7 +29,7 @@ public class MovementChoice implements Choice {
 	@Override
 	public void execute(Player player) {
 		player.move(to);
-		player.hasMoved = true;
+		player.setHasMoved(true);
 	}
 
 	@Override

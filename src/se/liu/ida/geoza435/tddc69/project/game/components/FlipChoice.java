@@ -1,4 +1,9 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
+
+import se.liu.ida.geoza435.tddc69.project.Debug;
+import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 /**
  * Presents the choice of paying for flipping a Token or throwing the die. If
@@ -11,7 +16,7 @@ public class FlipChoice implements Choice {
 	boolean shouldPay;
 	Game game;
 
-	protected FlipChoice(Game game) {
+	public FlipChoice(Game game) {
 		this.game = game;
 	}
 

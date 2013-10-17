@@ -1,6 +1,11 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
 
 import java.util.List;
+
+import se.liu.ida.geoza435.tddc69.project.game.ConnectionType;
+import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.MarkType;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
 
 /**
  * A player can chose to Fly if he is standing on a city, there is a flight

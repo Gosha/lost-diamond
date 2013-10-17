@@ -9,9 +9,9 @@ import java.awt.Rectangle;
 
 import javax.swing.JLabel;
 
+import se.liu.ida.geoza435.tddc69.project.Debug;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 import se.liu.ida.geoza435.tddc69.project.Observer;
-import se.liu.ida.geoza435.tddc69.project.game.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.Position;
 import se.liu.ida.geoza435.tddc69.project.gui.DrawingTools;

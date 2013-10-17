@@ -6,6 +6,14 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import se.liu.ida.geoza435.tddc69.project.Debug;
+import se.liu.ida.geoza435.tddc69.project.game.components.AfricasStar;
+import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
+import se.liu.ida.geoza435.tddc69.project.game.components.DoNothing;
+import se.liu.ida.geoza435.tddc69.project.game.components.Flight;
+import se.liu.ida.geoza435.tddc69.project.game.components.GameComponent;
+import se.liu.ida.geoza435.tddc69.project.game.components.StandardMovement;
+import se.liu.ida.geoza435.tddc69.project.game.components.Tokens;
 import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
 
 /**
@@ -21,7 +29,7 @@ public class Game {
 	List<Player> players = new ArrayList<>();
 	List<GameComponent> gameComponents = new ArrayList<>();
 	Player currentPlayer = null;
-	boolean gameEnded = false;
+	private boolean gameEnded = false;
 	private boolean initialized = false;
 
 	public Game() {
@@ -73,7 +81,7 @@ public class Game {
 	private void playTurn(Player player) {
 		List<Choice> choices = new ArrayList<>();
 
-		player.hasMoved = false;
+		player.setHasMoved(false);
 
 		for (GameComponent g : gameComponents) {
 			g.addChoices(player, choices);
@@ -84,7 +92,7 @@ public class Game {
 		choices.clear();
 
 		// noinspection ConstantConditions
-		if (player.hasMoved) {
+		if (player.hasMoved()) {
 			for (GameComponent g : gameComponents) {
 				g.addPostMoveChoices(player, choices);
 			}
@@ -106,7 +114,7 @@ public class Game {
 	}
 
 	private boolean isGameEnd() {
-		return gameEnded;
+		return isGameEnded();
 	}
 
 	public void loadBoard(String file) {
@@ -156,6 +164,14 @@ public class Game {
 				return t;
 		}
 		return null;
+	}
+
+	public boolean isGameEnded() {
+		return gameEnded;
+	}
+
+	public void setGameEnded(boolean gameEnded) {
+		this.gameEnded = gameEnded;
 	}
 
 }

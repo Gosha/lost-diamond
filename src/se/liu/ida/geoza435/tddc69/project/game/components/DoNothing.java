@@ -1,6 +1,11 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
 
 import java.util.List;
+
+import se.liu.ida.geoza435.tddc69.project.Debug;
+import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.MarkType;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
 
 /**
  * Under some circumstances a player can chose to do nothing;
@@ -12,12 +17,12 @@ import java.util.List;
 @SuppressWarnings("RefusedBequest")
 public class DoNothing extends GameComponent implements Choice {
 
-	DoNothing(Game game) {
+	public DoNothing(Game game) {
 		super(game);
 	}
 
 	@Override
-	void addChoices(Player player, List<Choice> choices) {
+	public void addChoices(Player player, List<Choice> choices) {
 		if (player.isOn(MarkType.city))
 			choices.add(this);
 	}

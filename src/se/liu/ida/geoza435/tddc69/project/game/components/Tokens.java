@@ -1,6 +1,9 @@
-package se.liu.ida.geoza435.tddc69.project.game;
+package se.liu.ida.geoza435.tddc69.project.game.components;
 
 import java.util.List;
+
+import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
 
 /**
  * When a player stands on a token or has just moved to a Token he can chose to
@@ -9,12 +12,12 @@ import java.util.List;
 @SuppressWarnings("RefusedBequest")
 public class Tokens extends GameComponent {
 
-	Tokens(Game game) {
+	public Tokens(Game game) {
 		super(game);
 	}
 
 	@Override
-	void addChoices(Player player, List<Choice> choices) {
+	public void addChoices(Player player, List<Choice> choices) {
 		if (player.standsOnToken())
 			choices.add(new FlipChoice(game));
 	}
