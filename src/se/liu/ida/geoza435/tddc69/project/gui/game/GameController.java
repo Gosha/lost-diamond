@@ -5,7 +5,6 @@ import javax.swing.SwingUtilities;
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
-import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 /**
  * Sets up a {@link Game} and a GUI (BoardGameDisplay).
@@ -39,15 +38,7 @@ public final class GameController {
 				gameView.initUI();
 				gameView.boardGameDisplay.loadBoard();
 
-				// TODO Move to BoardGameDisplay/GameView
-				for (Token token : game.getTokens()) {
-					gameView.boardGameDisplay.addTokenDisplay(token);
-				}
-
-				// TODO Add to load
-				gameView.boardGameDisplay.addPlayerDisplay(p1);
-				// gameView.boardGameDisplay.addPlayerDisplay(p2);
-				gameView.boardGameDisplay.addPlayerDisplay(p3);
+				gameView.loadGame();
 			}
 
 		});

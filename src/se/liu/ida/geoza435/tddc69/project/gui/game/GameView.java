@@ -7,6 +7,8 @@ import javax.swing.JScrollPane;
 import javax.swing.WindowConstants;
 
 import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Token;
 
 /**
  * Sets up the GameView.
@@ -45,6 +47,16 @@ public class GameView extends JFrame {
 		setSize(600, 500);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
+	}
+
+	public void loadGame() {
+		for (Token token : game.getTokens()) {
+			boardGameDisplay.addTokenDisplay(token);
+		}
+
+		for (Player p : game.getPlayers()) {
+			boardGameDisplay.addPlayerDisplay(p);
+		}
 	}
 
 }
