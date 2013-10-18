@@ -6,11 +6,11 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import se.liu.ida.geoza435.tddc69.project.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Mark;
 import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
+import se.liu.ida.geoza435.tddc69.project.game.Token;
 import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 
 /**
@@ -64,11 +64,13 @@ public class GUIPlayer extends Player {
 			listeners.add(listener);
 		}
 
+		// Has to wait until the value is set in the Swing Thread
 		clickedMark.waitUntilSet();
 
 		for (MarkClickListener mcl : listeners) {
 			mcl.remove();
 		}
+		boardGameDisplay.getBoard().selectNone();
 
 		return clickedMark.getMarkDisplay().mark;
 	}
@@ -80,8 +82,14 @@ public class GUIPlayer extends Player {
 			response = JOptionPane.showConfirmDialog(boardGameDisplay, message,
 					"Choose", JOptionPane.YES_NO_OPTION);
 		}
-		Debug.o(response);
-		return response != 0;
+		// 0 is Yes
+		return response == 0;
+	}
+
+	@Override
+	public void visited(Token token) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

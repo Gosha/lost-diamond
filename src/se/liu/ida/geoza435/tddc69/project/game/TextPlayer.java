@@ -44,4 +44,9 @@ public class TextPlayer extends Player {
 		return response;
 	}
 
+	@Override
+	public void visited(Token token) {
+		System.out.println("Got a token: " + token);
+	}
+
 }

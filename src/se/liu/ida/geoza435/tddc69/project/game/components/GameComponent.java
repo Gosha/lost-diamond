@@ -31,7 +31,9 @@ public abstract class GameComponent {
 
 	public void init() {}
 
-	public void visit(Token token, Player player) {}
+	public void visit(Token token, Player player) {
+		player.visited(token);
+	}
 
 	public void addChoices(Player player, List<Choice> choices) {}
 

@@ -150,4 +150,6 @@ abstract public class Player extends Observable {
 	public void setHasMoved(boolean hasMoved) {
 		this.hasMoved = hasMoved;
 	}
+
+	public abstract void visited(Token token);
 }
