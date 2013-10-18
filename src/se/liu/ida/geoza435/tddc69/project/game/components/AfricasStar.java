@@ -18,22 +18,22 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
 @SuppressWarnings("RefusedBequest")
 public class AfricasStar extends GameComponent {
 
-	public AfricasStar(Game game) {
+	Tokens tokens;
+
+	public AfricasStar(Game game, Tokens tokens) {
 		super(game);
+		this.tokens = tokens;
 	}
 
 	@Override
 	public void init() {
-		game.getTokens().add(new Token(game.getBoard()
-				.getMarksOfType(MarkType.city)
-				.get(0), this));
+		tokens.addOne(this);
 	}
 
 	@Override
 	public void visit(Token token, Player player) {
 		player.addToken(token);
-		token.setAt(null);
-		game.getTokens().remove(token);
+		tokens.removeToken(token);
 	}
 
 	@Override

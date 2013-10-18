@@ -36,8 +36,9 @@ public class Game {
 		this.board = new Board();
 		this.gameComponents.add(new StandardMovement(this));
 		this.gameComponents.add(new Flight(this));
-		this.gameComponents.add(new Tokens(this));
-		this.gameComponents.add(new AfricasStar(this));
+		Tokens tokens = new Tokens(this);
+		this.gameComponents.add(tokens);
+		this.gameComponents.add(new AfricasStar(this, tokens));
 		this.gameComponents.add(new DoNothing(this));
 	}
 

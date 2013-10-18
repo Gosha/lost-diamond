@@ -28,7 +28,7 @@ public class TokenDisplay extends JLabel implements Observer {
 		// TODO Finish TokenDisplay
 		// noinspection DynamicRegexReplaceableByCompiledPattern
 		super(token.getGameComponent().getClass().getCanonicalName()
-				.split("\\.")[7]);
+				.split("\\.")[8]);
 
 		Position position = token.getAt().getPosition();
 		this.setBounds(0, 0, 100, 50);

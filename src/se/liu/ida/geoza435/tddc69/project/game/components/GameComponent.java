@@ -15,6 +15,9 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  * For instance, the rules for {@link Flight} has no initialization to do and
  * therefore doesn't override init(). However, AfricasStar has to use the init()
  * to put a token on the board, but doesn't give any additional choices.
+ * 
+ * Dependencies are created by adding parameters to the constructor. As in
+ * {@link AfricasStar}
  */
 @SuppressWarnings({ "NoopMethodInAbstractClass",
 		"AbstractClassWithoutAbstractMethods" })
