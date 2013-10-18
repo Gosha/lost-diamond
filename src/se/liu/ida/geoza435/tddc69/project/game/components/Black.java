@@ -16,8 +16,7 @@ public class Black extends GameComponent {
 	@Override
 	public void init() {
 		super.init();
-		// 20 because there are supposed to be 6 in the original game.
-		tokens.addPercentally(this, 20);
+		tokens.addNumOfTokens(this, 6);
 	}
 
 	@Override

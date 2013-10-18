@@ -49,8 +49,7 @@ public class Tokens extends GameComponent {
 		game.getTokens().add(new Token(mark, gameComponent));
 	}
 
-	public void addPercentally(GameComponent gameComponent, Integer percent) {
-		Integer count = (int) Math.round(((initialMarksCnt * percent) / 100.0));
+	public void addNumOfTokens(GameComponent gameComponent, Integer count) {
 		for (int i = 0; !availableMarks.isEmpty() && i < count; i++) {
 			addOne(gameComponent);
 		}
