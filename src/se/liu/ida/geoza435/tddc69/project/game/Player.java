@@ -152,4 +152,8 @@ abstract public class Player extends Observable {
 	}
 
 	public abstract void visited(Token token);
+
+	public void setMoney(int value) {
+		money = value;
+	}
 }

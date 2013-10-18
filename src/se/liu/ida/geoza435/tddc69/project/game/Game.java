@@ -13,6 +13,8 @@ import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 import se.liu.ida.geoza435.tddc69.project.game.components.DoNothing;
 import se.liu.ida.geoza435.tddc69.project.game.components.Flight;
 import se.liu.ida.geoza435.tddc69.project.game.components.GameComponent;
+import se.liu.ida.geoza435.tddc69.project.game.components.Jewel;
+import se.liu.ida.geoza435.tddc69.project.game.components.Robber;
 import se.liu.ida.geoza435.tddc69.project.game.components.StandardMovement;
 import se.liu.ida.geoza435.tddc69.project.game.components.Tokens;
 import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
@@ -40,7 +42,11 @@ public class Game {
 		Tokens tokens = new Tokens(this);
 		this.gameComponents.add(tokens);
 		this.gameComponents.add(new AfricasStar(this, tokens));
+		this.gameComponents.add(new Jewel(this, tokens, 2, 5000, "Ruby"));
+		this.gameComponents.add(new Jewel(this, tokens, 3, 4000, "Emerald"));
+		this.gameComponents.add(new Jewel(this, tokens, 6, 3000, "Topaz"));
 		this.gameComponents.add(new Black(this, tokens));
+		this.gameComponents.add(new Robber(this, tokens));
 		this.gameComponents.add(new DoNothing(this));
 	}
 
