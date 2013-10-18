@@ -8,6 +8,7 @@ import java.util.List;
 
 import se.liu.ida.geoza435.tddc69.project.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.components.AfricasStar;
+import se.liu.ida.geoza435.tddc69.project.game.components.Black;
 import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 import se.liu.ida.geoza435.tddc69.project.game.components.DoNothing;
 import se.liu.ida.geoza435.tddc69.project.game.components.Flight;
@@ -39,6 +40,7 @@ public class Game {
 		Tokens tokens = new Tokens(this);
 		this.gameComponents.add(tokens);
 		this.gameComponents.add(new AfricasStar(this, tokens));
+		this.gameComponents.add(new Black(this, tokens));
 		this.gameComponents.add(new DoNothing(this));
 	}
 
