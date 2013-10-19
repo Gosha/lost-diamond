@@ -18,7 +18,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
 public class Tokens extends GameComponent {
 
 	private List<Mark> availableMarks;
-	private Integer initialMarksCnt;
 
 	public Tokens(Game game) {
 		super(game);
@@ -29,7 +28,6 @@ public class Tokens extends GameComponent {
 		super.init();
 		this.availableMarks = new ArrayList<>(game.getBoard().getMarksOfType(
 				MarkType.city));
-		this.initialMarksCnt = availableMarks.size();
 		Collections.shuffle(this.availableMarks);
 	}
 
