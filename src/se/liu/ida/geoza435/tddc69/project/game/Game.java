@@ -9,6 +9,7 @@ import java.util.List;
 import se.liu.ida.geoza435.tddc69.project.Debug;
 import se.liu.ida.geoza435.tddc69.project.game.components.AfricasStar;
 import se.liu.ida.geoza435.tddc69.project.game.components.Black;
+import se.liu.ida.geoza435.tddc69.project.game.components.Boat;
 import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 import se.liu.ida.geoza435.tddc69.project.game.components.DoNothing;
 import se.liu.ida.geoza435.tddc69.project.game.components.Flight;
@@ -47,7 +48,10 @@ public class Game {
 		this.gameComponents.add(new Jewel(this, tokens, 6, 3000, "Topaz"));
 		this.gameComponents.add(new Black(this, tokens));
 		this.gameComponents.add(new Robber(this, tokens));
-		this.gameComponents.add(new DoNothing(this));
+		DoNothing doNothing = new DoNothing(this);
+		this.gameComponents.add(doNothing);
+		this.gameComponents.add(new Boat(this, doNothing));
+		this.gameComponents.add(new Black(this, tokens));
 	}
 
 	public void addPlayer(Player player) {
@@ -119,6 +123,7 @@ public class Game {
 			Choice choice = player.presentChoices(choices);
 			choice.choose(player);
 			choice.execute(player);
+			player.setLastChoice(choice);
 		}
 	}
 

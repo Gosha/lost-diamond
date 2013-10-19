@@ -22,6 +22,7 @@ abstract public class Player extends Observable {
 	Mark at;
 	private List<Token> tokens = new ArrayList<>();
 	Game game;
+	private Choice lastChoice;
 	private boolean hasMoved = false;
 
 	int playerId;
@@ -155,5 +156,13 @@ abstract public class Player extends Observable {
 
 	public void setMoney(int value) {
 		money = value;
+	}
+
+	public Choice lastChoice() {
+		return lastChoice;
+	}
+
+	public void setLastChoice(Choice choice) {
+		this.lastChoice = choice;
 	}
 }
