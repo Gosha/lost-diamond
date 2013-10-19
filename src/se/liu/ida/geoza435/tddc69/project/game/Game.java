@@ -100,7 +100,12 @@ public class Game {
 			g.addChoices(player, choices);
 		}
 
-		playerChoices(player, choices);
+		if (!choices.isEmpty()) {
+			Choice choice = player.presentChoices(choices);
+			choice.choose(player);
+			choice.execute(player);
+			player.setLastChoice(choice);
+		}
 
 		choices.clear();
 
@@ -111,19 +116,14 @@ public class Game {
 			}
 		}
 
-		playerChoices(player, choices);
-
-		for (GameComponent g : gameComponents) {
-			g.postTurn(player);
-		}
-	}
-
-	private void playerChoices(Player player, List<Choice> choices) {
 		if (!choices.isEmpty()) {
 			Choice choice = player.presentChoices(choices);
 			choice.choose(player);
 			choice.execute(player);
-			player.setLastChoice(choice);
+		}
+
+		for (GameComponent g : gameComponents) {
+			g.postTurn(player);
 		}
 	}
 
