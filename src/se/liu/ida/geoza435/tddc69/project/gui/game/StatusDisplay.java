@@ -84,6 +84,7 @@ public class StatusDisplay extends JPanel implements Observer {
 		txt = "<html>" + txt + "</html>";
 		label.setText(txt);
 		panel.setSize(label.getPreferredSize());
+		System.out.println(txt);
 		repaint();
 	}
 
