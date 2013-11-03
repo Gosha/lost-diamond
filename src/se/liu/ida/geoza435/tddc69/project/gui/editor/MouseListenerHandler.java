@@ -14,11 +14,11 @@ import se.liu.ida.geoza435.tddc69.project.gui.editor.states.AbstractEditorState;
  */
 public class MouseListenerHandler {
 
-	BoardDisplay bd;
+	BoardDisplay boardDisplay;
 	AbstractEditorState state = null;
 
 	public MouseListenerHandler(BoardDisplay bd) {
-		this.bd = bd;
+		this.boardDisplay = bd;
 	}
 
 	public void setState(AbstractEditorState state) {
@@ -30,15 +30,15 @@ public class MouseListenerHandler {
 	}
 
 	public BoardDisplay getBoardDisplay() {
-		return this.bd;
+		return this.boardDisplay;
 	}
 
 	public List<MarkDisplay> getMarkDisplays() {
-		return bd.getMarkDisplays();
+		return boardDisplay.getMarkDisplays();
 	}
 
 	public List<ConnectionDisplay> getConnectionDisplays() {
-		return bd.getConnectionDisplays();
+		return boardDisplay.getConnectionDisplays();
 	}
 
 	public void reenterState() {

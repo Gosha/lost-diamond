@@ -89,7 +89,7 @@ public class Mark extends Observable implements Serializable {
 	 * Actually searches the board graph. Pretty much does a recursive DFS.
 	 * 
 	 * @param upTo
-	 *            Decresas every recursion
+	 *            Decreases every recursion
 	 * @param ofType
 	 *            Only of this type - null if any type
 	 * @param retMarks
