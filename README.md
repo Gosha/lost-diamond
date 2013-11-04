@@ -5,15 +5,12 @@ There's a map editor and a game.
 
 Usage
 =====
-Run the game
+Running:
 
     ant
     java -jar Game.jar
-    
-Run the editor
-
-    cd bin
-    java se.liu.ida.geoza435.tddc69.project.GUI.editor.Editor
+    #or
+    java -jar Editor.jar
     
 Screenshots
 ===========
