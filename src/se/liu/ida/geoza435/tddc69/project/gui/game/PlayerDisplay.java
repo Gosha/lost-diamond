@@ -51,6 +51,7 @@ public class PlayerDisplay extends JLabel implements Observer {
 	protected void paintComponent(Graphics arg0) {
 		Graphics2D g2d = DrawingTools.setupGraphics(arg0);
 		g2d.setColor(color);
+		// I am aware that these are magic numbers, but so is drawing.
 		g2d.fillOval(5, 0, 30, 30);
 		Polygon p = new Polygon();
 		p.addPoint(17, 10);

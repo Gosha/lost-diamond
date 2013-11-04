@@ -25,11 +25,6 @@ public class TokenDisplay extends JLabel implements Observer {
 	public static final Color COLOR = new Color(255, 255, 255);
 
 	public TokenDisplay(Token token) {
-		// TODO Finish TokenDisplay
-		// noinspection DynamicRegexReplaceableByCompiledPattern
-		super(token.getGameComponent().getClass().getCanonicalName()
-				.split("\\.")[8]);
-
 		Position position = token.getAt().getPosition();
 		this.setBounds(0, 0, 100, 50);
 		this.setLocation(position.getX(), position.getY());

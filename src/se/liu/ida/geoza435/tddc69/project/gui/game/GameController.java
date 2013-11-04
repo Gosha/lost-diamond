@@ -12,11 +12,14 @@ import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
  * Also fires up the actual game.
  */
 public final class GameController {
+	final GameView gameView;
+	final Game game;
+
 	public GameController() throws Exception {
-		final Game game = new Game();
+		game = new Game();
 		game.loadBoard("africa.dat");
 
-		final GameView gameView = new GameView(game);
+		gameView = new GameView(game);
 
 		final TextPlayer p1 = new TextPlayer(game.getBoard().getMarksOfType(
 				MarkType.start).get(0), game);
@@ -26,7 +29,7 @@ public final class GameController {
 				MarkType.start).get(0), gameView.boardGameDisplay, game);
 
 		game.addPlayer(p1);
-		// game.addPlayer(p2);
+		game.addPlayer(p2);
 		game.addPlayer(p3);
 
 		game.init();
