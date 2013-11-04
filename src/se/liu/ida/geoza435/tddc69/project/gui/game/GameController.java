@@ -26,7 +26,7 @@ public final class GameController {
 		final TextPlayer p3 = new TextPlayer(game.getBoard().getMarksOfType(
 				MarkType.start).get(0), game);
 		final GUIPlayer p2 = new GUIPlayer(game.getBoard().getMarksOfType(
-				MarkType.start).get(0), gameView.boardGameDisplay, game);
+				MarkType.start).get(0), gameView.getBoardGameDisplay(), game);
 
 		game.addPlayer(p1);
 		game.addPlayer(p2);
@@ -39,7 +39,7 @@ public final class GameController {
 			@Override
 			public void run() {
 				gameView.initUI();
-				gameView.boardGameDisplay.loadBoard();
+				gameView.getBoardGameDisplay().loadBoard();
 
 				gameView.loadGame();
 			}

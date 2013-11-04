@@ -44,7 +44,6 @@ public class SaveListener implements ActionListener {
 				oostream.close();
 				fostream.close();
 			} catch (IOException e) {
-				// TODO Show error
 				e.printStackTrace();
 			}
 		}

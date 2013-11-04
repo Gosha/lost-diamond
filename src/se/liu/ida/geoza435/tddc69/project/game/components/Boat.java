@@ -56,7 +56,7 @@ public class Boat extends GameComponent implements Choice {
 		List<MarkListContainer> marks = player.getAt().getNextMarks(die,
 				ConnectionType.boat);
 
-		// TODO Filter out marks
+		// Not implemented: Filter out marks
 
 		Debug.o("Can go by boat to to: " + marks);
 

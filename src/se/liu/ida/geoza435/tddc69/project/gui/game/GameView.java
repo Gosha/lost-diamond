@@ -21,8 +21,8 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
 public class GameView extends JFrame {
 
 	// TODO Public variables
-	BoardGameDisplay boardGameDisplay;
-	Game game;
+	private BoardGameDisplay boardGameDisplay;
+	private Game game;
 
 	public GameView(Game game) {
 		this.game = game;
@@ -57,6 +57,10 @@ public class GameView extends JFrame {
 		for (Player p : game.getPlayers()) {
 			boardGameDisplay.addPlayerDisplay(p);
 		}
+	}
+
+	public BoardGameDisplay getBoardGameDisplay() {
+		return boardGameDisplay;
 	}
 
 }

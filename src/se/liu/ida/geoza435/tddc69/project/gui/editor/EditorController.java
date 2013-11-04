@@ -44,7 +44,6 @@ public class EditorController {
 							}
 						});
 
-				// TODO Duplicate code
 				// Radio buttons
 				JButton moveButton = editorView.getMoveButton();
 				moveButton.addActionListener(

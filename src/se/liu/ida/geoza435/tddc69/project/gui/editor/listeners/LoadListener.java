@@ -53,7 +53,6 @@ public class LoadListener implements ActionListener {
 				oistream.close();
 				fistream.close();
 			} catch (IOException | ClassNotFoundException e) {
-				// TODO Display error
 				e.printStackTrace();
 			}
 		}

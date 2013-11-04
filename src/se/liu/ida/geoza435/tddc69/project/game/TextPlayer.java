@@ -1,6 +1,5 @@
 package se.liu.ida.geoza435.tddc69.project.game;
 
-import se.liu.ida.geoza435.tddc69.project.GameTest;
 import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 
 import java.io.BufferedReader;
