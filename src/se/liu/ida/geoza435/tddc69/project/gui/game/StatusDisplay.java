@@ -24,6 +24,7 @@ public class StatusDisplay extends JPanel implements Observer {
 	JPanel panel;
 	private Game game;
 
+	@SuppressWarnings("MagicNumber")
 	public StatusDisplay(Game game) {
 		this.game = game;
 		setLayout(null);

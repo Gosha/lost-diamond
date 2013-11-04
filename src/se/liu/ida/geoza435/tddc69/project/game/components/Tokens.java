@@ -17,7 +17,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
 @SuppressWarnings("RefusedBequest")
 public class Tokens extends GameComponent {
 
-	private List<Mark> availableMarks;
+	private List<Mark> availableMarks = null;
 
 	public Tokens(Game game) {
 		super(game);

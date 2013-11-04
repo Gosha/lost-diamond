@@ -10,11 +10,19 @@ import se.liu.ida.geoza435.tddc69.project.game.MarkListContainer;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 
+/**
+ * Defines logic for how a player can move through ConnectionType.Boat.
+ * 
+ * A special rule is that if a player did nothing last turn he is allowed to go
+ * by boat for free.
+ */
+
 public class Boat extends GameComponent implements Choice {
 
 	DoNothing doNothing;
 	Mark to = null;
 	boolean isFree;
+	@SuppressWarnings("JavaDoc")
 	public final static int COST = 1000;
 
 	public Boat(Game game, DoNothing doNothing) {
@@ -42,7 +50,6 @@ public class Boat extends GameComponent implements Choice {
 	public void execute(Player player) {
 		player.move(to);
 		if (!isFree) {
-			// noinspection MagicNumber
 			player.takeMoney(COST);
 		}
 		player.setHasMoved(true);

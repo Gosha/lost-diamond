@@ -36,6 +36,7 @@ public class Game {
 	private boolean gameEnded = false;
 	private boolean initialized = false;
 
+	@SuppressWarnings("MagicNumber")
 	public Game() {
 		this.board = new Board();
 		this.gameComponents.add(new StandardMovement(this));
@@ -109,7 +110,6 @@ public class Game {
 
 		choices.clear();
 
-		// noinspection ConstantConditions
 		if (player.hasMoved()) {
 			for (GameComponent g : gameComponents) {
 				g.addPostMoveChoices(player, choices);
@@ -153,10 +153,6 @@ public class Game {
 
 	public Board getBoard() {
 		return board;
-	}
-
-	public void setBoard(Board board) {
-		this.board = board;
 	}
 
 	public List<Token> getTokens() {

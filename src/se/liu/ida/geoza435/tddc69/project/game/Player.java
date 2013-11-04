@@ -6,7 +6,6 @@ import java.util.List;
 import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 import se.liu.ida.geoza435.tddc69.project.game.components.GameComponent;
 import se.liu.ida.geoza435.tddc69.project.gui.game.GUIPlayer;
-import se.liu.ida.geoza435.tddc69.project.Debug;
 import se.liu.ida.geoza435.tddc69.project.Observable;
 
 /**
@@ -22,7 +21,7 @@ abstract public class Player extends Observable {
 	Mark at;
 	private List<Token> tokens = new ArrayList<>();
 	Game game;
-	private Choice lastChoice;
+	private Choice lastChoice = null;
 	private boolean hasMoved = false;
 
 	int playerId;
@@ -56,7 +55,7 @@ abstract public class Player extends Observable {
 		if (to != null) {
 			setAt(to);
 		}
-		setHasMoved(true);
+		hasMoved = true;
 	}
 
 	public boolean isOn(MarkType... types) {
@@ -114,17 +113,6 @@ abstract public class Player extends Observable {
 	public boolean standsOnToken() {
 		for (Token t : game.getTokens()) {
 			if (t.getAt() == this.at)
-				return true;
-		}
-		return false;
-	}
-
-	@SuppressWarnings({ "BooleanMethodNameMustStartWithQuestion",
-			"ObjectEquality" })
-	public boolean standsOnToken(GameComponent gameComponent) {
-		Debug.o(this);
-		for (Token t : game.getTokens()) {
-			if (t.getAt() == this.at && t.getGameComponent() == gameComponent)
 				return true;
 		}
 		return false;

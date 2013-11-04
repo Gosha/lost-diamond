@@ -4,6 +4,12 @@ import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
+/**
+ * Defines logic for what happens when a player flips a Token with a robber on
+ * it.
+ * 
+ * All your money is taken.
+ */
 public class Robber extends GameComponent {
 
 	Tokens tokens;

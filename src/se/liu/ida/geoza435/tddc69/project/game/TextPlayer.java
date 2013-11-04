@@ -2,21 +2,14 @@ package se.liu.ida.geoza435.tddc69.project.game;
 
 import se.liu.ida.geoza435.tddc69.project.game.components.Choice;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.List;
 
 /**
  * Simple AI-like player that doesn't require any interaction.
  * 
  * Can be used as a AI opponent in a game or as a test user.
- * 
- * @see GameTest
  */
 public class TextPlayer extends Player {
-
-	static BufferedReader stdin = new BufferedReader(new InputStreamReader(
-			System.in));
 
 	public TextPlayer(Mark at, Game game) {
 		super(at, game);

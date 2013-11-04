@@ -10,6 +10,10 @@ import se.liu.ida.geoza435.tddc69.project.gui.BoardDisplay;
 import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
 import se.liu.ida.geoza435.tddc69.project.gui.editor.MouseListenerHandler;
 
+/**
+ * Defines some default actions for Editor states.
+ */
+
 @SuppressWarnings("AbstractClassWithoutAbstractMethods")
 public abstract class AbstractEditorState {
 

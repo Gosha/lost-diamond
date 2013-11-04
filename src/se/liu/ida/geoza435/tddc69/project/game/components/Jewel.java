@@ -4,6 +4,13 @@ import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
 import se.liu.ida.geoza435.tddc69.project.game.Token;
 
+/**
+ * Defines logic for all different Tokens with Jewels on them.
+ * 
+ * Instantiated with a count of how many there should be of a specific kind and
+ * how much money one gets when it is flipped.
+ */
+
 public class Jewel extends GameComponent {
 
 	String name;
