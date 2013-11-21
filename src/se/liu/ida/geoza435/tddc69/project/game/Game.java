@@ -67,10 +67,10 @@ public class Game {
 		initialized = true;
 	}
 
-	public void start() throws Exception {
+	public void start() throws GameNotInitializedException {
 
 		if (!initialized) {
-			throw new Exception("Game not initialized");
+			throw new GameNotInitializedException("Game not initialized");
 		}
 
 		// noinspection CallToSimpleGetterFromWithinClass
@@ -78,7 +78,7 @@ public class Game {
 			try {
 				// noinspection BusyWait
 				Thread.sleep(100);
-			} catch (Exception e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			playTurn(currentPlayer);

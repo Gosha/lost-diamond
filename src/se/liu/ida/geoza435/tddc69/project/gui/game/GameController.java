@@ -3,6 +3,7 @@ package se.liu.ida.geoza435.tddc69.project.gui.game;
 import javax.swing.SwingUtilities;
 
 import se.liu.ida.geoza435.tddc69.project.game.Game;
+import se.liu.ida.geoza435.tddc69.project.game.GameNotInitializedException;
 import se.liu.ida.geoza435.tddc69.project.game.MarkType;
 import se.liu.ida.geoza435.tddc69.project.game.TextPlayer;
 
@@ -15,7 +16,7 @@ public final class GameController {
 	final GameView gameView;
 	final Game game;
 
-	public GameController() throws Exception {
+	public GameController() throws GameNotInitializedException {
 		game = new Game();
 		game.loadBoard("africa.dat");
 
