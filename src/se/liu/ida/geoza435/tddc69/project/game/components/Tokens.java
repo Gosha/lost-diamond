@@ -33,7 +33,7 @@ public class Tokens extends GameComponent {
 	@Override
 	public void addChoices(Player player, List<Choice> choices) {
 		super.addChoices(player, choices);
-		if (player.standsOnToken())
+		if (player.isOnToken())
 			choices.add(new FlipChoice(game));
 	}
 

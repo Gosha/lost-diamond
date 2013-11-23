@@ -12,7 +12,7 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
 public class ConnectCallback implements SelectCallback {
 
 	@Override
-	public boolean run(SelectListener from) {
+	public boolean didRun(SelectListener from) {
 		MarkDisplay markDisplay = from.boardDisplay.getSelectedMark();
 
 		if (markDisplay != null) {
@@ -23,9 +23,9 @@ public class ConnectCallback implements SelectCallback {
 			}
 			from.boardDisplay.selectNone();
 			from.boardDisplay.repaint();
-			return false;
-		} else {
 			return true;
+		} else {
+			return false;
 		}
 	}
 

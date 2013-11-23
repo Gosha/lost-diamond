@@ -10,12 +10,14 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * Swing thread while the Game Loop thread waits for a response.
  */
 public class ClickedMarkDisplay {
-	private MarkDisplay markDisplay = null;
+	private volatile MarkDisplay markDisplay = null;
 
 	public void waitUntilSet() {
 		synchronized (this) {
 			try {
-				this.wait();
+				while (markDisplay == null) {
+					this.wait(1000);
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

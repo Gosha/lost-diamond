@@ -9,8 +9,8 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
 /**
  * All game rules are subclasses of GameComponent.
  * 
- * Rules do many different things, therefore there are many Null-methods a
- * GameComponent may chose not to implement.
+ * Rules do many different things, therefore there are many noop-methods a
+ * GameComponent may chose whether to implement.
  * 
  * For instance, the rules for {@link Flight} has no initialization to do and
  * therefore doesn't override init(). However, AfricasStar has to use the init()
@@ -19,7 +19,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  * Dependencies are created by adding parameters to the constructor. As in
  * {@link AfricasStar}
  */
-public abstract class GameComponent {
+public class GameComponent {
 
 	protected Game game;
 

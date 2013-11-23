@@ -54,7 +54,6 @@ public class MarkDisplay extends JLabel implements Observer {
 				mark.getPosition().getX(),
 				mark.getPosition().getY(),
 				SIZE, SIZE);
-		this.setText(mark.toString());
 		this.setBounds(bounds);
 	}
 

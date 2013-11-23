@@ -76,7 +76,7 @@ public class GUIPlayer extends Player {
 	}
 
 	@Override
-	public boolean presentBinaryChoice(String message) {
+	public boolean isYesFromBinaryChoice(String message) {
 		int response = -1;
 		while (response < 0) {
 			response = JOptionPane.showConfirmDialog(boardGameDisplay, message,

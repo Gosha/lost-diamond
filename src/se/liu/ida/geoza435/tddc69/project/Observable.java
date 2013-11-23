@@ -9,7 +9,7 @@ import java.util.List;
  * 
  * A {@link Observer} interface is defined, too.
  */
-public abstract class Observable {
+public class Observable {
 	private List<Observer> observers;
 
 	protected Observable() {

@@ -6,5 +6,6 @@ package se.liu.ida.geoza435.tddc69.project.gui.editor.listeners;
  * Only used in {@link ConnectCallback}
  */
 public interface SelectCallback {
-	public boolean run(SelectListener from);
+	// I'm quite certain "did" could be interpreted as a question word.
+	public boolean didRun(SelectListener from);
 }

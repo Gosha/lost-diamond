@@ -35,7 +35,7 @@ public class Boat extends GameComponent implements Choice {
 		super.addChoices(player, choices);
 		if (player.isNextTo(ConnectionType.boat)) {
 			if (player.lastChoice() != null
-			    && (player.lastChoice().equals(doNothing)
+					&& (player.lastChoice().equals(doNothing)
 					|| (player.lastChoice().equals(this)
 					&& player.getAt().getType().equals(MarkType.boat)))) {
 				isFree = true;

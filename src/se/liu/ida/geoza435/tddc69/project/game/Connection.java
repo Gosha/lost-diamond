@@ -13,6 +13,7 @@ public class Connection implements Serializable {
 	private Mark a, b;
 	private ConnectionType type;
 
+	// Already serialized and hence I can't change these names
 	public Connection(Mark a, Mark b, ConnectionType type) {
 		this.a = a;
 		this.b = b;

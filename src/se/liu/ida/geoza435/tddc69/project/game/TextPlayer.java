@@ -20,17 +20,21 @@ public class TextPlayer extends Player {
 		for (Choice choice : choices)
 			System.out.println(choice);
 
+		// The cast sure is required, because the result is a double and get()
+		// needs an int
 		return choices.get((int) (Math.random() * (choices.size())));
 	}
 
 	@Override
 	public Mark chooseMark(List<MarkListContainer> marks) {
+		// The cast sure is required, because the result is a double and get()
+		// needs an int
 		return marks.isEmpty() ? null : marks.get(
 				(int) (Math.random() * (marks.size()))).getMark();
 	}
 
 	@Override
-	public boolean presentBinaryChoice(String message) {
+	public boolean isYesFromBinaryChoice(String message) {
 		boolean response = (int) (Math.random() + 1) != 0;
 		System.out.println(message + " " + response);
 		return response;

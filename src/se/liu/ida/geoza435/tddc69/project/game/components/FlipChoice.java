@@ -24,7 +24,7 @@ public class FlipChoice implements Choice {
 	public void choose(Player player) {
 		if (player.hasAtLeast(1000))
 			shouldPay = player
-					.presentBinaryChoice("Do you want to pay to flip?");
+					.isYesFromBinaryChoice("Do you want to pay to flip?");
 		else
 			shouldPay = false;
 	}

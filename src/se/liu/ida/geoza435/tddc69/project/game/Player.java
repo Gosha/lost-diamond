@@ -26,8 +26,8 @@ abstract public class Player extends Observable {
 
 	private static final int STARTING_MONEY = 5000;
 
-	int playerId;
-	static int staticId = 1;
+	private final int playerId;
+	private static int staticId = 1;
 
 	Integer money = STARTING_MONEY;
 
@@ -35,6 +35,7 @@ abstract public class Player extends Observable {
 		this.at = at;
 		this.game = game;
 		playerId = staticId;
+		// The point is to give each player a new ID.
 		staticId += 1;
 	}
 
@@ -100,14 +101,14 @@ abstract public class Player extends Observable {
 
 	public abstract Mark chooseMark(List<MarkListContainer> marks);
 
-	public abstract boolean presentBinaryChoice(String message);
+	public abstract boolean isYesFromBinaryChoice(String message);
 
 	public void addToken(Token token) {
 		tokens.add(token);
 		changed();
 	}
 
-	public boolean standsOnToken() {
+	public boolean isOnToken() {
 		for (Token t : game.getTokens()) {
 			if (t.getAt().equals(this.at))
 				return true;
