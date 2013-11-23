@@ -72,7 +72,7 @@ public class GUIPlayer extends Player {
 		}
 		boardGameDisplay.getBoard().selectNone();
 
-		return clickedMark.getMarkDisplay().mark;
+		return clickedMark.getMarkDisplay().getMark();
 	}
 
 	@Override

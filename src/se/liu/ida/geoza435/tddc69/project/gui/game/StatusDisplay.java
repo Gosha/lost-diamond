@@ -23,20 +23,25 @@ public class StatusDisplay extends JPanel implements Observer {
 	JPanel panel;
 	private Game game;
 
+	private static final Color FOREGROUND_COLOUR = new Color(242, 242, 242);
+	private static final Color BACKGROUND_COLOUR = new Color(0, 0, 0, 200);
+
+	private static final int START_POSITION = 20;
+
 	public StatusDisplay(Game game) {
 		this.game = game;
 		setLayout(null);
 
 		panel = new JPanel();
 		panel.setLayout(new GridLayout(0, 1));
-		panel.setBounds(20, 20, 0, 0);
+		panel.setBounds(START_POSITION, START_POSITION, 0, 0);
 
 		label = new JLabel("NOT SET");
-		label.setForeground(new Color(242, 242, 242));
+		label.setForeground(FOREGROUND_COLOUR);
 
 		panel.add(label);
 
-		panel.setBackground(new Color(0, 0, 0, 200));
+		panel.setBackground(BACKGROUND_COLOUR);
 		add(panel, BorderLayout.WEST);
 
 		setOpaque(false);

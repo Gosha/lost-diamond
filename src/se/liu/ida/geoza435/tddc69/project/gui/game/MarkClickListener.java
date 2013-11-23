@@ -28,7 +28,7 @@ public class MarkClickListener extends MouseAdapter {
 		this.clickedMarkDisplay = clickedMarkDisplay;
 
 		for (MarkDisplay aMarkDisplay : bd.getMarkDisplays()) {
-			if (aMarkDisplay.mark == mark) {
+			if (aMarkDisplay.getMark() == mark) {
 				this.markDisplay = aMarkDisplay;
 				aMarkDisplay.addMouseListener(this);
 				aMarkDisplay.setCursor(Cursor

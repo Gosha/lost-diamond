@@ -23,9 +23,12 @@ public class TokenDisplay extends JLabel implements Observer {
 	public static final int MARGIN = 5;
 	public static final Color COLOR = new Color(255, 255, 255);
 
+	private static final int WIDTH = 100;
+	private static final int HEIGHT = 100;
+
 	public TokenDisplay(Token token) {
 		Position position = token.getAt().getPosition();
-		this.setBounds(0, 0, 100, 50);
+		this.setBounds(0, 0, WIDTH, HEIGHT);
 		this.setLocation(position.getX(), position.getY());
 
 		token.observe(this);

@@ -26,6 +26,7 @@ public class PlayerDisplay extends JLabel implements Observer {
 	public final static int HEIGHT = 50;
 	public final static int WIDTH = 40;
 	public final static int Y_OFFSET = 25;
+	public final static int HEAD_SIZE = 25;
 	Color color;
 
 	public PlayerDisplay(Player player) {
@@ -50,7 +51,7 @@ public class PlayerDisplay extends JLabel implements Observer {
 		Graphics2D g2d = DrawingTools.setupGraphics(arg0);
 		g2d.setColor(color);
 		// I am aware that these are magic numbers, but so is drawing.
-		g2d.fillOval(5, 0, 30, 30);
+		g2d.fillOval(5, 0, HEAD_SIZE, HEAD_SIZE);
 		Polygon p = new Polygon();
 		p.addPoint(17, 10);
 		p.addPoint(5, HEIGHT);

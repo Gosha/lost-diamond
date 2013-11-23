@@ -22,7 +22,7 @@ public class Mark extends Observable implements Serializable {
 	private Position position;
 
 	// Not List or Collection because they aren't serializable
-	private ArrayList<Connection> connections;
+	private List<Connection> connections;
 	boolean selected;
 
 	public Mark(MarkType type, Position position) {
@@ -119,16 +119,17 @@ public class Mark extends Observable implements Serializable {
 		return retMarks;
 	}
 
-	private ArrayList<MarkListContainer> getAdjacentMarks() {
-		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
+	private List<MarkListContainer> getAdjacentMarks() {
+		List<MarkListContainer> retMarks = new ArrayList<>();
 
 		for (Connection connection : connections) {
 			Mark mark = connection.getA();
 			if (mark != this)
 				retMarks.add(new MarkListContainer(mark, connection.getType()));
-			mark = connection.getB();
-			if (mark != this)
-				retMarks.add(new MarkListContainer(mark, connection.getType()));
+			Mark nextMark = connection.getB();
+			if (nextMark != this)
+				retMarks.add(new MarkListContainer(nextMark, connection
+						.getType()));
 		}
 		return retMarks;
 	}

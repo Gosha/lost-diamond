@@ -39,7 +39,7 @@ public class DragMotionListener extends MouseAdapter {
 
 		markDisplay.setLocation(position);
 
-		markDisplay.mark.setPosition(new Position(position.x,
+		markDisplay.getMark().setPosition(new Position(position.x,
 				position.y));
 
 		markDisplay.getParent().getParent().repaint();

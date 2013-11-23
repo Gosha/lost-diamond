@@ -12,7 +12,7 @@ import java.util.List;
 public class Board implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	ArrayList<Mark> marks;
+	List<Mark> marks;
 	List<Connection> connections;
 
 	public Board() {
@@ -25,6 +25,7 @@ public class Board implements Serializable {
 	}
 
 	public void createStubBoard() {
+		// Magic numbers because it's a manual stub
 		Mark m1 = addMark(new Mark(MarkType.normal, new Position(50, 50)));
 		Mark m2 = addMark(new Mark(MarkType.boat, new Position(150, 150)));
 		Mark m3 = addMark(new Mark(MarkType.start, new Position(151, 250)));

@@ -36,6 +36,10 @@ public class Game {
 	private boolean gameEnded = false;
 	private boolean initialized = false;
 
+	private final static int rubyPrice = 5000;
+	private final static int emeraldPrice = 4000;
+	private final static int topazPrice = 3000;
+
 	public Game() {
 		this.board = new Board();
 		this.gameComponents.add(new StandardMovement(this));
@@ -43,9 +47,12 @@ public class Game {
 		Tokens tokensComponent = new Tokens(this);
 		this.gameComponents.add(tokensComponent);
 		this.gameComponents.add(new AfricasStar(this, tokensComponent));
-		this.gameComponents.add(new Jewel(this, tokensComponent, 2, 5000, "Ruby"));
-		this.gameComponents.add(new Jewel(this, tokensComponent, 3, 4000, "Emerald"));
-		this.gameComponents.add(new Jewel(this, tokensComponent, 6, 3000, "Topaz"));
+		this.gameComponents.add(new Jewel(this, tokensComponent, 2, rubyPrice,
+				"Ruby"));
+		this.gameComponents.add(new Jewel(this, tokensComponent, 3,
+				emeraldPrice, "Emerald"));
+		this.gameComponents.add(new Jewel(this, tokensComponent, 6, topazPrice,
+				"Topaz"));
 		this.gameComponents.add(new Black(this, tokensComponent));
 		this.gameComponents.add(new Robber(this, tokensComponent));
 		DoNothing doNothing = new DoNothing(this);

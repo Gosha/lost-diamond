@@ -38,7 +38,7 @@ public class AddListener extends MouseAdapter {
 					new Position(mouseEvent.getX() - MarkDisplay.SIZE / 2,
 							mouseEvent.getY() - MarkDisplay.SIZE / 2));
 			boardDisplay.getBoard().addMark(newmark);
-			Connection newConnection = new Connection(selectedMark.mark,
+			Connection newConnection = new Connection(selectedMark.getMark(),
 					newmark);
 			MarkDisplay newmd = boardDisplay.addMarkDisplay(newmark);
 			boardDisplay.addNewConnectionDisplay(newConnection);

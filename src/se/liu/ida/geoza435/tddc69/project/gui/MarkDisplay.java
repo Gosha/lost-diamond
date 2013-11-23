@@ -16,7 +16,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Mark;
  * Displays a Mark based on Type and Position
  */
 public class MarkDisplay extends JLabel implements Observer {
-	public Mark mark;
+	Mark mark;
 	Rectangle bounds;
 
 	public final static int SIZE = 40;
@@ -91,6 +91,10 @@ public class MarkDisplay extends JLabel implements Observer {
 	@Override
 	public void notifyChange(Observable observable) {
 		this.repaint();
+	}
+
+	public Mark getMark() {
+		return mark;
 	}
 
 }

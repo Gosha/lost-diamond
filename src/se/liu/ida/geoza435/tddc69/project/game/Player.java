@@ -24,10 +24,12 @@ abstract public class Player extends Observable {
 	private Choice lastChoice = null;
 	private boolean hasMoved = false;
 
+	private static final int STARTING_MONEY = 5000;
+
 	int playerId;
 	static int staticId = 1;
 
-	Integer money = 5000;
+	Integer money = STARTING_MONEY;
 
 	protected Player(Mark at, Game game) {
 		this.at = at;

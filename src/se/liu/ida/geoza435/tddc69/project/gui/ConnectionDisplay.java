@@ -25,8 +25,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Position;
 public class ConnectionDisplay extends JLabel implements Observer {
 	Connection connection;
 
+	/** Black standard color */
 	public final static Color STANDARD_COLOR = new Color(10, 10, 10);
+	/** Red flight color */
 	public final static Color FLIGHT_COLOR = new Color(200, 20, 20);
+	/** Blue boat color */
 	public final static Color BOAT_COLOR = new Color(20, 20, 200);
 
 	public ConnectionDisplay(Connection connection) {
