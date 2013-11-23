@@ -109,7 +109,7 @@ abstract public class Player extends Observable {
 
 	public boolean standsOnToken() {
 		for (Token t : game.getTokens()) {
-			if (t.getAt() == this.at)
+			if (t.getAt().equals(this.at))
 				return true;
 		}
 		return false;
@@ -117,7 +117,7 @@ abstract public class Player extends Observable {
 
 	public boolean hasToken(GameComponent gameComponent) {
 		for (Token t : tokens) {
-			if (t.getGameComponent() == gameComponent) {
+			if (t.getGameComponent().equals(gameComponent)) {
 				return true;
 			}
 		}

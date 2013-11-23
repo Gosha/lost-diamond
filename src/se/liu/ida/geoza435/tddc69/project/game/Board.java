@@ -55,10 +55,10 @@ public class Board implements Serializable {
 	public void deleteMark(Mark mark) {
 		marks.remove(mark);
 		for (final Connection connection : mark.getConnections()) {
-			if (connection.getA() != mark) {
+			if (!connection.getA().equals(mark)) {
 				connection.getA().deleteConnection(connection);
 			}
-			if (connection.getB() != mark) {
+			if (!connection.getB().equals(mark)) {
 				connection.getB().deleteConnection(connection);
 			}
 			deleteConnection(connection);
@@ -73,7 +73,7 @@ public class Board implements Serializable {
 		ArrayList<Mark> retMarks = new ArrayList<>();
 
 		for (Mark mark : marks) {
-			if (mark.getType() == type)
+			if (mark.getType().equals(type))
 				retMarks.add(mark);
 		}
 

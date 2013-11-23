@@ -173,7 +173,7 @@ public class Game {
 
 	public Token getTokenAt(Mark at) {
 		for (Token t : tokens) {
-			if (t.getAt() == at)
+			if (t.getAt().equals(at))
 				return t;
 		}
 		return null;

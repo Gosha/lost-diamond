@@ -106,7 +106,7 @@ public class Mark extends Observable implements Serializable {
 			return retMarks;
 		}
 		for (MarkListContainer mlc : this.getAdjacentMarks()) {
-			if (mlc.getMark() != from) {
+			if (!mlc.getMark().equals(from)) {
 				if (ofType == mlc.getConnectionType() || ofType == null) {
 					retMarks.add(new MarkListContainer(mlc, distance));
 
@@ -124,10 +124,10 @@ public class Mark extends Observable implements Serializable {
 
 		for (Connection connection : connections) {
 			Mark mark = connection.getA();
-			if (mark != this)
+			if (!mark.equals(this))
 				retMarks.add(new MarkListContainer(mark, connection.getType()));
 			Mark nextMark = connection.getB();
-			if (nextMark != this)
+			if (!nextMark.equals(this))
 				retMarks.add(new MarkListContainer(nextMark, connection
 						.getType()));
 		}

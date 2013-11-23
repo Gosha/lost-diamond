@@ -34,11 +34,10 @@ public class Boat extends GameComponent implements Choice {
 	public void addChoices(Player player, List<Choice> choices) {
 		super.addChoices(player, choices);
 		if (player.isNextTo(ConnectionType.boat)) {
-			// Could probably be solved some other way, but in this case I
-			// really want to check whether it is the same object.
-			if (player.lastChoice() == doNothing
-					|| (player.lastChoice() == this
-					&& player.getAt().getType() == MarkType.boat)) {
+			if (player.lastChoice() != null
+			    && (player.lastChoice().equals(doNothing)
+					|| (player.lastChoice().equals(this)
+					&& player.getAt().getType().equals(MarkType.boat)))) {
 				isFree = true;
 			} else {
 				isFree = false;

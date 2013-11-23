@@ -60,7 +60,7 @@ public class StatusDisplay extends JPanel implements Observer {
 		StringBuilder txt = new StringBuilder();
 		for (Player p : game.getPlayers()) {
 			txt.append("Player ").append(p.getNum());
-			if (game.getCurrentPlayer() == p) {
+			if (game.getCurrentPlayer().equals(p)) {
 				txt.append(" *");
 			}
 			txt.append("<br>");

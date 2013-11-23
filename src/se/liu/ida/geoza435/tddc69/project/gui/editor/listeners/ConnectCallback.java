@@ -16,7 +16,7 @@ public class ConnectCallback implements SelectCallback {
 		MarkDisplay markDisplay = from.boardDisplay.getSelectedMark();
 
 		if (markDisplay != null) {
-			if (markDisplay != from.markDisplay) {
+			if (!markDisplay.equals(from.markDisplay)) {
 				from.boardDisplay.addNewConnectionDisplay(new Connection(
 						markDisplay.getMark(),
 						from.markDisplay.getMark()));
