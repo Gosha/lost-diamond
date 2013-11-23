@@ -40,17 +40,16 @@ public class LoadListener implements ActionListener {
 			try {
 				FileInputStream fistream = new FileInputStream(
 						fChooser.getSelectedFile());
-				ObjectInputStream oistream = new ObjectInputStream(fistream);
+				try (ObjectInputStream oistream = new ObjectInputStream(
+						fistream)) {
+					Board board = (Board) oistream.readObject();
+					bd.clearBoard();
+					bd.setBoard(board);
+					bd.loadBoard();
+					mlh.reenterState();
+					bd.repaint();
+				}
 
-				Board board = (Board) oistream.readObject();
-
-				bd.clearBoard();
-				bd.setBoard(board);
-				bd.loadBoard();
-				mlh.reenterState();
-				bd.repaint();
-
-				oistream.close();
 				fistream.close();
 			} catch (IOException | ClassNotFoundException e) {
 				e.printStackTrace();

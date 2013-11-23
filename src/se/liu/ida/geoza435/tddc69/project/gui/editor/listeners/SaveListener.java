@@ -38,10 +38,11 @@ public class SaveListener implements ActionListener {
 				FileOutputStream fostream = new FileOutputStream(
 						fChooser.getSelectedFile());
 
-				ObjectOutputStream oostream = new ObjectOutputStream(fostream);
-				oostream.writeObject(bd.getBoard());
+				try (ObjectOutputStream oostream = new ObjectOutputStream(
+						fostream)) {
+					oostream.writeObject(bd.getBoard());
+				}
 
-				oostream.close();
 				fostream.close();
 			} catch (IOException e) {
 				e.printStackTrace();

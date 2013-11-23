@@ -128,11 +128,12 @@ public class Game {
 	}
 
 	public void loadBoard(String file) {
+		InputStream istream = ResourceManagager.getStream(file);
+
 		try {
-			InputStream istream = ResourceManagager.getStream(file);
-			ObjectInputStream in = new ObjectInputStream(istream);
-			board = (Board) in.readObject();
-			in.close();
+			try (ObjectInputStream in = new ObjectInputStream(istream)) {
+				board = (Board) in.readObject();
+			}
 		} catch (IOException ioException) {
 			ioException.printStackTrace();
 		} catch (ClassNotFoundException classNotFoundException) {
