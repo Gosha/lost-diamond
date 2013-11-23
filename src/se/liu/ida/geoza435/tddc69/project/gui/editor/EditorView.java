@@ -43,6 +43,9 @@ public class EditorView extends JFrame {
 	JPanel buttonPanel = new JPanel();
 	BoardDisplay boardDisplay;
 
+	final static int WIDTH = 600;
+	final static int HEIGHT = 500;
+
 	public EditorView(Board board) {
 		this.boardDisplay = new BoardDisplay(board);
 	}
@@ -70,8 +73,7 @@ public class EditorView extends JFrame {
 
 		setTitle("Editor");
 		setLocationByPlatform(true);
-		// noinspection MagicNumber
-		setSize(600, 500);
+		setSize(WIDTH, HEIGHT);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 

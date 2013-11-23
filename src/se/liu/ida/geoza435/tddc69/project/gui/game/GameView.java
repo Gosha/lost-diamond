@@ -25,6 +25,8 @@ public class GameView extends JFrame {
 	private static final int WIDTH = 600;
 	private static final int HEIGHT = 500;
 
+	final static int SCROLL_INCREMENT = 16;
+
 	public GameView(Game game) {
 		this.game = game;
 		this.boardGameDisplay = new BoardGameDisplay(game.getBoard());
@@ -34,8 +36,7 @@ public class GameView extends JFrame {
 		JScrollPane spane = new JScrollPane();
 
 		spane.setViewportView(boardGameDisplay);
-		// noinspection MagicNumber
-		spane.getVerticalScrollBar().setUnitIncrement(16);
+		spane.getVerticalScrollBar().setUnitIncrement(SCROLL_INCREMENT);
 
 		add(spane, BorderLayout.CENTER);
 

@@ -33,7 +33,7 @@ public class Game {
 	List<Player> players = new ArrayList<>();
 	List<GameComponent> gameComponents = new ArrayList<>();
 	Player currentPlayer = null;
-	private boolean gameEnded = false;
+	private volatile boolean gameEnded = false;
 	private boolean initialized = false;
 
 	private final static int RUBY_PRICE = 5000;
@@ -80,10 +80,10 @@ public class Game {
 			throw new GameNotInitializedException("Game not initialized");
 		}
 
-		// noinspection CallToSimpleGetterFromWithinClass
-		while (!isGameEnd()) {
+
+		while (!gameEnded) {
 			try {
-				// noinspection BusyWait
+				// It's just a delay for display
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -177,10 +177,6 @@ public class Game {
 				return t;
 		}
 		return null;
-	}
-
-	public boolean isGameEnd() {
-		return gameEnded;
 	}
 
 	public void setGameEnded(boolean gameEnded) {

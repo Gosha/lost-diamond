@@ -22,7 +22,7 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  */
 public class GameComponent {
 
-	public final static Pattern SPLIT_PATTERN = Pattern.compile("\\.");
+	final static Pattern SPLIT_PATTERN = Pattern.compile("\\.");
 
 	protected Game game;
 
@@ -44,7 +44,8 @@ public class GameComponent {
 
 	@Override
 	public String toString() {
-		return SPLIT_PATTERN.split(this.getClass().getCanonicalName())[8];
+		String[] classNameParts = SPLIT_PATTERN.split(this.getClass().getCanonicalName());
+		return classNameParts[classNameParts.length - 1];
 	}
 
 }

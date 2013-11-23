@@ -15,11 +15,13 @@ public class FlightChoice implements Choice {
 
 	Mark to = null;
 
+	/** The cost of going by plane */
+	public final static int FLIGHT_PRICE = 3000;
+
 	@Override
 	public void execute(Player player) {
 		player.move(to);
-		// noinspection MagicNumber
-		player.takeMoney(3000);
+		player.takeMoney(FLIGHT_PRICE);
 		player.setHasMoved(true);
 	}
 

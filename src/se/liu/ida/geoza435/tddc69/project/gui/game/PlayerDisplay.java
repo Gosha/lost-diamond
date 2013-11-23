@@ -29,11 +29,15 @@ public class PlayerDisplay extends JLabel implements Observer {
 	public final static int WIDTH = 40;
 	/** Offset for the players location on a mark */
 	public final static int Y_OFFSET = 25;
+
 	/** Diameter of a player token head */
-	public final static int HEAD_SIZE = 25;
+	final static int HEAD_SIZE = 25;
 	/** Offset the upper end of the player token lower polygon */
 	public final static int NECK_OFFSET = 17;
+
 	Color color;
+
+	final static int MAX_RANDOM_COLOR = 200;
 
 	public PlayerDisplay(Player player) {
 		this.player = player;
@@ -44,10 +48,9 @@ public class PlayerDisplay extends JLabel implements Observer {
 				WIDTH, HEIGHT);
 		this.setText(player.toString());
 		this.setBounds(bounds);
-		// noinspection MagicNumber
-		this.color = new Color((int) (Math.random() * 200),
-				(int) (Math.random() * 200),
-				(int) (Math.random() * 200));
+		this.color = new Color((int) (Math.random() * MAX_RANDOM_COLOR),
+				(int) (Math.random() * MAX_RANDOM_COLOR),
+				(int) (Math.random() * MAX_RANDOM_COLOR));
 
 		Debug.out("New Player: " + player);
 	}
