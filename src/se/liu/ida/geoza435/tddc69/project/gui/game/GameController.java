@@ -16,7 +16,7 @@ public final class GameController {
 	final GameView gameView;
 	final Game game;
 
-	public GameController() throws GameNotInitializedException {
+	public GameController() {
 		game = new Game();
 		game.loadBoard("africa.dat");
 
@@ -34,7 +34,9 @@ public final class GameController {
 		game.addPlayer(p3);
 
 		game.init();
+	}
 
+	public void run() throws GameNotInitializedException {
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override

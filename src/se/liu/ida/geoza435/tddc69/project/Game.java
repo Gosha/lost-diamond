@@ -8,11 +8,12 @@ import se.liu.ida.geoza435.tddc69.project.gui.game.GameController;
  * on an error.
  */
 public final class Game {
-    private Game() {}
+	private Game() {}
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		try {
-			new GameController();
+			GameController gameController = new GameController();
+			gameController.run();
 		} catch (GameNotInitializedException e) {
 			System.out.println("Couldn't start game:");
 			e.printStackTrace();
