@@ -22,7 +22,7 @@ public class Boat extends GameComponent implements Choice {
 	DoNothing doNothing;
 	Mark to = null;
 	boolean isFree;
-	@SuppressWarnings("JavaDoc")
+    /** The cost of a boat trip*/
 	public final static int COST = 1000;
 
 	public Boat(Game game, DoNothing doNothing) {

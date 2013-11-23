@@ -41,18 +41,18 @@ public class Game {
 		this.board = new Board();
 		this.gameComponents.add(new StandardMovement(this));
 		this.gameComponents.add(new Flight(this));
-		Tokens tokens = new Tokens(this);
-		this.gameComponents.add(tokens);
-		this.gameComponents.add(new AfricasStar(this, tokens));
-		this.gameComponents.add(new Jewel(this, tokens, 2, 5000, "Ruby"));
-		this.gameComponents.add(new Jewel(this, tokens, 3, 4000, "Emerald"));
-		this.gameComponents.add(new Jewel(this, tokens, 6, 3000, "Topaz"));
-		this.gameComponents.add(new Black(this, tokens));
-		this.gameComponents.add(new Robber(this, tokens));
+		Tokens tokensComponent = new Tokens(this);
+		this.gameComponents.add(tokensComponent);
+		this.gameComponents.add(new AfricasStar(this, tokensComponent));
+		this.gameComponents.add(new Jewel(this, tokensComponent, 2, 5000, "Ruby"));
+		this.gameComponents.add(new Jewel(this, tokensComponent, 3, 4000, "Emerald"));
+		this.gameComponents.add(new Jewel(this, tokensComponent, 6, 3000, "Topaz"));
+		this.gameComponents.add(new Black(this, tokensComponent));
+		this.gameComponents.add(new Robber(this, tokensComponent));
 		DoNothing doNothing = new DoNothing(this);
 		this.gameComponents.add(doNothing);
 		this.gameComponents.add(new Boat(this, doNothing));
-		this.gameComponents.add(new Black(this, tokens));
+		this.gameComponents.add(new Black(this, tokensComponent));
 	}
 
 	public void addPlayer(Player player) {
@@ -127,10 +127,6 @@ public class Game {
 		}
 	}
 
-	private boolean isGameEnd() {
-		return isGameEnded();
-	}
-
 	public void loadBoard(String file) {
 		try {
 			InputStream istream = ResourceManagager.getStream(file);
@@ -176,7 +172,7 @@ public class Game {
 		return null;
 	}
 
-	public boolean isGameEnded() {
+	public boolean isGameEnd() {
 		return gameEnded;
 	}
 
