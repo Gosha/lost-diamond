@@ -19,9 +19,11 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  */
 public class GameView extends JFrame {
 
-	// TODO Public variables
 	private BoardGameDisplay boardGameDisplay;
 	private Game game;
+
+	private static final int WIDTH = 600;
+	private static final int HEIGHT = 500;
 
 	public GameView(Game game) {
 		this.game = game;
@@ -41,9 +43,7 @@ public class GameView extends JFrame {
 		setGlassPane(status);
 		status.setVisible(true);
 
-		// TODO: Constants
-		// noinspection MagicNumber
-		setSize(600, 500);
+		setSize(WIDTH, HEIGHT);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setVisible(true);
 	}

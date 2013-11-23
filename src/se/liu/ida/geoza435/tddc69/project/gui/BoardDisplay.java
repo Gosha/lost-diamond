@@ -21,7 +21,6 @@ import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
  * Can load and display a {@link Board}.
  * 
  * Has a predefined image <br>
- * TODO Make Image changeable
  */
 public class BoardDisplay extends JPanel {
 	private Board board;
@@ -35,8 +34,6 @@ public class BoardDisplay extends JPanel {
 		this.connectionDisplays = new ArrayList<>();
 		this.board = board;
 		this.setLayout(null);
-		// TODO Automatic resizing / Set size of board
-		// TODO Loadable map
 		URL url = ResourceManagager.getURL("africa.jpg");
 		background = new ImageIcon(url);
 

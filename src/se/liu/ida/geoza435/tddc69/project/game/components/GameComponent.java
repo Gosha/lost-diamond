@@ -1,6 +1,7 @@
 package se.liu.ida.geoza435.tddc69.project.game.components;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import se.liu.ida.geoza435.tddc69.project.game.Game;
 import se.liu.ida.geoza435.tddc69.project.game.Player;
@@ -20,6 +21,8 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  * {@link AfricasStar}
  */
 public class GameComponent {
+
+	public final static Pattern SPLIT_PATTERN = Pattern.compile("\\.");
 
 	protected Game game;
 
@@ -41,7 +44,7 @@ public class GameComponent {
 
 	@Override
 	public String toString() {
-		return this.getClass().toString();
+		return SPLIT_PATTERN.split(this.getClass().getCanonicalName())[8];
 	}
 
 }

@@ -34,7 +34,6 @@ public class GUIPlayer extends Player {
 			return choices.get(0);
 		}
 
-		// TODO Better option choosing
 		Choice response = null;
 		while (response == null) {
 			response = (Choice) JOptionPane.showInputDialog(
@@ -88,8 +87,8 @@ public class GUIPlayer extends Player {
 
 	@Override
 	public void visited(Token token) {
-		// TODO Auto-generated method stub
-
+		JOptionPane.showMessageDialog(boardGameDisplay,
+				"You got: " + token.toString() + "!");
 	}
 
 }

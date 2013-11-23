@@ -41,7 +41,7 @@ public class Jewel extends GameComponent {
 
 	@Override
 	public String toString() {
-		return name + " worth: " + worth;
+		return name + " worth " + worth;
 	}
 
 }
