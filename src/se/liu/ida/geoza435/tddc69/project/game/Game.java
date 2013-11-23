@@ -33,6 +33,8 @@ public class Game {
 	List<Player> players = new ArrayList<>();
 	List<GameComponent> gameComponents = new ArrayList<>();
 	Player currentPlayer = null;
+
+	// Not really a volatile field in my opinion. But IDEA likes it.
 	private volatile boolean gameEnded = false;
 	private boolean initialized = false;
 
@@ -79,7 +81,6 @@ public class Game {
 		if (!initialized) {
 			throw new GameNotInitializedException("Game not initialized");
 		}
-
 
 		while (!gameEnded) {
 			try {
