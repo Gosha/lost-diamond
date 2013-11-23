@@ -20,7 +20,8 @@ public class MouseOverListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseMoved(MouseEvent mouseEvent) {
+	public void mouseMoved(MouseEvent event) {
+		super.mouseMoved(event);
 		component.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	}
 }

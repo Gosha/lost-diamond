@@ -20,7 +20,9 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  */
 public class TokenDisplay extends JLabel implements Observer {
 
+	/** How much less that a MarkDisplay a token is */
 	public static final int MARGIN = 5;
+	/** White token color */
 	public static final Color COLOR = new Color(255, 255, 255);
 
 	private static final int WIDTH = 100;
@@ -34,6 +36,7 @@ public class TokenDisplay extends JLabel implements Observer {
 		token.observe(this);
 	}
 
+	// Yes, it ignores the super method because that's the point.
 	@Override
 	public boolean contains(int x, int y) {
 		return false;

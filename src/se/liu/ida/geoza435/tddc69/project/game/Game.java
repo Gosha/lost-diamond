@@ -36,9 +36,9 @@ public class Game {
 	private boolean gameEnded = false;
 	private boolean initialized = false;
 
-	private final static int rubyPrice = 5000;
-	private final static int emeraldPrice = 4000;
-	private final static int topazPrice = 3000;
+	private final static int RUBY_PRICE = 5000;
+	private final static int EMERALD_PRICE = 4000;
+	private final static int TOPAZ_PRICE = 3000;
 
 	public Game() {
 		this.board = new Board();
@@ -47,11 +47,12 @@ public class Game {
 		Tokens tokensComponent = new Tokens(this);
 		this.gameComponents.add(tokensComponent);
 		this.gameComponents.add(new AfricasStar(this, tokensComponent));
-		this.gameComponents.add(new Jewel(this, tokensComponent, 2, rubyPrice,
+		this.gameComponents.add(new Jewel(this, tokensComponent, 2, RUBY_PRICE,
 				"Ruby"));
 		this.gameComponents.add(new Jewel(this, tokensComponent, 3,
-				emeraldPrice, "Emerald"));
-		this.gameComponents.add(new Jewel(this, tokensComponent, 6, topazPrice,
+				EMERALD_PRICE, "Emerald"));
+		this.gameComponents.add(new Jewel(this, tokensComponent, 6,
+				TOPAZ_PRICE,
 				"Topaz"));
 		this.gameComponents.add(new Black(this, tokensComponent));
 		this.gameComponents.add(new Robber(this, tokensComponent));
@@ -90,7 +91,7 @@ public class Game {
 			playTurn(currentPlayer);
 			nextPlayer();
 		}
-		Debug.o("Game end!");
+		Debug.out("Game end!");
 	}
 
 	private void nextPlayer() {
@@ -150,7 +151,7 @@ public class Game {
 
 	public int rollDie() {
 		int die = (int) (Math.random() * 5 + 1);
-		Debug.o(die);
+		Debug.out(die);
 		return die;
 	}
 

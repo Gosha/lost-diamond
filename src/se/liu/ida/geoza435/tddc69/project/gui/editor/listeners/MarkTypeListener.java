@@ -20,7 +20,8 @@ public class MarkTypeListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent event) {
+		super.mouseClicked(event);
 		MarkType type = md.getMark().getType();
 		MarkType[] vals = MarkType.values();
 		md.getMark().setType(

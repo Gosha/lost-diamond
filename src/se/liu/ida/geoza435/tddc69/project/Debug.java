@@ -9,7 +9,7 @@ public final class Debug {
 
 	private Debug() {}
 
-	public static void o(Object object) {
+	public static void out(Object object) {
 		if (debug)
 			if (object == null)
 				System.out.println("Null");

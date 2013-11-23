@@ -29,7 +29,7 @@ public class FlightChoice implements Choice {
 		List<MarkListContainer> marks = player.getAt().getNextMarks(1,
 				ConnectionType.flight);
 
-		Debug.o("Can fly to: " + marks);
+		Debug.out("Can fly to: " + marks);
 
 		to = player.chooseMark(marks);
 	}

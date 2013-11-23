@@ -39,7 +39,8 @@ public class MarkClickListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
+	public void mouseClicked(MouseEvent event) {
+		super.mouseClicked(event);
 		clickedMarkDisplay.setMarkDisplay(markDisplay);
 	}
 

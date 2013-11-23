@@ -32,12 +32,14 @@ public class Tokens extends GameComponent {
 
 	@Override
 	public void addChoices(Player player, List<Choice> choices) {
+		super.addChoices(player, choices);
 		if (player.standsOnToken())
 			choices.add(new FlipChoice(game));
 	}
 
 	@Override
 	public void addPostMoveChoices(Player player, List<Choice> choices) {
+		super.addPostMoveChoices(player, choices);
 		addChoices(player, choices);
 	}
 

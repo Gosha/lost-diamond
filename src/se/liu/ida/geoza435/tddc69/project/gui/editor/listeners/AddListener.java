@@ -31,12 +31,13 @@ public class AddListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent mouseEvent) {
+	public void mouseClicked(MouseEvent event) {
+		super.mouseClicked(event);
 		MarkDisplay selectedMark = boardDisplay.getSelectedMark();
 		if (selectedMark != null) {
 			Mark newmark = new Mark(MarkType.normal,
-					new Position(mouseEvent.getX() - MarkDisplay.SIZE / 2,
-							mouseEvent.getY() - MarkDisplay.SIZE / 2));
+					new Position(event.getX() - MarkDisplay.SIZE / 2,
+							event.getY() - MarkDisplay.SIZE / 2));
 			boardDisplay.getBoard().addMark(newmark);
 			Connection newConnection = new Connection(selectedMark.getMark(),
 					newmark);

@@ -7,9 +7,9 @@ import java.io.Serializable;
  * 
  * Positional data is stored in the two Marks the connection connects.
  */
-// Already serialized
 public class Connection implements Serializable {
 	private static final long serialVersionUID = 1L;
+	// Already serialized and hence I can't change these names
 	private Mark a, b;
 	private ConnectionType type;
 
@@ -21,6 +21,7 @@ public class Connection implements Serializable {
 		b.addConnection(this);
 	}
 
+	// Already serialized and hence I can't change these names
 	public Connection(Mark a, Mark b) {
 		this(a, b, ConnectionType.normal);
 	}

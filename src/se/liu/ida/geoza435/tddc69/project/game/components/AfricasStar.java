@@ -26,11 +26,13 @@ public class AfricasStar extends GameComponent {
 
 	@Override
 	public void init() {
+		super.init();
 		tokens.addOne(this);
 	}
 
 	@Override
 	public void visit(Token token, Player player) {
+		super.visit(token, player);
 		player.addToken(token);
 		tokens.removeToken(token);
 	}
@@ -42,6 +44,7 @@ public class AfricasStar extends GameComponent {
 
 	@Override
 	public void postTurn(Player player) {
+		super.postTurn(player);
 		if (player.hasToken(this) && player.isOn(MarkType.start))
 			game.setGameEnded(true);
 	}

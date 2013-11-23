@@ -29,6 +29,7 @@ public abstract class AbstractEditorState {
 	public void leaveState(MouseListenerHandler mouseListenerHandler) {
 		BoardDisplay bd = mouseListenerHandler.getBoardDisplay();
 
+		// Remove all listeners, both MouseListener and MouseMoitionListener
 		for (MouseListener ml : bd.getMouseListeners()) {
 			bd.removeMouseListener(ml);
 		}

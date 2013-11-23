@@ -17,6 +17,7 @@ public class StandardMovement extends GameComponent {
 
 	@Override
 	public void addChoices(Player player, List<Choice> choices) {
+		super.addChoices(player, choices);
 		if (player.isNextTo(ConnectionType.normal))
 			choices.add(new MovementChoice(game));
 	}

@@ -23,10 +23,16 @@ import se.liu.ida.geoza435.tddc69.project.gui.DrawingTools;
 public class PlayerDisplay extends JLabel implements Observer {
 
 	Player player;
+	/** Height of a player */
 	public final static int HEIGHT = 50;
+	/** Width of a player */
 	public final static int WIDTH = 40;
+	/** Offset for the players location on a mark */
 	public final static int Y_OFFSET = 25;
+	/** Diameter of a player token head */
 	public final static int HEAD_SIZE = 25;
+	/** Offset the upper end of the player token lower polygon */
+	public final static int NECK_OFFSET = 17;
 	Color color;
 
 	public PlayerDisplay(Player player) {
@@ -43,20 +49,21 @@ public class PlayerDisplay extends JLabel implements Observer {
 				(int) (Math.random() * 200),
 				(int) (Math.random() * 200));
 
-		Debug.o("New Player: " + player);
+		Debug.out("New Player: " + player);
 	}
 
 	@Override
-	protected void paintComponent(Graphics arg0) {
-		Graphics2D g2d = DrawingTools.setupGraphics(arg0);
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2d = DrawingTools.setupGraphics(g);
 		g2d.setColor(color);
 		// I am aware that these are magic numbers, but so is drawing.
 		g2d.fillOval(5, 0, HEAD_SIZE, HEAD_SIZE);
 		Polygon p = new Polygon();
-		p.addPoint(17, 10);
+		p.addPoint(NECK_OFFSET, 10);
 		p.addPoint(5, HEIGHT);
 		p.addPoint(WIDTH - 5, HEIGHT);
-		p.addPoint(WIDTH - 17, 10);
+		p.addPoint(WIDTH - NECK_OFFSET, 10);
 		g2d.fillPolygon(p);
 	}
 

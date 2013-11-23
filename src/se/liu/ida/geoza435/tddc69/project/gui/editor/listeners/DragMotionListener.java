@@ -21,18 +21,20 @@ public class DragMotionListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseMoved(MouseEvent mouseEvent) {
-		anchorPoint = mouseEvent.getPoint();
+	public void mouseMoved(MouseEvent event) {
+		super.mouseMoved(event);
+		anchorPoint = event.getPoint();
 	}
 
 	@Override
-	public void mouseDragged(MouseEvent mouseEvent) {
+	public void mouseDragged(MouseEvent event) {
+		super.mouseDragged(event);
 		int anchorX = anchorPoint.x;
 		int anchorY = anchorPoint.y;
 
 		Point parentOnScreen = markDisplay.getParent()
 				.getLocationOnScreen();
-		Point mouseOnScreen = mouseEvent.getLocationOnScreen();
+		Point mouseOnScreen = event.getLocationOnScreen();
 		Point position = new Point(
 				mouseOnScreen.x - parentOnScreen.x - anchorX,
 				mouseOnScreen.y - parentOnScreen.y - anchorY);

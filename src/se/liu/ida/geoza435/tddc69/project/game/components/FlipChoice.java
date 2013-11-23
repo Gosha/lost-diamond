@@ -32,7 +32,7 @@ public class FlipChoice implements Choice {
 	@Override
 	public void execute(Player player) {
 		Token token = game.getTokenAt(player.getAt());
-		Debug.o("FlipChoice execute(): " + shouldPay);
+		Debug.out("FlipChoice execute(): " + shouldPay);
 		if (shouldPay) {
 			player.takeMoney(1000);
 			token.visit(player);

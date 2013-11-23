@@ -19,20 +19,33 @@ public class MarkDisplay extends JLabel implements Observer {
 	Mark mark;
 	Rectangle bounds;
 
+	/** Square size */
 	public final static int SIZE = 40;
 
+	/** Radius of a normal mark */
 	public final static int NORMAL_RADIUS = 15;
+	/** Radius of a boat mark */
 	public final static int BOAT_RADIUS = 15;
+	/** Radius of a city mark */
 	public final static int CITY_RADIUS = 20;
+	/** Radius of a start point mark */
 	public final static int START_RADIUS = 20;
+	/** Radius mark that maybe doesn't exist. */
 	public final static int DEFAULT_RADIUS = 20;
 
+	/** Black normal color */
 	public final static Color NORMAL_COLOR = new Color(10, 10, 10);
+	/** Blue boat color */
 	public final static Color BOAT_COLOR = new Color(20, 20, 200);
+	/** Red city color */
 	public final static Color CITY_COLOR = new Color(200, 20, 20);
+	/** Green start color */
 	public final static Color START_COLOR = new Color(20, 200, 20);
+	/** Black ring color */
 	public final static Color RING_COLOR = new Color(10, 10, 10);
+	/** Yellow select color */
 	public final static Color SELECT_COLOR = new Color(200, 200, 0);
+	/** Black, used in case an uknown mark is drawn */
 	public final static Color DEFAULT_COLOR = new Color(0, 0, 0);
 
 	public MarkDisplay(Mark mark) {
@@ -47,6 +60,8 @@ public class MarkDisplay extends JLabel implements Observer {
 
 	@Override
 	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
 		Graphics2D g2d = DrawingTools.setupGraphics(g);
 
 		Integer radius = DEFAULT_RADIUS;

@@ -20,7 +20,8 @@ public class DeleteListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent event) {
+		super.mouseClicked(event);
 		bd.deleteMarkDisplay(md);
 		bd.repaint();
 	}

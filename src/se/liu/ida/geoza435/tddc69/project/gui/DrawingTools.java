@@ -32,19 +32,23 @@ public final class DrawingTools {
 	}
 
 	/**
-	 * Uses Linear Algebra to decide the shortest length from a line to a point.
+	 * Uses linear algebra to decide the shortest length from a line to a point.
 	 */
 	public static double pointToLineDistance(Point linePointA,
 			Point linePointB, Point mousePoint) {
-		double normalLength =
-				Math.sqrt((linePointB.x - linePointA.x)
-						* (linePointB.x - linePointA.x)
-						+ (linePointB.y - linePointA.y)
-						* (linePointB.y - linePointA.y));
-		return Math.abs(
-				(mousePoint.x - linePointA.x) * (linePointB.y - linePointA.y)
-						- (mousePoint.y - linePointA.y)
-						* (linePointB.x - linePointA.x))
+
+		double deltaY = linePointB.y - linePointA.y;
+		double deltaX = linePointB.x - linePointA.x;
+
+		double deltaXSquared = Math.pow(deltaX, 2);
+		double deltaYSquared = Math.pow(deltaY, 2);
+
+		double normalLength = Math.sqrt(deltaXSquared + deltaYSquared);
+
+		double deltaMouseX = (mousePoint.x - linePointA.x);
+		double deltaMouseY = mousePoint.y - linePointA.y;
+
+		return Math.abs(deltaMouseX * deltaY - deltaMouseY * deltaX)
 				/ normalLength;
 	}
 

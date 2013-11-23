@@ -30,7 +30,8 @@ public class SelectListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent event) {
+		super.mouseClicked(event);
 		if (callback == null || callback.run(this)) {
 			boardDisplay.selectNone();
 			boardDisplay.selectOne(markDisplay);

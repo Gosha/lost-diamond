@@ -67,7 +67,7 @@ public class Boat extends GameComponent implements Choice {
 
 		// Not implemented: Filter out marks
 
-		Debug.o("Can go by boat to to: " + marks);
+		Debug.out("Can go by boat to to: " + marks);
 
 		to = player.chooseMark(marks);
 	}

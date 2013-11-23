@@ -72,7 +72,7 @@ public class Board implements Serializable {
 	public ArrayList<Mark> getMarksOfType(MarkType type) {
 		ArrayList<Mark> retMarks = new ArrayList<>();
 
-		for (Mark mark : getMarks()) {
+		for (Mark mark : marks) {
 			if (mark.getType() == type)
 				retMarks.add(mark);
 		}
@@ -90,7 +90,7 @@ public class Board implements Serializable {
 	}
 
 	public void selectNone() {
-		for (Mark mark : this.getMarks()) {
+		for (Mark mark : marks) {
 			mark.setSelected(false);
 		}
 	}

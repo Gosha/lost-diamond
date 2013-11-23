@@ -18,7 +18,8 @@ public class ConnectionTypeListener extends MouseAdapter {
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
+	public void mouseClicked(MouseEvent event) {
+		super.mouseClicked(event);
 		ConnectionType type = cd.getConnection().getType();
 		ConnectionType[] vals = ConnectionType.values();
 		cd.getConnection().setType(

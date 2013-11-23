@@ -26,9 +26,13 @@ public class EditorController {
 	Board board = new Board();
 
 	public EditorController() {
-
 		editorView = new EditorView(board);
+	}
+
+	public void start() {
+
 		board.createStubBoard();
+
 		final MouseListenerHandler mlh = new MouseListenerHandler(
 				editorView.getBoardDisplay());
 

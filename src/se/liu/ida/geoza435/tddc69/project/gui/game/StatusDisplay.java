@@ -2,7 +2,6 @@ package se.liu.ida.geoza435.tddc69.project.gui.game;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.GridLayout;
 
 import javax.swing.JLabel;
@@ -53,37 +52,27 @@ public class StatusDisplay extends JPanel implements Observer {
 	}
 
 	@Override
-	public boolean contains(int x, int y) {
-		for (Component component : this.getComponents()) {
-			if (component.contains(x, y)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	@Override
 	public void notifyChange(Observable observable) {
 		updateDisplay();
 	}
 
 	private void updateDisplay() {
-		String txt = "";
+		StringBuilder txt = new StringBuilder();
 		for (Player p : game.getPlayers()) {
-			txt += "Player " + p.getNum();
+			txt.append("Player ").append(p.getNum());
 			if (game.getCurrentPlayer() == p) {
-				txt += " *";
+				txt.append(" *");
 			}
-			txt += "<br>";
-			txt += "Money: " + p.getMoney() + "<br>";
-			txt += "Has: ";
+			txt.append("<br>");
+			txt.append("Money: ").append(p.getMoney()).append("<br>");
+			txt.append("Has: ");
 			for (Token token : p.getTokens()) {
-				txt += token + " ";
+				txt.append(token).append(" ");
 			}
-			txt += "<br>";
+			txt.append("<br>");
 		}
-		txt = "<html>" + txt + "</html>";
-		label.setText(txt);
+		txt.insert(0, "<html>").append("</html>");
+		label.setText(txt.toString());
 		panel.setSize(label.getPreferredSize());
 		System.out.println(txt);
 		repaint();

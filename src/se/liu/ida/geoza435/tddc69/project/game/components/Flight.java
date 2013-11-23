@@ -13,16 +13,19 @@ import se.liu.ida.geoza435.tddc69.project.game.Player;
  */
 public class Flight extends GameComponent {
 
+	/** The cost of going by plane */
+	final static int FLIGHT_PRICE = 3000;
+
 	public Flight(Game game) {
 		super(game);
 	}
 
 	@Override
 	public void addChoices(Player player, List<Choice> choices) {
-		// noinspection MagicNumber
+		super.addChoices(player, choices);
 		if (player.isOn(MarkType.city, MarkType.start)
 				&& player.isNextTo(ConnectionType.flight)
-				&& player.hasAtLeast(3000))
+				&& player.hasAtLeast(FLIGHT_PRICE))
 			choices.add(new FlightChoice());
 	}
 

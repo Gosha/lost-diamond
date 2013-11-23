@@ -22,19 +22,21 @@ public class DoNothing extends GameComponent implements Choice {
 
 	@Override
 	public void addChoices(Player player, List<Choice> choices) {
+		super.addChoices(player, choices);
 		if (player.isOn(MarkType.city))
 			choices.add(this);
 	}
 
 	@Override
 	public void addPostMoveChoices(Player player, List<Choice> choices) {
+		super.addPostMoveChoices(player, choices);
 		this.addChoices(player, choices);
 	}
 
 	@Override
 	public void choose(Player player) {
 		// simply nothing
-		Debug.o("Chose to do nothing");
+		Debug.out("Chose to do nothing");
 	}
 
 	@Override
