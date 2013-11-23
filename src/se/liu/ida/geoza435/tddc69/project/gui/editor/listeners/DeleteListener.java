@@ -9,7 +9,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
 /**
  * Deletes a Mark when mouseClicked.
  */
-@SuppressWarnings("RefusedBequest")
 public class DeleteListener extends MouseAdapter {
 
 	MarkDisplay md;

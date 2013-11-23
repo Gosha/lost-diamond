@@ -12,7 +12,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * @see SelectCallback
  * @see ConnectCallback
  */
-@SuppressWarnings("RefusedBequest")
 public class SelectListener extends MouseAdapter {
 
 	protected MarkDisplay markDisplay;

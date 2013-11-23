@@ -11,7 +11,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * Moves {@link MarkDisplay}s when mouse is dragged. Also updates the Marks
  * position.
  */
-@SuppressWarnings("RefusedBequest")
 public class DragMotionListener extends MouseAdapter {
 
 	protected Point anchorPoint = null;

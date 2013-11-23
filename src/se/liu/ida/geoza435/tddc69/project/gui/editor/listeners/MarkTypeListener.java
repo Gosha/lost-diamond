@@ -11,7 +11,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * 
  * Cycles through all available MarkTypes
  */
-@SuppressWarnings("RefusedBequest")
 public class MarkTypeListener extends MouseAdapter {
 
 	MarkDisplay md;

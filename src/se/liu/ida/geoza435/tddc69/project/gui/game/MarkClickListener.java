@@ -18,13 +18,11 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * @see ClickedMarkDisplay
  * @see GUIPlayer#chooseMark(List)
  */
-@SuppressWarnings("RefusedBequest")
 public class MarkClickListener extends MouseAdapter {
 
 	MarkDisplay markDisplay = null;
 	final ClickedMarkDisplay clickedMarkDisplay;
 
-	@SuppressWarnings("ObjectEquality")
 	public MarkClickListener(Mark mark, ClickedMarkDisplay clickedMarkDisplay,
 			BoardDisplay bd) {
 		this.clickedMarkDisplay = clickedMarkDisplay;

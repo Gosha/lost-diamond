@@ -8,7 +8,6 @@ import java.io.Serializable;
  * Positional data is stored in the two Marks the connection connects.
  */
 // Already serialized
-@SuppressWarnings("StandardVariableNames")
 public class Connection implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Mark a, b;

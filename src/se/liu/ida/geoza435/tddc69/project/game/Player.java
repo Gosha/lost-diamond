@@ -27,10 +27,8 @@ abstract public class Player extends Observable {
 	int playerId;
 	static int staticId = 1;
 
-	@SuppressWarnings("MagicNumber")
 	Integer money = 5000;
 
-	@SuppressWarnings("AssignmentToStaticFieldFromInstanceMethod")
 	protected Player(Mark at, Game game) {
 		this.at = at;
 		this.game = game;
@@ -100,7 +98,6 @@ abstract public class Player extends Observable {
 
 	public abstract Mark chooseMark(List<MarkListContainer> marks);
 
-	@SuppressWarnings("BooleanMethodNameMustStartWithQuestion")
 	public abstract boolean presentBinaryChoice(String message);
 
 	public void addToken(Token token) {
@@ -108,8 +105,6 @@ abstract public class Player extends Observable {
 		changed();
 	}
 
-	@SuppressWarnings({ "BooleanMethodNameMustStartWithQuestion",
-			"ObjectEquality" })
 	public boolean standsOnToken() {
 		for (Token t : game.getTokens()) {
 			if (t.getAt() == this.at)
@@ -118,7 +113,6 @@ abstract public class Player extends Observable {
 		return false;
 	}
 
-	@SuppressWarnings("ObjectEquality")
 	public boolean hasToken(GameComponent gameComponent) {
 		for (Token t : tokens) {
 			if (t.getGameComponent() == gameComponent) {

@@ -9,7 +9,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * Required because MarkDisplays are set from {@link MarkClickListener} in the
  * Swing thread while the Game Loop thread waits for a response.
  */
-@SuppressWarnings({ "WaitNotInLoop", "WaitOrAwaitWithoutTimeout" })
 public class ClickedMarkDisplay {
 	private MarkDisplay markDisplay = null;
 

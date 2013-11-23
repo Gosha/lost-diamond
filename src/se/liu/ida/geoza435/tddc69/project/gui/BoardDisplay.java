@@ -23,7 +23,6 @@ import se.liu.ida.geoza435.tddc69.project.resources.ResourceManagager;
  * Has a predefined image <br>
  * TODO Make Image changeable
  */
-@SuppressWarnings("serial")
 public class BoardDisplay extends JPanel {
 	private Board board;
 	List<MarkDisplay> markDisplays;

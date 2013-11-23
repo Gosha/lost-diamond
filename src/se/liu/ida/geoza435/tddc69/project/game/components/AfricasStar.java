@@ -15,7 +15,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  * ends.</li>
  * </ul>
  */
-@SuppressWarnings("RefusedBequest")
 public class AfricasStar extends GameComponent {
 
 	Tokens tokens;

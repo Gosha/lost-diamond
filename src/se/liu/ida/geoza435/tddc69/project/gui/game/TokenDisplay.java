@@ -18,13 +18,11 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * 
  * If the Mark it is located at is null, it removes itself.
  */
-@SuppressWarnings({ "serial", "JavaDoc" })
 public class TokenDisplay extends JLabel implements Observer {
 
 	public static final int MARGIN = 5;
 	public static final Color COLOR = new Color(255, 255, 255);
 
-	@SuppressWarnings("MagicNumber")
 	public TokenDisplay(Token token) {
 		Position position = token.getAt().getPosition();
 		this.setBounds(0, 0, 100, 50);
@@ -33,7 +31,6 @@ public class TokenDisplay extends JLabel implements Observer {
 		token.observe(this);
 	}
 
-	@SuppressWarnings("RefusedBequest")
 	@Override
 	public boolean contains(int x, int y) {
 		return false;

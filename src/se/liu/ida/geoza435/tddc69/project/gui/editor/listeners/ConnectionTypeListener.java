@@ -9,7 +9,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.ConnectionDisplay;
 /**
  * Changes type of a Connection when mouseClicked
  * */
-@SuppressWarnings("RefusedBequest")
 public class ConnectionTypeListener extends MouseAdapter {
 
 	ConnectionDisplay cd;

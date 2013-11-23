@@ -17,14 +17,12 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
 /**
  * Displays status for all Players in text-format
  */
-@SuppressWarnings("serial")
 public class StatusDisplay extends JPanel implements Observer {
 
 	JLabel label;
 	JPanel panel;
 	private Game game;
 
-	@SuppressWarnings("MagicNumber")
 	public StatusDisplay(Game game) {
 		this.game = game;
 		setLayout(null);
@@ -49,7 +47,6 @@ public class StatusDisplay extends JPanel implements Observer {
 		}
 	}
 
-	@SuppressWarnings("RefusedBequest")
 	@Override
 	public boolean contains(int x, int y) {
 		for (Component component : this.getComponents()) {
@@ -65,8 +62,6 @@ public class StatusDisplay extends JPanel implements Observer {
 		updateDisplay();
 	}
 
-	@SuppressWarnings({ "NonConstantStringShouldBeStringBuffer",
-			"StringContatenationInLoop", "ObjectEquality" })
 	private void updateDisplay() {
 		String txt = "";
 		for (Player p : game.getPlayers()) {

@@ -19,8 +19,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  * Dependencies are created by adding parameters to the constructor. As in
  * {@link AfricasStar}
  */
-@SuppressWarnings({ "NoopMethodInAbstractClass",
-		"AbstractClassWithoutAbstractMethods" })
 public abstract class GameComponent {
 
 	protected Game game;

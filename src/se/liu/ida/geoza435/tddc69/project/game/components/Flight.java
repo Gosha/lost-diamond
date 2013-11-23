@@ -11,7 +11,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Player;
  * A player can chose to Fly if he is standing on a city, there is a flight
  * connection and he has at least 3000 money.
  */
-@SuppressWarnings("RefusedBequest")
 public class Flight extends GameComponent {
 
 	public Flight(Game game) {

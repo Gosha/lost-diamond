@@ -22,7 +22,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  * If a mark is selected and the user presses somewhere on the board, a mark is
  * added there and connected to the selected mark.
  */
-@SuppressWarnings("RefusedBequest")
 public class AddListener extends MouseAdapter {
 
 	BoardDisplay boardDisplay;

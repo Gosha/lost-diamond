@@ -9,7 +9,6 @@ import java.util.List;
  * 
  * A {@link Observer} interface is defined, too.
  */
-@SuppressWarnings("AbstractClassWithoutAbstractMethods")
 public abstract class Observable {
 	private List<Observer> observers;
 

@@ -9,7 +9,6 @@ public final class Debug {
 
 	private Debug() {}
 
-	@SuppressWarnings("StaticMethodNamingConvention")
 	public static void o(Object object) {
 		if (debug)
 			if (object == null)

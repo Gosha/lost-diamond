@@ -14,7 +14,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Player;
  * <li>When player has moved</li>
  * </ul>
  */
-@SuppressWarnings("RefusedBequest")
 public class DoNothing extends GameComponent implements Choice {
 
 	public DoNothing(Game game) {

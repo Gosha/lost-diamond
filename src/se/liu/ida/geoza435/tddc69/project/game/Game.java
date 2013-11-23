@@ -36,7 +36,6 @@ public class Game {
 	private boolean gameEnded = false;
 	private boolean initialized = false;
 
-	@SuppressWarnings("MagicNumber")
 	public Game() {
 		this.board = new Board();
 		this.gameComponents.add(new StandardMovement(this));
@@ -164,7 +163,6 @@ public class Game {
 		return currentPlayer;
 	}
 
-	@SuppressWarnings("ObjectEquality")
 	public Token getTokenAt(Mark at) {
 		for (Token t : tokens) {
 			if (t.getAt() == at)

@@ -34,7 +34,6 @@ public final class DrawingTools {
 	/**
 	 * Uses Linear Algebra to decide the shortest length from a line to a point.
 	 */
-	@SuppressWarnings("OverlyComplexArithmeticExpression")
 	public static double pointToLineDistance(Point linePointA,
 			Point linePointB, Point mousePoint) {
 		double normalLength =

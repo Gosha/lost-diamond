@@ -11,7 +11,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.MarkDisplay;
  */
 public class ConnectCallback implements SelectCallback {
 
-	@SuppressWarnings("ObjectEquality")
 	@Override
 	public boolean run(SelectListener from) {
 		MarkDisplay markDisplay = from.boardDisplay.getSelectedMark();

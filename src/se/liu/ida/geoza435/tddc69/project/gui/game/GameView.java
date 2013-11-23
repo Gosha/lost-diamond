@@ -17,7 +17,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Token;
  * players is showed in separate JPanel on the Glass Pane
  * 
  */
-@SuppressWarnings("serial")
 public class GameView extends JFrame {
 
 	// TODO Public variables

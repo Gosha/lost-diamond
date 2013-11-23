@@ -20,7 +20,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.DrawingTools;
  * Displays a player based on a random color and the Position of the Mark the
  * Player is standing on.
  */
-@SuppressWarnings({ "serial", "JavaDoc" })
 public class PlayerDisplay extends JLabel implements Observer {
 
 	Player player;
@@ -46,7 +45,6 @@ public class PlayerDisplay extends JLabel implements Observer {
 		Debug.o("New Player: " + player);
 	}
 
-	@SuppressWarnings({ "MagicNumber", "RefusedBequest" })
 	@Override
 	protected void paintComponent(Graphics arg0) {
 		Graphics2D g2d = DrawingTools.setupGraphics(arg0);

@@ -13,7 +13,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.BoardDisplay;
  * 
  * @see BoardDisplay
  */
-@SuppressWarnings("serial")
 public class BoardGameDisplay extends BoardDisplay {
 
 	List<PlayerDisplay> playerDisplays = new ArrayList<>();

@@ -14,7 +14,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.editor.MouseListenerHandler;
  * Defines some default actions for Editor states.
  */
 
-@SuppressWarnings("AbstractClassWithoutAbstractMethods")
 public abstract class AbstractEditorState {
 
 	JButton button;

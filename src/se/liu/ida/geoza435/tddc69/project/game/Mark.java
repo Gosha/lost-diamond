@@ -16,7 +16,6 @@ import se.liu.ida.geoza435.tddc69.project.Observable;
  * Uses the Observer/Observable pattern. Known observers are:
  * {@link MarkDisplay} {@link ConnectionDisplay}
  */
-@SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Mark extends Observable implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private MarkType type;
@@ -100,7 +99,6 @@ public class Mark extends Observable implements Serializable {
 	 *            Increases every recursion
 	 * @return The built up List retMarks
 	 */
-	@SuppressWarnings("ObjectEquality")
 	private ArrayList<MarkListContainer> getNextMarks(Integer upTo,
 			ConnectionType ofType, ArrayList<MarkListContainer> retMarks,
 			Mark from, Integer distance) {
@@ -121,7 +119,6 @@ public class Mark extends Observable implements Serializable {
 		return retMarks;
 	}
 
-	@SuppressWarnings({ "ReuseOfLocalVariable", "ObjectEquality" })
 	private ArrayList<MarkListContainer> getAdjacentMarks() {
 		ArrayList<MarkListContainer> retMarks = new ArrayList<>();
 

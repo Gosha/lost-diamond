@@ -30,7 +30,6 @@ import se.liu.ida.geoza435.tddc69.project.gui.BoardDisplay;
  *          BoardDisplay in CENTER
  * </pre>
  */
-@SuppressWarnings("serial")
 public class EditorView extends JFrame {
 
 	JButton quitButton = new JButton("Quit");

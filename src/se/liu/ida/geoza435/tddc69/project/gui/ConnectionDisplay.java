@@ -22,7 +22,6 @@ import se.liu.ida.geoza435.tddc69.project.game.Position;
  * 
  * @see DrawingTools#isConnectionFromBottom
  */
-@SuppressWarnings({ "serial", "JavaDoc" })
 public class ConnectionDisplay extends JLabel implements Observer {
 	Connection connection;
 

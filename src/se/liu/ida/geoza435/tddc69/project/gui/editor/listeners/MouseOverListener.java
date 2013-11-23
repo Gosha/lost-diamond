@@ -12,7 +12,6 @@ import javax.swing.JComponent;
  * Can apply to any component, but used only for MarkDisplays and
  * ConnectionDisplays
  */
-@SuppressWarnings("RefusedBequest")
 public class MouseOverListener extends MouseAdapter {
 	JComponent component;
 

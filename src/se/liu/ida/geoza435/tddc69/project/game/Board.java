@@ -9,7 +9,6 @@ import java.util.List;
  * Connection information is stored in the individual Connections
  */
 // Because List is not Serializable
-@SuppressWarnings("CollectionDeclaredAsConcreteClass")
 public class Board implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +24,6 @@ public class Board implements Serializable {
 		return connections;
 	}
 
-	@SuppressWarnings("MagicNumber")
 	public void createStubBoard() {
 		Mark m1 = addMark(new Mark(MarkType.normal, new Position(50, 50)));
 		Mark m2 = addMark(new Mark(MarkType.boat, new Position(150, 150)));
@@ -53,7 +51,6 @@ public class Board implements Serializable {
 		this.connections.add(connection);
 	}
 
-	@SuppressWarnings("ObjectEquality")
 	public void deleteMark(Mark mark) {
 		marks.remove(mark);
 		for (final Connection connection : mark.getConnections()) {
